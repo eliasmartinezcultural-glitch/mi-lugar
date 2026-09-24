@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "items": [
     {
       "id": "historia-nombre-chanar",
@@ -269,6 +269,129 @@
         "checkedAt": "2026-09-24",
         "source": "Municipalidad de San Patricio del Chañar",
         "notes": "Síntesis editorial de fuentes municipales; no agrega datos no documentados."
+      }
+    },
+    {
+      "id": "historia-viento-y-vinedo",
+      "title": "El viento también forma parte del paisaje",
+      "slug": "viento-y-vinedo",
+      "summary": "La vitivinicultura del Chañar se explica también por el ambiente: la Municipalidad destaca los vientos constantes, la altitud, el clima seco y una maduración lenta de las uvas como rasgos del territorio vitivinícola.",
+      "period": "paisaje productivo actual",
+      "places": [
+        "lugar-bodega-familia-schroeder",
+        "lugar-bodega-del-fin-del-mundo",
+        "lugar-bodega-secreto-patagonico"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Qué hacer"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "Síntesis fiel de la descripción municipal del ambiente vitivinícola."
+      }
+    },
+    {
+      "id": "historia-rio-que-se-mira",
+      "title": "Un río que también se puede mirar",
+      "slug": "un-rio-que-se-mira",
+      "summary": "El río Neuquén no aparece solamente como fondo del paisaje. En el Chañar está ligado al descanso, la observación de fauna, la pesca y actividades sobre el agua, siempre con la idea de cuidar ese recurso.",
+      "period": "territorio actual",
+      "places": [
+        "lugar-balneario-municipal",
+        "lugar-establecimiento-lara",
+        "lugar-dique-compensador"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Nuestra Ciudad",
+        "Municipalidad de San Patricio del Chañar — Qué hacer"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "La fuente municipal documenta recreación, pesca, kayak, aves y valor ambiental del entorno."
+      }
+    },
+    {
+      "id": "historia-mas-de-25-aves",
+      "title": "Un pueblo con más de veinticinco especies para mirar",
+      "slug": "mas-de-25-especies-para-mirar",
+      "summary": "El avistaje de aves agrega una escala distinta para conocer Chañar: la Municipalidad registra más de 25 especies en la zona, entre ellas calandria grande, carpintero real y golondrina patagónica.",
+      "period": "naturaleza actual",
+      "places": [
+        "lugar-dique-compensador",
+        "lugar-establecimiento-lara"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Qué hacer"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "Cantidad y ejemplos de especies según la publicación municipal."
+      }
+    },
+    {
+      "id": "historia-kayak-en-verano",
+      "title": "El paisaje visto desde el agua",
+      "slug": "kayak-en-verano",
+      "summary": "Durante enero y febrero, las bajadas de kayak permiten recorrer el Río Neuquén desde otra perspectiva y descubrir de cerca la flora y la fauna del río.",
+      "period": "enero y febrero",
+      "places": [
+        "lugar-establecimiento-lara"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Qué hacer"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "La temporada indicada corresponde a la información municipal consultada."
+      }
+    },
+    {
+      "id": "historia-paleontologia-entre-vinedos",
+      "title": "Cuando una bodega también guarda fósiles",
+      "slug": "paleontologia-entre-vinedos",
+      "summary": "En tierras de Bodega Familia Schroeder, un hallazgo paleontológico terminó formando parte de la identidad del lugar y hasta inspiró el diseño de sus etiquetas. Es una de esas historias que hacen que el paisaje productivo tenga otra profundidad.",
+      "period": "historia reciente",
+      "places": [
+        "lugar-bodega-familia-schroeder"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Qué hacer"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "La fuente municipal relaciona el hallazgo paleontológico con la identidad de la bodega."
+      }
+    },
+    {
+      "id": "historia-pequenos-proyectos",
+      "title": "También hay un Chañar hecho de proyectos pequeños",
+      "slug": "pequenos-proyectos",
+      "summary": "La vida productiva local no termina en las grandes bodegas. La propuesta municipal también registra emprendimientos familiares, producción hortícola, gastronomía y proyectos artesanales que ayudan a contar el pueblo desde una escala más cercana.",
+      "period": "presente",
+      "places": [
+        "lugar-establecimiento-san-juan",
+        "lugar-delorean",
+        "lugar-picada-11"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Qué hacer",
+        "Municipalidad de San Patricio del Chañar — Espacios Gastronómicos"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "Síntesis editorial basada en categorías y espacios publicados por la Municipalidad; no atribuye testimonios individuales."
       }
     }
   ]
