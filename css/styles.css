@@ -653,3 +653,208 @@ body{background-color:var(--paper);background-image:
     margin-top:6px;
   }
 }
+
+
+/* Mi Lugar · V2.8 · postal fotográfica + atlas afectivo
+   SOLO CSS. HTML, JS, navegación y estructura funcional permanecen congelados.
+   Objetivo: que la página se sienta más como un álbum de Chañar hecho por un vecino. */
+
+.hero{
+  background:
+    linear-gradient(90deg,rgba(233,221,196,.98) 0%,rgba(242,232,213,.93) 54%,rgba(242,232,213,.55) 100%),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG")
+    center right/cover no-repeat;
+}
+.hero:before{
+  width:min(520px,43vw);
+  height:340px;
+  right:5%;
+  top:12%;
+  border:10px solid rgba(255,249,237,.82);
+  border-radius:3px 3px 20px 3px;
+  transform:rotate(2deg);
+  background:
+    linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.12)),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG")
+    center/cover no-repeat;
+  box-shadow:0 24px 55px rgba(55,51,39,.18),0 0 0 1px rgba(40,53,46,.10);
+}
+.hero-copy:before{
+  content:"una postal de acá";
+  display:inline-block;
+  margin-bottom:5px;
+  padding:5px 9px;
+  border:1px solid rgba(40,53,46,.18);
+  border-radius:999px;
+  font:italic 11px 'Fraunces',serif;
+  color:var(--green);
+  background:rgba(255,249,237,.46);
+  transform:rotate(-2deg);
+}
+
+/* Más fotografías reales dentro de la primera capa territorial. */
+.places-section .empty-card:nth-child(2),
+.places-section .empty-card:nth-child(3){
+  background-size:cover;
+  background-position:center;
+}
+.places-section .empty-card:nth-child(2){
+  background-image:
+    linear-gradient(180deg,rgba(31,41,36,.02),rgba(31,41,36,.34)),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Dique-Compensador.JPG");
+  color:var(--cream);
+}
+.places-section .empty-card:nth-child(3){
+  background-image:
+    linear-gradient(180deg,rgba(31,41,36,.02),rgba(31,41,36,.38)),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Mirador-La-Virgen.JPG");
+  color:var(--cream);
+}
+.places-section .empty-card:nth-child(2) strong,
+.places-section .empty-card:nth-child(3) strong,
+.places-section .empty-card:nth-child(2) span,
+.places-section .empty-card:nth-child(3) span{
+  color:var(--cream);
+}
+.places-section .empty-card:nth-child(2):before,
+.places-section .empty-card:nth-child(3):before{
+  background:var(--sun);
+  box-shadow:none;
+}
+.places-section .empty-card:nth-child(2) strong:after,
+.places-section .empty-card:nth-child(3) strong:after{
+  color:var(--cream);
+}
+.places-section .empty-card:nth-child(2) .local-note,
+.places-section .empty-card:nth-child(3) .local-note{display:none}
+
+/* Pequeñas señales editoriales: no venden; acompañan. */
+.places-section .empty-card:nth-child(4):after{
+  content:"◎  si podés, quedate un rato";
+  width:auto;height:auto;right:16px;top:16px;
+  padding:7px 10px;
+  border:1px solid rgba(255,249,237,.42);
+  border-radius:999px;
+  background:rgba(31,41,36,.30);
+  color:var(--cream);
+  font:italic 11px 'Fraunces',serif;
+  transform:rotate(1deg);
+}
+.places-section .empty-card:nth-child(5):after{
+  content:"↗  mirá cómo cambia la tierra";
+  width:auto;height:auto;right:16px;top:16px;
+  padding:7px 10px;
+  border:1px solid rgba(255,249,237,.42);
+  border-radius:999px;
+  background:rgba(31,41,36,.30);
+  color:var(--cream);
+  font:italic 11px 'Fraunces',serif;
+}
+
+/* Una trama de caminos y agua muy tenue detrás de las tarjetas. */
+.places-section:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.10;
+  background:
+    linear-gradient(28deg,transparent 0 48%,var(--river) 48.2% 48.5%,transparent 48.7%),
+    linear-gradient(156deg,transparent 0 63%,var(--green) 63.2% 63.4%,transparent 63.6%);
+  mask-image:linear-gradient(to bottom,transparent,black 18%,black 82%,transparent);
+}
+
+/* La sección de historias recibe una textura de papel más editorial. */
+.stories-section:after{
+  content:"";
+  position:absolute;
+  left:7%;
+  bottom:6%;
+  width:180px;
+  height:90px;
+  border:1px solid rgba(152,99,76,.13);
+  border-radius:48% 52% 44% 56%;
+  transform:rotate(-8deg);
+  pointer-events:none;
+}
+.stories-section .section-shell,
+.places-section .section-shell{z-index:1}
+
+/* El mapa ahora parece una pieza guardada dentro de un cuaderno de viaje. */
+.route-banner:after{
+  border-width:10px 10px 28px;
+  border-color:rgba(255,249,237,.88);
+  box-shadow:
+    0 22px 55px rgba(31,41,36,.28),
+    0 0 0 1px rgba(31,41,36,.18),
+    12px 14px 0 rgba(255,249,237,.08);
+}
+.route-drawing{
+  position:relative;
+  z-index:3;
+}
+.route-drawing:after{
+  content:"Mapa base: OpenStreetMap";
+  display:block;
+  margin-top:12px;
+  font:500 8px 'DM Sans',sans-serif;
+  letter-spacing:.08em;
+  opacity:.58;
+}
+
+/* Cuidado del lugar como parte de la identidad, no como cartel de normas. */
+.route-inner:after{
+  max-width:760px;
+  padding-top:9px;
+  border-top:1px solid rgba(255,249,237,.16);
+}
+
+/* El cierre recupera la idea de pueblo y pertenencia. */
+.site-footer{
+  background:
+    radial-gradient(circle at 85% 20%,rgba(229,170,76,.08),transparent 24%),
+    #222c27;
+}
+.site-footer:before{
+  content:"✦";
+  position:absolute;
+  right:clamp(18px,6vw,90px);
+  top:22px;
+  font:24px 'Fraunces',serif;
+  color:rgba(229,170,76,.55);
+  transform:rotate(-8deg);
+}
+
+/* Responsive: la foto acompaña, nunca tapa el texto. */
+@media(max-width:900px){
+  .hero:before{
+    width:42vw;
+    height:260px;
+    opacity:.78;
+  }
+}
+@media(max-width:760px){
+  .hero{
+    background:
+      linear-gradient(180deg,rgba(233,221,196,.96) 0%,rgba(242,232,213,.92) 62%,rgba(242,232,213,.76) 100%),
+      url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG")
+      center/cover no-repeat;
+  }
+  .hero:before{
+    width:210px;
+    height:145px;
+    right:-24px;
+    top:13%;
+    border-width:7px;
+    opacity:.62;
+  }
+  .hero-copy:before{margin-top:8px}
+  .places-section .empty-card:nth-child(2),
+  .places-section .empty-card:nth-child(3){
+    min-height:220px;
+  }
+  .route-drawing:after{
+    margin-top:8px;
+    font-size:7px;
+  }
+}
