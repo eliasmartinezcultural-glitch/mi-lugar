@@ -30,3 +30,35 @@
   .explore-card:nth-child(n){transform:none}
   .site-footer:after{position:static;display:block;margin-top:18px}
 }
+
+
+/* Mi Lugar · profundidad visual V2.2
+   Solo CSS: la estructura HTML, JS y navegación permanecen intactos. */
+.hero:before{content:"";position:absolute;inset:7% 5% auto auto;width:42%;height:55%;border:1px solid rgba(40,53,46,.12);border-radius:48% 52% 46% 54%;transform:rotate(8deg);pointer-events:none}
+.hero-copy{max-width:720px}
+.hero-text{max-width:590px}
+.explore-card{isolation:isolate}
+.explore-card .illustration{filter:drop-shadow(3px 4px 0 rgba(40,53,46,.08))}
+.empty-card{min-height:215px;padding:28px 28px 30px}
+.empty-card:after{width:150px;height:105px;right:-72px;top:-45px;border-radius:42% 58% 54% 46%;background:linear-gradient(135deg,rgba(255,249,237,.18),rgba(75,124,130,.08));box-shadow:inset 0 0 0 1px rgba(40,53,46,.06)}
+.empty-card:before{width:5px}
+.empty-card strong{max-width:90%;letter-spacing:-.02em}
+.empty-card span{max-width:92%;line-height:1.5}
+.places-section .empty-card:nth-child(3n+1):before{box-shadow:7px 0 0 rgba(82,103,76,.08)}
+.stories-section .empty-card:nth-child(3n+2):before{box-shadow:7px 0 0 rgba(182,108,78,.07)}
+.places-section .empty-card:nth-child(5n+1){background:linear-gradient(145deg,rgba(255,249,237,.72),rgba(202,214,195,.42))}
+.places-section .empty-card:nth-child(5n+2){background:linear-gradient(145deg,rgba(235,241,231,.76),rgba(255,249,237,.45))}
+.places-section .empty-card:nth-child(5n+3){background:linear-gradient(145deg,rgba(206,222,220,.55),rgba(255,249,237,.52))}
+.places-section .empty-card:nth-child(5n+4){background:linear-gradient(145deg,rgba(239,228,214,.72),rgba(255,249,237,.48))}
+.places-section .empty-card:nth-child(5n){background:linear-gradient(145deg,rgba(219,229,218,.72),rgba(229,214,185,.44))}
+.stories-section .empty-card:nth-child(5n+1){background:linear-gradient(145deg,rgba(255,249,237,.72),rgba(223,197,164,.42))}
+.stories-section .empty-card:nth-child(5n+2){background:linear-gradient(145deg,rgba(246,238,220,.75),rgba(182,108,78,.08))}
+.stories-section .empty-card:nth-child(5n+3){background:linear-gradient(145deg,rgba(235,241,231,.65),rgba(152,99,76,.09))}
+.stories-section .empty-card:nth-child(5n+4){background:linear-gradient(145deg,rgba(239,228,214,.72),rgba(75,124,130,.08))}
+.stories-section .empty-card:nth-child(5n){background:linear-gradient(145deg,rgba(255,249,237,.72),rgba(229,170,76,.12))}
+.route-inner h2{max-width:760px}
+.route-inner h2:after{content:"";display:block;width:110px;height:1px;margin-top:22px;background:rgba(255,249,237,.45);transform:rotate(-2deg)}
+@media(max-width:760px){
+  .hero:before{width:70%;height:40%;right:-18%;top:5%}
+  .empty-card{min-height:180px}
+}
