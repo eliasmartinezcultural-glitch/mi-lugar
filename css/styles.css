@@ -2007,3 +2007,390 @@ body:before{opacity:.075}
     min-height:250px;
   }
 }
+
+
+/* ============================================================
+   MI LUGAR 1.4 · DIRECCIÓN DE ARTE FINAL · PROFUNDIDAD MÁXIMA
+   24/09/2026
+   SOLO VISUAL. HTML / JS / navegación / funcionalidad intactos.
+   ============================================================ */
+
+/* ---------- ATMÓSFERA GENERAL ---------- */
+html{background:var(--paper)}
+body{
+  overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 12% 8%,rgba(229,170,76,.08),transparent 18%),
+    radial-gradient(circle at 88% 32%,rgba(75,124,130,.055),transparent 22%),
+    radial-gradient(rgba(40,53,46,.035) .55px,transparent .55px),
+    linear-gradient(rgba(255,249,237,.12) 1px,transparent 1px);
+  background-size:auto,auto,12px 12px,100% 36px;
+}
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:29;
+  opacity:.035;
+  background:
+    linear-gradient(90deg,transparent 0 49.8%,rgba(40,53,46,.7) 50%,transparent 50.2%),
+    linear-gradient(transparent 0 49.8%,rgba(40,53,46,.7) 50%,transparent 50.2%);
+  background-size:140px 140px;
+  mix-blend-mode:multiply;
+}
+
+/* ---------- HEADER · OBJETO DE ORIENTACIÓN ---------- */
+.site-header{
+  padding-top:11px;
+  padding-bottom:11px;
+  border-bottom-color:rgba(40,53,46,.10);
+  box-shadow:0 10px 30px rgba(55,51,39,.035);
+}
+.brand-mark{
+  box-shadow:3px 3px 0 rgba(182,108,78,.16),0 0 0 5px rgba(255,249,237,.45);
+}
+.brand strong{letter-spacing:-.025em}
+.main-nav a{padding:6px 0}
+.main-nav a:before{
+  content:"";
+  position:absolute;
+  left:-9px;
+  top:50%;
+  width:3px;
+  height:3px;
+  border-radius:50%;
+  background:var(--sun);
+  opacity:0;
+  transform:translateY(-50%);
+  transition:opacity .2s ease,left .2s ease;
+}
+.main-nav a:hover:before{opacity:.9;left:-6px}
+
+/* ---------- HERO · PORTADA FOTOGRÁFICA + DIBUJO ---------- */
+.hero{
+  min-height:94vh;
+  background:
+    linear-gradient(90deg,rgba(242,232,213,.98) 0%,rgba(242,232,213,.91) 34%,rgba(242,232,213,.28) 70%,rgba(31,41,36,.05) 100%),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG") center/cover no-repeat;
+}
+.hero:after{
+  height:55%;
+  background:
+    linear-gradient(180deg,transparent 0%,rgba(31,41,36,.06) 42%,rgba(31,41,36,.34) 100%);
+}
+.hero-copy{
+  max-width:760px;
+  padding:clamp(28px,4vw,52px);
+  background:linear-gradient(135deg,rgba(255,250,240,.88),rgba(255,250,240,.70));
+  border:1px solid rgba(255,250,240,.90);
+  box-shadow:0 34px 100px rgba(31,41,36,.17),0 0 0 8px rgba(255,250,240,.12);
+  backdrop-filter:blur(5px);
+}
+.hero-copy:after{
+  content:"hecho desde cerca · San Patricio del Chañar";
+  margin-top:32px;
+  font-size:16px;
+  letter-spacing:.015em;
+}
+.hero h1{
+  max-width:720px;
+  text-shadow:0 1px 0 rgba(255,249,237,.6);
+}
+.hero-text{font-weight:500}
+.hero-drawing .sun{
+  width:clamp(150px,18vw,260px);
+  height:clamp(150px,18vw,260px);
+  right:9%;
+  top:12%;
+  opacity:.58;
+  box-shadow:0 0 0 20px rgba(229,170,76,.07),0 0 0 42px rgba(229,170,76,.035);
+}
+.hero-drawing .hill{opacity:.62}
+.hero-drawing .river{opacity:.72}
+
+/* Marco fotográfico: parece una foto apoyada sobre el papel. */
+.hero:before{
+  width:min(31vw,390px);
+  height:min(42vw,330px);
+  right:6%;
+  top:18%;
+  border:9px solid rgba(255,250,240,.72);
+  background:rgba(255,250,240,.05);
+  box-shadow:0 28px 70px rgba(31,41,36,.20),0 0 0 1px rgba(40,53,46,.10);
+  transform:rotate(2.5deg);
+  z-index:2;
+}
+
+/* ---------- BIENVENIDA · CAMBIO DE RITMO ---------- */
+.welcome{
+  max-width:1120px;
+  padding-top:clamp(110px,12vw,155px);
+  padding-bottom:clamp(110px,12vw,155px);
+}
+.welcome:before{
+  width:74px;
+  height:2px;
+  margin-bottom:34px;
+}
+.welcome h2{
+  max-width:780px;
+  font-size:clamp(45px,6.8vw,84px);
+}
+.welcome>p:last-child{
+  max-width:590px;
+  margin-left:auto;
+  border-left:0;
+  border-top:1px solid rgba(182,108,78,.45);
+  padding:24px 0 0;
+  position:relative;
+}
+.welcome>p:last-child:before{
+  content:"una mirada local";
+  display:block;
+  margin-bottom:10px;
+  font:600 9px 'DM Sans',sans-serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--terracotta);
+  opacity:.72;
+}
+
+/* ---------- EXPLORAR · CUATRO POSTALES ---------- */
+.explore{
+  padding-top:12px;
+  padding-bottom:clamp(105px,12vw,145px);
+}
+.explore .section-heading{margin-bottom:44px}
+.explore .section-heading h2{font-size:clamp(42px,6vw,72px)}
+.explore-grid{gap:16px}
+.explore-card{
+  min-height:310px;
+  border-radius:4px 24px 4px 28px;
+  padding:29px;
+  border-color:rgba(40,53,46,.12);
+  box-shadow:0 24px 60px rgba(55,51,39,.11),0 0 0 1px rgba(255,249,237,.25);
+}
+.explore-card:after{
+  width:155px;
+  height:155px;
+  right:-78px;
+  top:-78px;
+  border-color:rgba(40,53,46,.13);
+}
+.explore-card .illustration{
+  font-size:82px;
+  line-height:.9;
+}
+.explore-card strong{
+  font-size:32px;
+  letter-spacing:-.025em;
+}
+.explore-card small{max-width:210px}
+
+/* ---------- LUGARES · ÁLBUM DEL TERRITORIO ---------- */
+.places-section{
+  padding-top:clamp(100px,12vw,150px);
+  padding-bottom:clamp(110px,12vw,155px);
+}
+.places-section .section-heading{margin-bottom:55px}
+.places-section .section-heading h2{font-size:clamp(45px,6.5vw,84px)}
+.places-section .content-grid{gap:18px}
+
+/* Las primeras seis piezas tienen presencia de postal. */
+.places-section .empty-card:nth-child(-n+6){
+  min-height:280px;
+  border:7px solid rgba(255,250,240,.88);
+  outline:1px solid rgba(40,53,46,.12);
+  border-radius:3px;
+  box-shadow:0 26px 68px rgba(55,75,58,.14),0 0 0 1px rgba(255,249,237,.35);
+}
+.places-section .empty-card:nth-child(1),
+.places-section .empty-card:nth-child(2){
+  min-height:405px;
+}
+.places-section .empty-card:nth-child(3){min-height:355px}
+.places-section .empty-card:nth-child(4),
+.places-section .empty-card:nth-child(5),
+.places-section .empty-card:nth-child(6){min-height:295px}
+
+.places-section .empty-card:nth-child(-n+6):after{
+  width:170px;
+  height:120px;
+  right:-65px;
+  top:-55px;
+  border-color:rgba(255,249,237,.20);
+  background:linear-gradient(135deg,rgba(255,249,237,.16),rgba(75,124,130,.08));
+}
+.places-section .empty-card:nth-child(-n+6) strong{
+  font-size:clamp(27px,2.8vw,39px);
+  max-width:86%;
+  letter-spacing:-.025em;
+}
+.places-section .empty-card:nth-child(-n+6) span{font-size:15px}
+
+/* Tratamiento fotográfico individual: no parece una repetición automática. */
+.places-section .empty-card:nth-child(1){background-position:center 52%}
+.places-section .empty-card:nth-child(2){background-position:center 48%}
+.places-section .empty-card:nth-child(3){background-position:center 42%}
+.places-section .empty-card:nth-child(4){background-position:center 58%}
+.places-section .empty-card:nth-child(5){background-position:center 65%}
+.places-section .empty-card:nth-child(6){background-position:center 40%}
+
+/* Segunda capa: atlas local, más silencioso. */
+.places-section .empty-card:nth-child(n+7){
+  border-radius:5px 18px 5px 18px;
+}
+.places-section .empty-card:nth-child(n+9){
+  min-height:190px;
+  border-width:2px;
+  outline:0;
+  box-shadow:0 10px 28px rgba(55,51,39,.055);
+}
+
+/* ---------- HISTORIAS · ARCHIVO HUMANO ---------- */
+.stories-section{
+  padding-top:clamp(105px,12vw,155px);
+  padding-bottom:clamp(110px,12vw,160px);
+}
+.stories-section .section-heading{margin-bottom:58px}
+.stories-section .section-heading h2{font-size:clamp(45px,6.5vw,84px)}
+.stories-section .content-grid{gap:24px}
+
+/* La grilla ya no parece un CMS: parece una mesa con documentos. */
+.stories-section .empty-card{
+  min-height:275px;
+  padding:37px 38px 34px;
+  border-radius:3px 18px 3px 18px;
+  border:1px solid rgba(152,99,76,.18);
+  border-top-width:5px;
+  box-shadow:0 18px 45px rgba(80,61,43,.07);
+}
+.stories-section .empty-card strong{
+  font-size:clamp(25px,2.55vw,35px);
+  max-width:88%;
+}
+.stories-section .empty-card span{
+  max-width:680px;
+  font-size:15.5px;
+}
+
+/* ---------- RUTA · ÚLTIMA GRAN IMAGEN ---------- */
+.route-banner{
+  min-height:470px;
+  padding:clamp(100px,12vw,145px) 0;
+  background:
+    radial-gradient(circle at 15% 22%,rgba(239,189,97,.17),transparent 23%),
+    radial-gradient(circle at 80% 70%,rgba(255,250,240,.08),transparent 25%),
+    linear-gradient(135deg,#355e63,#496f6f);
+}
+.route-banner:before{
+  opacity:.16;
+  background:
+    repeating-linear-gradient(135deg,transparent 0 28px,#fff 29px 30px),
+    radial-gradient(circle at 75% 30%,rgba(255,250,240,.13),transparent 22%);
+}
+.route-inner{min-height:330px}
+.route-inner h2{
+  font-size:clamp(50px,7vw,90px);
+  max-width:780px;
+  letter-spacing:-.045em;
+}
+.route-inner h2:after{width:150px}
+.route-drawing{
+  font-size:clamp(90px,10vw,135px);
+  opacity:.75;
+}
+
+/* ---------- FOOTER · FIRMA ---------- */
+.site-footer{
+  min-height:225px;
+  padding-top:70px;
+  padding-bottom:70px;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(229,170,76,.08),transparent 18%),
+    #222c27;
+}
+.site-footer>div:first-child strong{
+  font-size:32px;
+  letter-spacing:-.025em;
+}
+.site-footer p{max-width:440px}
+.site-footer small{max-width:520px}
+
+/* ---------- MICRO-DETALLE · SIN NUEVAS FUNCIONES ---------- */
+.empty-card,.explore-card,.primary-button{
+  -webkit-tap-highlight-color:transparent;
+}
+.empty-card,.explore-card{backface-visibility:hidden}
+@media(hover:hover){
+  .places-section .empty-card:nth-child(-n+6):hover{
+    transform:translateY(-7px) scale(1.006);
+    box-shadow:0 32px 78px rgba(55,75,58,.18),0 0 0 1px rgba(255,249,237,.42);
+  }
+  .stories-section .empty-card:hover{
+    transform:translateY(-6px) rotate(0);
+  }
+}
+
+/* ---------- MÓVIL · FOTOGRAFÍA PRIMERO ---------- */
+@media(max-width:760px){
+  .site-header{padding-left:14px;padding-right:14px}
+  .hero{
+    min-height:91vh;
+    padding:46px 14px 60px;
+    background:
+      linear-gradient(180deg,rgba(242,232,213,.64),rgba(242,232,213,.95) 73%),
+      url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG") center/cover no-repeat;
+  }
+  .hero-copy{
+    padding:24px 20px 27px;
+    box-shadow:0 24px 60px rgba(31,41,36,.15);
+  }
+  .hero h1{font-size:clamp(47px,14vw,70px)}
+  .hero-text{font-size:17px}
+  .hero:before{display:none}
+  .welcome{padding:82px 0 90px}
+  .welcome h2{font-size:clamp(42px,12vw,62px)}
+  .explore{padding-bottom:88px}
+  .explore-grid{gap:11px}
+  .explore-card{
+    min-height:215px;
+    padding:20px;
+  }
+  .explore-card .illustration{font-size:54px}
+  .explore-card strong{font-size:25px}
+  .places-section{padding-top:90px;padding-bottom:100px}
+  .places-section .section-heading{margin-bottom:38px}
+  .places-section .empty-card:nth-child(-n+6){
+    min-height:250px;
+    border-width:5px;
+  }
+  .places-section .empty-card:nth-child(1),
+  .places-section .empty-card:nth-child(2){min-height:300px}
+  .places-section .empty-card:nth-child(3){min-height:265px}
+  .places-section .empty-card:nth-child(4),
+  .places-section .empty-card:nth-child(5),
+  .places-section .empty-card:nth-child(6){min-height:235px}
+  .places-section .empty-card:nth-child(n+9){min-height:170px}
+  .stories-section{padding-top:92px;padding-bottom:105px}
+  .stories-section .section-heading{margin-bottom:38px}
+  .stories-section .empty-card{
+    min-height:230px;
+    padding:28px 23px;
+  }
+  .stories-section .empty-card strong{font-size:27px}
+  .route-banner{min-height:380px;padding:88px 0}
+  .route-inner{min-height:260px}
+  .route-inner h2{font-size:clamp(45px,12vw,66px)}
+  .route-drawing{font-size:72px}
+  .site-footer{min-height:0;padding-top:54px;padding-bottom:54px}
+}
+@media(max-width:390px){
+  .hero{min-height:88vh}
+  .explore-grid{grid-template-columns:1fr}
+  .explore-card{min-height:180px}
+  .places-section .empty-card:nth-child(1),
+  .places-section .empty-card:nth-child(2){min-height:265px}
+  .stories-section .empty-card{min-height:215px}
+}
