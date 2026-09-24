@@ -1,5 +1,8 @@
 # Ley maestra — Mi Lugar
 
+**Aplicación vigente: Versión 1.4 · CAPA VISUAL CONSOLIDADA**  
+**Estado:** estructura y funcionalidad congeladas.
+
 ## A. Propósito
 Mi Lugar existe para acercar San Patricio del Chañar a visitantes y habitantes mediante una experiencia turística, cultural y territorial.
 
@@ -55,3 +58,6 @@ Ocarina Producciones aparece como productor del proyecto sin convertir la experi
 
 ## N. Regla final
 **Que el visitante sienta que alguien le está mostrando su lugar, no que una institución le está entregando un folleto.**
+
+## O. Aplicación de versión
+Estas leyes son las reglas vigentes de la Versión 1.4. Su interpretación y cualquier evolución posterior deben mantener la continuidad registrada en `docs/VERSION-STATUS.md`.
