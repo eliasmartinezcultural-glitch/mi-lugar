@@ -1,15 +1,275 @@
 {
-  "version":"0.3.0",
-  "items":[
-    {"id":"historia-nombre-chanar","title":"Un árbol que dejó su nombre","slug":"un-arbol-que-dejo-su-nombre","summary":"El nombre El Chañar quedó ligado al paraje por la presencia histórica de este árbol. La documentación municipal explica que el término se vincula al nombre quichua del chical y recuerda su presencia en el territorio.","period":"memoria territorial","places":["lugar-mirador-la-virgen"],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"Relato basado en la sección oficial Nuestra Identidad."}},
-    {"id":"historia-mangrullo-chanar","title":"El paisaje antes de las chacras","slug":"el-mangrullo-chanar","summary":"Antes del paisaje productivo actual, la zona aparece en documentación vinculada a un antiguo mangrullo, una posta y caminos de circulación. La rastrillada de Paso de Indios atravesaba este territorio.","period":"siglo XIX","places":[],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La fuente municipal cita documentación de mensura de 1881-1882 y referencias históricas posteriores."}},
-    {"id":"historia-tratayen-y-la-crecida","title":"Una colonia que el río también recuerda","slug":"tratayen-y-la-crecida","summary":"La mensura de 1913 registra la colonia Tratayen como un núcleo urbano que habría alcanzado unas veinte manzanas. La historia municipal plantea que una gran crecida del río Neuquén pudo haber contribuido a su desaparición.","period":"1913","places":[],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La desaparición por una gran crecida está presentada por la fuente como una hipótesis histórica, por eso no se formula aquí como certeza absoluta."}},
-    {"id":"historia-20000-hectareas","title":"20.000 hectáreas y una apuesta enorme","slug":"20000-hectareas-y-una-apuesta","summary":"A fines de los años sesenta, la compra y posterior sistematización de unas 20.000 hectáreas de monte bruto inició una transformación radical del paisaje.","period":"1966–1969","places":[],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La fuente municipal detalla la compra de tierras y el proyecto de sistematización."}},
-    {"id":"historia-primeras-cosechas","title":"Cuando llegaron las primeras cosechas","slug":"primeras-cosechas","summary":"En 1969 comenzaron obras de sistematización y riego. Los primeros cultivos incluyeron papas de distintas variedades, comercializadas durante varios años en la zona.","period":"1969 en adelante","places":["lugar-chacra-municipal-valles-del-chanar","lugar-establecimiento-san-juan"],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"Información tomada de la reconstrucción histórica municipal."}},
-    {"id":"historia-agua-y-transformacion","title":"El agua cambió la tierra","slug":"el-agua-cambio-la-tierra","summary":"Bombas, bocatomas, canales y riego hicieron posible transformar un paisaje de monte en un valle productivo. La historia del Chañar también puede contarse siguiendo el recorrido del agua.","period":"1969–1973","places":["lugar-dique-compensador","lugar-mirador-la-virgen"],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad","Municipalidad de San Patricio del Chañar — Nuestra Ciudad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"Las fuentes oficiales describen las obras de riego y el paisaje actual asociado al río y al valle productivo."}},
-    {"id":"historia-fundacion-1973","title":"21 de mayo: nace la localidad","slug":"21-de-mayo-nace-la-localidad","summary":"San Patricio del Chañar fue fundado el 21 de mayo de 1973. Desde entonces, la historia local se construyó alrededor del trabajo, la producción, las familias y la relación permanente con el territorio.","period":"1973 en adelante","places":["lugar-centro-cultural-erika-baron-de-werro","lugar-parroquia-san-patricio"],"sources":["Consejo Federal de Inversiones — Valle Inferior del Río Neuquén","Neuquén Informa"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"CFI / Neuquén Informa","notes":"Fecha de fundación contrastada en fuentes institucionales."}},
-    {"id":"historia-pelon-identidad","title":"El pelón como memoria productiva","slug":"el-pelon-como-memoria","summary":"La Fiesta Provincial del Pelón, inaugurada en 1985, homenajea a uno de los primeros frutos emblemáticos de la localidad y convierte una producción agrícola en una celebración comunitaria.","period":"desde 1985","places":[],"sources":["Municipalidad de San Patricio del Chañar — Qué hacer"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La fuente municipal registra la inauguración de la fiesta en 1985."}},
-    {"id":"historia-vinedos","title":"El viñedo entra en la historia reciente","slug":"el-vinedo-entra-en-la-historia","summary":"Desde fines de la década de 1990, la vitivinicultura se convirtió en una parte visible del paisaje productivo y de la identidad turística del Chañar.","period":"desde 1999","places":["lugar-bodega-familia-schroeder","lugar-bodega-malma","lugar-bodega-del-fin-del-mundo"],"sources":["Municipalidad de San Patricio del Chañar — Qué hacer"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La página municipal presenta el desarrollo vitivinícola y sus bodegas como parte de la propuesta turística local."}},
-    {"id":"historia-pueblo-hecho-por-gente","title":"Un pueblo también se construye todos los días","slug":"un-pueblo-se-construye-todos-los-dias","summary":"Escuela, chacra, club, parroquia, centro cultural, comercio, deporte y trabajo forman una historia que no termina en una fecha. Mi Lugar irá reuniendo esas pequeñas memorias cuando puedan documentarse con nombre, fuente y contexto.","period":"memoria viva","places":["lugar-puesto-chanar","lugar-estadio-juan-bautista-jara","lugar-centro-cultural-erika-baron-de-werro"],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Ciudad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"Pieza editorial que conecta instituciones y espacios documentados; no atribuye testimonios individuales no verificados."}}
+  "version": "0.4.0",
+  "items": [
+    {
+      "id": "historia-nombre-chanar",
+      "title": "Un árbol que dejó su nombre",
+      "slug": "un-arbol-que-dejo-su-nombre",
+      "summary": "El nombre El Chañar quedó ligado al paraje por la presencia histórica de este árbol. La documentación municipal explica que el término se vincula al nombre quichua del chical y recuerda su presencia en el territorio.",
+      "period": "memoria territorial",
+      "places": [
+        "lugar-mirador-la-virgen"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Nuestra Identidad"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "Relato basado en la sección oficial Nuestra Identidad."
+      }
+    },
+    {
+      "id": "historia-mangrullo-chanar",
+      "title": "El paisaje antes de las chacras",
+      "slug": "el-mangrullo-chanar",
+      "summary": "Antes del paisaje productivo actual, la zona aparece en documentación vinculada a un antiguo mangrullo, una posta y caminos de circulación. La rastrillada de Paso de Indios atravesaba este territorio.",
+      "period": "siglo XIX",
+      "places": [],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Nuestra Identidad"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "La fuente municipal cita documentación de mensura de 1881-1882 y referencias históricas posteriores."
+      }
+    },
+    {
+      "id": "historia-tratayen-y-la-crecida",
+      "title": "Una colonia que el río también recuerda",
+      "slug": "tratayen-y-la-crecida",
+      "summary": "La mensura de 1913 registra la colonia Tratayen como un núcleo urbano que habría alcanzado unas veinte manzanas. La historia municipal plantea que una gran crecida del río Neuquén pudo haber contribuido a su desaparición.",
+      "period": "1913",
+      "places": [],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Nuestra Identidad"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "La desaparición por una gran crecida está presentada por la fuente como una hipótesis histórica, por eso no se formula aquí como certeza absoluta."
+      }
+    },
+    {
+      "id": "historia-20000-hectareas",
+      "title": "20.000 hectáreas y una apuesta enorme",
+      "slug": "20000-hectareas-y-una-apuesta",
+      "summary": "A fines de los años sesenta, la compra y posterior sistematización de unas 20.000 hectáreas de monte bruto inició una transformación radical del paisaje.",
+      "period": "1966–1969",
+      "places": [],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Nuestra Identidad"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "La fuente municipal detalla la compra de tierras y el proyecto de sistematización."
+      }
+    },
+    {
+      "id": "historia-primeras-cosechas",
+      "title": "Cuando llegaron las primeras cosechas",
+      "slug": "primeras-cosechas",
+      "summary": "En 1969 comenzaron obras de sistematización y riego. Los primeros cultivos incluyeron papas de distintas variedades, comercializadas durante varios años en la zona.",
+      "period": "1969 en adelante",
+      "places": [
+        "lugar-chacra-municipal-valles-del-chanar",
+        "lugar-establecimiento-san-juan"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Nuestra Identidad"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "Información tomada de la reconstrucción histórica municipal."
+      }
+    },
+    {
+      "id": "historia-agua-y-transformacion",
+      "title": "El agua cambió la tierra",
+      "slug": "el-agua-cambio-la-tierra",
+      "summary": "Bombas, bocatomas, canales y riego hicieron posible transformar un paisaje de monte en un valle productivo. La historia del Chañar también puede contarse siguiendo el recorrido del agua.",
+      "period": "1969–1973",
+      "places": [
+        "lugar-dique-compensador",
+        "lugar-mirador-la-virgen"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Nuestra Identidad",
+        "Municipalidad de San Patricio del Chañar — Nuestra Ciudad"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "Las fuentes oficiales describen las obras de riego y el paisaje actual asociado al río y al valle productivo."
+      }
+    },
+    {
+      "id": "historia-fundacion-1973",
+      "title": "21 de mayo: nace la localidad",
+      "slug": "21-de-mayo-nace-la-localidad",
+      "summary": "San Patricio del Chañar fue fundado el 21 de mayo de 1973. Desde entonces, la historia local se construyó alrededor del trabajo, la producción, las familias y la relación permanente con el territorio.",
+      "period": "1973 en adelante",
+      "places": [
+        "lugar-centro-cultural-erika-baron-de-werro",
+        "lugar-parroquia-san-patricio"
+      ],
+      "sources": [
+        "Consejo Federal de Inversiones — Valle Inferior del Río Neuquén",
+        "Neuquén Informa"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "CFI / Neuquén Informa",
+        "notes": "Fecha de fundación contrastada en fuentes institucionales."
+      }
+    },
+    {
+      "id": "historia-pelon-identidad",
+      "title": "El pelón como memoria productiva",
+      "slug": "el-pelon-como-memoria",
+      "summary": "La Fiesta Provincial del Pelón, inaugurada en 1985, homenajea a uno de los primeros frutos emblemáticos de la localidad y convierte una producción agrícola en una celebración comunitaria.",
+      "period": "desde 1985",
+      "places": [],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Qué hacer"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "La fuente municipal registra la inauguración de la fiesta en 1985."
+      }
+    },
+    {
+      "id": "historia-vinedos",
+      "title": "El viñedo entra en la historia reciente",
+      "slug": "el-vinedo-entra-en-la-historia",
+      "summary": "Desde fines de la década de 1990, la vitivinicultura se convirtió en una parte visible del paisaje productivo y de la identidad turística del Chañar.",
+      "period": "desde 1999",
+      "places": [
+        "lugar-bodega-familia-schroeder",
+        "lugar-bodega-malma",
+        "lugar-bodega-del-fin-del-mundo"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Qué hacer"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "La página municipal presenta el desarrollo vitivinícola y sus bodegas como parte de la propuesta turística local."
+      }
+    },
+    {
+      "id": "historia-pueblo-hecho-por-gente",
+      "title": "Un pueblo también se construye todos los días",
+      "slug": "un-pueblo-se-construye-todos-los-dias",
+      "summary": "Escuela, chacra, club, parroquia, centro cultural, comercio, deporte y trabajo forman una historia que no termina en una fecha. Mi Lugar irá reuniendo esas pequeñas memorias cuando puedan documentarse con nombre, fuente y contexto.",
+      "period": "memoria viva",
+      "places": [
+        "lugar-puesto-chanar",
+        "lugar-estadio-juan-bautista-jara",
+        "lugar-centro-cultural-erika-baron-de-werro"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Nuestra Ciudad"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "Pieza editorial que conecta instituciones y espacios documentados; no atribuye testimonios individuales no verificados."
+      }
+    },
+    {
+      "id": "historia-rutas-y-llegadas",
+      "title": "Dos rutas, una puerta de entrada",
+      "slug": "dos-rutas-una-puerta-de-entrada",
+      "summary": "Las rutas provinciales 7 y 8 conectan al Chañar con su entorno y ayudan a entender por qué el pueblo se lee siempre en relación con el valle, el río, las chacras y los caminos.",
+      "period": "territorio actual",
+      "places": [
+        "lugar-mirador-la-virgen",
+        "lugar-picada-11"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Nuestra Ciudad",
+        "Municipalidad de San Patricio del Chañar — Llegar"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "La relación territorial se basa en las páginas municipales sobre acceso y lugares."
+      }
+    },
+    {
+      "id": "historia-plaza-como-memoria",
+      "title": "Una plaza también cuenta quiénes somos",
+      "slug": "una-plaza-tambien-cuenta",
+      "summary": "La Plaza de las Infancias muestra otra escala del territorio: no la gran historia de las tierras y el agua, sino la ciudad cotidiana, el juego, las familias y los espacios que se vuelven parte de la memoria de todos los días.",
+      "period": "desde 2022",
+      "places": [
+        "lugar-plaza-de-las-infancias"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Nuestra Ciudad"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "Pieza editorial basada en la descripción municipal del espacio."
+      }
+    },
+    {
+      "id": "historia-fiesta-pelon",
+      "title": "Cuando una cosecha se convierte en fiesta",
+      "slug": "cuando-una-cosecha-se-convierte-en-fiesta",
+      "summary": "El pelón no es solamente un producto: desde 1985 tiene una celebración provincial que convierte parte de la historia agrícola en encuentro, identidad y memoria compartida.",
+      "period": "desde 1985",
+      "places": [],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Qué hacer"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "La fecha de inicio de la fiesta está documentada por la fuente municipal."
+      }
+    },
+    {
+      "id": "historia-pueblo-entre-agua-y-tierra",
+      "title": "El Chañar se entiende entre agua y tierra",
+      "slug": "entre-agua-y-tierra",
+      "summary": "Mirar el río, las bardas y las chacras como una sola historia permite entender mejor el paisaje actual: la producción no aparece separada de la geografía, sino construida sobre ella mediante obras de riego y trabajo.",
+      "period": "memoria territorial",
+      "places": [
+        "lugar-dique-compensador",
+        "lugar-chacra-municipal-valles-del-chanar",
+        "lugar-mirador-la-virgen"
+      ],
+      "sources": [
+        "Municipalidad de San Patricio del Chañar — Nuestra Identidad",
+        "Municipalidad de San Patricio del Chañar — Nuestra Ciudad"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar",
+        "notes": "Síntesis editorial de fuentes municipales; no agrega datos no documentados."
+      }
+    }
   ]
 }
