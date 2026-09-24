@@ -1593,3 +1593,123 @@ body:before{opacity:.075}
   .places-section .empty-card:nth-child(1),
   .places-section .empty-card:nth-child(2){min-height:255px}
 }
+
+
+/* ============================================================
+   MI LUGAR 1.4 · BLOQUE VISUAL + MATRIZ FOTOGRÁFICA
+   Principio congelado: colores, diseño y lenguaje visual no se
+   reemplazan; se profundizan.
+   Núcleo protegido: NO HTML / NO JS / NO navegación.
+   ============================================================ */
+
+.places-grid .empty-card{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+.places-grid .empty-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:.96;
+  transform:scale(1.01);
+}
+
+.places-grid .empty-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(180deg,rgba(22,31,27,.05) 20%,rgba(22,31,27,.74) 100%),
+    linear-gradient(90deg,rgba(255,249,237,.03),rgba(255,249,237,.10));
+  pointer-events:none;
+}
+
+/* 01 · Balneario Municipal — fuente municipal */
+.places-grid .empty-card:nth-child(1)::before{
+  background-image:url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG");
+}
+
+/* 02 · Dique Compensador — paisaje del sistema de agua y compuertas */
+.places-grid .empty-card:nth-child(2)::before{
+  background-image:url("https://media.lmneuquen.com/p/cdbeefa2f5cc06df2d43b11712afc975/adjuntos/195/imagenes/007/038/0007038205/770x0/smart/san-patricio-del-chanar-villa-manzano-kayak-3jpg.jpg");
+}
+
+/* 04 · Chacra Municipal Valles del Chañar — fuente municipal */
+.places-grid .empty-card:nth-child(4)::before{
+  background-image:url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
+}
+
+/* 06 · Centro Cultural — fuente municipal */
+.places-grid .empty-card:nth-child(6)::before{
+  background-image:url("https://sanpatricio.gob.ar/assets/images/municipio/Centro-Cultural.JPG");
+}
+
+/* 08 · Estadio Municipal Juan Bautista Jara — fuente municipal */
+.places-grid .empty-card:nth-child(8)::before{
+  background-image:url("https://sanpatricio.gob.ar/assets/images/municipio/estadio-municipal.JPG");
+}
+
+/* 09 · Familia Schroeder — Argentina Travel */
+.places-grid .empty-card:nth-child(9)::before{
+  background-image:url("https://api.argentina.travel/files/images/5327515b-adf5-44f2-aee7-3da6c014901f-Familia_Schroeder___Saurus_y_Saurus_Restaurant_webp.webp");
+}
+
+/* 10 · Malma — fotografía territorial de la bodega */
+.places-grid .empty-card:nth-child(10)::before{
+  background-image:url("https://media.lmneuquen.com/p/459796c0495bcaff64bb0e35273515d0/adjuntos/195/imagenes/008/191/0008191787/1200x675/smart/bodegas-malma.jpg");
+}
+
+/* 11 · Del Fin del Mundo — interior de elaboración */
+.places-grid .empty-card:nth-child(11)::before{
+  background-image:url("https://media.lmneuquen.com/p/0933d273c44fa0105ee71457f922fd2c/adjuntos/195/imagenes/007/917/0007917677/770x0/smart/maria-belen-probando-las-barricas-la-bodega-los-diferentes-cortes.jpeg");
+}
+
+/* 14 · Plaza de las Infancias */
+.places-grid .empty-card:nth-child(14)::before{
+  background-image:url("https://media.lmneuquen.com/p/05912a32056cd81028b581cf73234951/adjuntos/195/imagenes/007/062/0007062880/770x0/smart/plaza-las-infanciasjpeg.jpeg");
+}
+
+/* 16 · Patritti — Turismo Neuquén */
+.places-grid .empty-card:nth-child(16)::before{
+  background-image:url("https://turismo.neuquen.gob.ar/wp-content/uploads/2024/11/Bodega-Patriti-Ruta-del-Vino-San-Patricio-del-Chanar-1024x680.jpg");
+}
+
+/* 19 · Cerveza Haw — Neuquén Informa */
+.places-grid .empty-card:nth-child(19)::before{
+  background-image:url("https://cdn3.neuqueninforma.com.ar/s3i233/2025/04/neuqueninforma/images/01/83/18/1831888_49a489a1c3924f39b5371a26b31a16d73947edf6229ff887a0e98803748d5353/md.webp");
+}
+
+/* Tratamiento editorial común para fotografías */
+.places-grid .empty-card:nth-child(-n+19){
+  background:var(--paper-deep,#d8c7a9);
+  text-shadow:0 2px 18px rgba(20,25,22,.34);
+}
+
+.places-grid .empty-card:nth-child(1),
+.places-grid .empty-card:nth-child(2),
+.places-grid .empty-card:nth-child(4),
+.places-grid .empty-card:nth-child(6),
+.places-grid .empty-card:nth-child(8),
+.places-grid .empty-card:nth-child(9),
+.places-grid .empty-card:nth-child(10),
+.places-grid .empty-card:nth-child(11),
+.places-grid .empty-card:nth-child(14),
+.places-grid .empty-card:nth-child(16),
+.places-grid .empty-card:nth-child(19){
+  color:var(--cream,#fff9ed);
+}
+
+@media (max-width:760px){
+  .places-grid .empty-card::before{background-position:center 46%;}
+}
+
+@media (max-width:390px){
+  .places-grid .empty-card::before{background-position:center;}
+}
