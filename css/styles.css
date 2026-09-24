@@ -762,4 +762,42 @@ button{font:inherit}
   background-image:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://cdn3.neuqueninforma.com.ar/s3i233/2024/09/neuqueninforma/images/01/04/47/1044716_d165885fe664fc823a45a05f95f019b9ff7939332d6291223052966ec7da5003/md.webp");
   background-position:center;background-size:cover;
 }
+/* FOTOGRAFÍA TERRITORIAL · LUGARES 16–19 */
+.places-section .empty-card:nth-child(16){
+  color:var(--paper);
+  background-image:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Bodega-Patritti.JPG");
+  background-position:center;background-size:cover;
+}
+.places-section .empty-card:nth-child(17){
+  color:var(--paper);
+  background-image:linear-gradient(180deg,rgba(31,41,36,.08),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Delorean-Resto-y-Cafe.JPG");
+  background-position:center;background-size:cover;
+}
+.places-section .empty-card:nth-child(18){
+  color:var(--paper);
+  background-image:linear-gradient(180deg,rgba(31,41,36,.08),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Picada-11.JPG");
+  background-position:center;background-size:cover;
+}
+.places-section .empty-card:nth-child(19){
+  color:var(--paper);
+  background-image:linear-gradient(180deg,rgba(31,41,36,.08),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Cerveceria-Haw.JPG");
+  background-position:center;background-size:cover;
+}
+.places-section .empty-card:nth-child(n+5){
+  min-height:290px;
+  background-repeat:no-repeat;
+}
+.places-section .empty-card:nth-child(n+5) span{
+  color:rgba(255,249,237,.94);
+  text-shadow:0 1px 14px rgba(0,0,0,.35);
+}
+.places-section .empty-card:nth-child(n+5) strong{
+  text-shadow:0 2px 18px rgba(0,0,0,.38);
+}
+.places-section .empty-card:nth-child(n+5):hover{
+  background-position:center 46%;
+}
+@media(max-width:760px){
+  .places-section .empty-card:nth-child(n+5){min-height:270px}
+}
 
