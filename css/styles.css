@@ -710,5 +710,30 @@ button{font:inherit}
 @keyframes miRiver{from{transform:rotate(-7deg) translateX(0)}to{transform:rotate(-5deg) translateX(-12px)}}
 @keyframes miBranch{from{transform:rotate(-18deg) translateY(0)}to{transform:rotate(-14deg) translateY(-8px)}}
 @keyframes miReveal{from{opacity:.25;transform:translateY(34px)}to{opacity:1;transform:none}}
+/* FOTOGRAFÍA TERRITORIAL · LUGARES 5–10 */
+.places-section .empty-card:nth-child(5){
+  color:var(--paper);
+  background-image:linear-gradient(180deg,rgba(31,41,36,.08),rgba(31,41,36,.82)),url("https://cdn3.neuqueninforma.com.ar/s3i233/2024/09/neuqueninforma/images/01/11/59/1115900_a89bda2ad7f82723c2465e9f87752b23546d23cbe87887207b6c401f422826c6/md.webp");
+  background-position:center;background-size:cover;
+}
+.places-section .empty-card:nth-child(7){
+  color:var(--paper);
+  background-image:linear-gradient(180deg,rgba(31,41,36,.10),rgba(31,41,36,.82)),url("https://sanpatricio.gob.ar/assets/images/municipio/Parroquia-San-Patricio.JPG");
+  background-position:center;background-size:cover;
+}
+.places-section .empty-card:nth-child(8){
+  color:var(--paper);
+  background-image:linear-gradient(180deg,rgba(31,41,36,.06),rgba(31,41,36,.84)),url("https://estadiosdeargentina.com.ar/wp-content/uploads/2016/05/san-patricio-del-chaC3B1ar1.jpg");
+  background-position:center;background-size:cover;
+}
+.places-section .empty-card:nth-child(9){
+  color:var(--paper);
+  background-image:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Bodega-Schroeder.JPG");
+  background-position:center;background-size:cover;
+}
+.places-section .empty-card:nth-child(10){
+  color:var(--paper);
+  background-image:linear-gradient(180deg,rgba(31,41,36,.03),rgba(31,41,36,.82)),url("https://cdn3.neuqueninforma.com.ar/s3i233/2026/03/neuqueninforma/images/02/50/79/2507944_37f1255f9cb90154c0a7d5bb0ee381ec1562e2a9766060cdde64c25847cff399/md.webp");
+  background-position:center;background-size:cover;
+}
 
-/* PHOTO TEST */
