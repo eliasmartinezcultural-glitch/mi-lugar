@@ -479,3 +479,18 @@ button{font:inherit}
   .stories-section .empty-card{min-height:240px}
   .stories-section .empty-card strong{max-width:94%}
 }
+
+
+/* PRECISIÓN DOCUMENTAL
+   Las historias nombran memoria y personas; no se usan paisajes genéricos como si fueran
+   fotografías documentales de aquello que la tarjeta afirma. */
+.stories-section .empty-card:nth-child(1),
+.stories-section .empty-card:nth-child(4),
+.stories-section .empty-card:nth-child(7),
+.stories-section .empty-card:nth-child(10){
+  background-image:
+    radial-gradient(circle at 88% 18%,rgba(229,170,76,.16),transparent 20%),
+    linear-gradient(135deg,rgba(248,239,223,.98),rgba(226,213,189,.82));
+  background-position:center;
+  background-size:auto;
+}
