@@ -56,39 +56,41 @@
     },
     {
       "id": "historia-20000-hectareas",
-      "title": "20.000 hectáreas y una apuesta enorme",
+      "title": "Roberto Gasparri y la apuesta por el Chañar",
       "slug": "20000-hectareas-y-una-apuesta",
-      "summary": "A fines de los años sesenta, la compra y posterior sistematización de unas 20.000 hectáreas de monte bruto inició una transformación radical del paisaje.",
+      "summary": "La transformación de unas 20.000 hectáreas de monte en un paisaje productivo quedó ligada al proyecto de Roberto Gasparri. La historia local lo recuerda como uno de los pioneros de esa transformación.",
       "period": "1966–1969",
       "places": [],
       "sources": [
-        "Municipalidad de San Patricio del Chañar — Nuestra Identidad"
+        "Municipalidad de San Patricio del Chañar — Nuestra Identidad",
+        "Neuquén Informa — aniversario de San Patricio del Chañar"
       ],
       "verification": {
         "status": "VERIFIED",
         "checkedAt": "2026-09-24",
-        "source": "Municipalidad de San Patricio del Chañar",
-        "notes": "La fuente municipal detalla la compra de tierras y el proyecto de sistematización."
+        "source": "Municipalidad de San Patricio del Chañar / Neuquén Informa",
+        "notes": "Se limita a hechos y atribuciones documentados por fuentes institucionales."
       }
     },
     {
       "id": "historia-primeras-cosechas",
-      "title": "Cuando llegaron las primeras cosechas",
+      "title": "Las primeras cosechas también tuvieron manos",
       "slug": "primeras-cosechas",
-      "summary": "En 1969 comenzaron obras de sistematización y riego. Los primeros cultivos incluyeron papas de distintas variedades, comercializadas durante varios años en la zona.",
+      "summary": "La historia productiva del Chañar no fue sólo riego, hectáreas y cultivos: detrás de las primeras cosechas estuvieron productores y trabajadores que hicieron posible la transformación del paisaje. La documentación local permite seguir esa historia sin inventar testimonios.",
       "period": "1969 en adelante",
       "places": [
         "lugar-chacra-municipal-valles-del-chanar",
         "lugar-establecimiento-san-juan"
       ],
       "sources": [
-        "Municipalidad de San Patricio del Chañar — Nuestra Identidad"
+        "Municipalidad de San Patricio del Chañar — Nuestra Identidad",
+        "Neuquén Informa — reseña histórica"
       ],
       "verification": {
         "status": "VERIFIED",
         "checkedAt": "2026-09-24",
-        "source": "Municipalidad de San Patricio del Chañar",
-        "notes": "Información tomada de la reconstrucción histórica municipal."
+        "source": "Municipalidad de San Patricio del Chañar / Neuquén Informa",
+        "notes": "Pieza editorial; no atribuye frases ni experiencias individuales no documentadas."
       }
     },
     {
@@ -114,23 +116,23 @@
     },
     {
       "id": "historia-fundacion-1973",
-      "title": "21 de mayo: nace la localidad",
+      "title": "Los vecinos de la primera Comisión de Fomento",
       "slug": "21-de-mayo-nace-la-localidad",
-      "summary": "San Patricio del Chañar fue fundado el 21 de mayo de 1973. Desde entonces, la historia local se construyó alrededor del trabajo, la producción, las familias y la relación permanente con el territorio.",
+      "summary": "Cuando comenzó a funcionar la primera Comisión de Fomento, la comunidad quedó representada por Tulio Ferraresso, Alfredo Rodríguez, Alberto Pampiglioni y Mario Roa. Sus nombres forman parte de la memoria institucional de aquel comienzo.",
       "period": "1973 en adelante",
       "places": [
         "lugar-centro-cultural-erika-baron-de-werro",
         "lugar-parroquia-san-patricio"
       ],
       "sources": [
-        "Consejo Federal de Inversiones — Valle Inferior del Río Neuquén",
-        "Neuquén Informa"
+        "Neuquén Informa — 37º aniversario de San Patricio del Chañar",
+        "Legislatura del Neuquén — reseña del 45º aniversario"
       ],
       "verification": {
         "status": "VERIFIED",
         "checkedAt": "2026-09-24",
-        "source": "CFI / Neuquén Informa",
-        "notes": "Fecha de fundación contrastada en fuentes institucionales."
+        "source": "Neuquén Informa / Legislatura del Neuquén",
+        "notes": "Nombres y función histórica contrastados en fuentes institucionales."
       }
     },
     {
@@ -173,9 +175,9 @@
     },
     {
       "id": "historia-pueblo-hecho-por-gente",
-      "title": "Un pueblo también se construye todos los días",
+      "title": "Cuatro nombres, una memoria de pueblo",
       "slug": "un-pueblo-se-construye-todos-los-dias",
-      "summary": "Escuela, chacra, club, parroquia, centro cultural, comercio, deporte y trabajo forman una historia que no termina en una fecha. Mi Lugar irá reuniendo esas pequeñas memorias cuando puedan documentarse con nombre, fuente y contexto.",
+      "summary": "La historia temprana también conserva los nombres de Erika Barion, Michiko Matsui, Juan Bautista Jara y Delia Richetti de Ferraresso, reconocidos en documentación provincial como primeros pobladores. Son parte de una memoria que no se entiende sólo mirando edificios.",
       "period": "memoria viva",
       "places": [
         "lugar-puesto-chanar",
@@ -183,13 +185,13 @@
         "lugar-centro-cultural-erika-baron-de-werro"
       ],
       "sources": [
-        "Municipalidad de San Patricio del Chañar — Nuestra Ciudad"
+        "Neuquén Informa — aniversario de San Patricio del Chañar"
       ],
       "verification": {
         "status": "VERIFIED",
         "checkedAt": "2026-09-24",
-        "source": "Municipalidad de San Patricio del Chañar",
-        "notes": "Pieza editorial que conecta instituciones y espacios documentados; no atribuye testimonios individuales no verificados."
+        "source": "Neuquén Informa",
+        "notes": "Los nombres y su reconocimiento histórico se toman de la publicación institucional consultada."
       }
     },
     {
