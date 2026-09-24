@@ -1,2396 +1,328 @@
-/* Mi Lugar · VERSIÓN 1.4 · CAPA VISUAL CONSOLIDADA · ESTRUCTURA/FUNCIONALIDAD CONGELADAS */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;600;700&display=swap');
-:root{--paper:#f2e8d5;--paper2:#e6d6b9;--ink:#28352e;--green:#52674c;--green2:#78896d;--river:#4b7c82;--water:#86b0ae;--sun:#e5aa4c;--terracotta:#b66c4e;--clay:#98634c;--vine:#415c49;--cream:#fff9ed;--line:rgba(40,53,46,.15);--shadow:0 22px 60px rgba(55,51,39,.13)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.58;background-color:var(--paper);background-image:radial-gradient(rgba(40,53,46,.05) .65px,transparent .65px),linear-gradient(rgba(255,249,237,.12) 1px,transparent 1px);background-size:10px 10px,100% 32px}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.12;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(70,52,35,.04) 4px)}a{color:inherit;text-decoration:none}.site-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:13px clamp(18px,4vw,60px);background:rgba(242,232,213,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px}.brand-mark{display:grid;place-items:center;width:35px;height:35px;border:1px solid var(--ink);border-radius:50%;font-size:15px;background:var(--sun);box-shadow:3px 3px 0 rgba(182,108,78,.18)}.brand small{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.62}.main-nav{display:flex;gap:28px;font-size:14px}.main-nav a{position:relative}.main-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1px;background:var(--terracotta);transition:right .2s}.main-nav a:hover:after{right:0}.menu-button{display:none;background:none;border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:var(--ink)}
-.hero{min-height:82vh;position:relative;overflow:hidden;display:grid;align-items:center;padding:75px clamp(20px,8vw,120px);background:linear-gradient(180deg,#e9ddc4 0%,#f2e8d5 82%)}.hero:after{content:"";position:absolute;inset:auto 0 0;height:34%;background:linear-gradient(180deg,transparent,rgba(65,92,73,.1))}.hero-copy{position:relative;z-index:2;max-width:700px}.hero-copy:after{content:"hecho desde cerca";display:block;margin-top:38px;font:italic 18px 'Fraunces',serif;color:var(--terracotta);transform:rotate(-2deg);opacity:.75}.eyebrow,.section-kicker{text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700;opacity:.68}.hero h1,h2{font-family:'Fraunces',serif;font-weight:600;line-height:.98}.hero h1{font-size:clamp(52px,9vw,112px);margin:16px 0 26px;letter-spacing:-.045em}.hero h1 em,h2 em{color:var(--green);font-style:italic}.hero-text{max-width:550px;font-size:clamp(17px,2vw,22px)}.primary-button{display:inline-flex;gap:24px;align-items:center;margin-top:24px;background:var(--ink);color:var(--cream);padding:14px 19px;border-radius:999px;font-weight:700;box-shadow:0 8px 20px rgba(40,53,46,.15)}.hero-drawing{position:absolute;inset:0;pointer-events:none}.sun{position:absolute;width:230px;height:230px;border-radius:50%;background:var(--sun);right:12%;top:12%;opacity:.82;box-shadow:0 0 0 18px rgba(229,170,76,.08),0 0 0 34px rgba(229,170,76,.04)}.hill{position:absolute;width:90%;height:42%;right:-10%;bottom:-10%;background:var(--green);border-radius:52% 48% 0 0/85% 85% 0 0;opacity:.82;transform:rotate(-5deg)}.river{position:absolute;width:110%;height:18%;left:-5%;bottom:8%;border-top:6px solid var(--river);border-radius:50%;transform:rotate(-4deg);box-shadow:0 -12px 0 -9px var(--water),0 -22px 0 -18px rgba(75,124,130,.35)}.branch{position:absolute;right:8%;bottom:19%;font-size:135px;transform:rotate(-18deg);color:var(--terracotta);opacity:.72}.section-shell{width:min(1180px,calc(100% - 36px));margin:auto}.welcome{padding:115px 0;max-width:900px}.welcome h2,.section-heading h2,.content-section h2,.route-inner h2{font-size:clamp(40px,6vw,76px);margin:12px 0 24px;letter-spacing:-.035em}.welcome>p:last-child{max-width:620px;font-size:18px}.explore{padding-bottom:115px}.section-heading{display:flex;justify-content:space-between;align-items:end}.scribble{font-size:60px;color:var(--terracotta);transform:rotate(-8deg)}.explore-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.explore-card{min-height:270px;padding:25px;display:flex;flex-direction:column;justify-content:space-between;border-radius:30px 30px 20px 30px;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease;position:relative;overflow:hidden;border:1px solid rgba(40,53,46,.08)}.explore-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 62%,rgba(255,249,237,.28));pointer-events:none}.explore-card:after{content:"";position:absolute;width:120px;height:120px;border:1px solid rgba(40,53,46,.1);border-radius:50%;right:-55px;top:-55px}.explore-card:hover{transform:translateY(-5px);box-shadow:0 26px 65px rgba(55,51,39,.16)}.explore-card.nature{background:#cad6c3}.explore-card.history{background:#dfc5a4}.explore-card.places{background:#cededc}.explore-card.routes{background:#ddb29a}.illustration{font-size:58px;font-family:'Fraunces',serif}.explore-card strong{font:600 30px 'Fraunces',serif}.explore-card small{opacity:.72}.content-section{padding:105px 0}.content-section .section-heading{position:relative}.content-section .section-heading:after{content:"";position:absolute;left:0;bottom:-16px;width:74px;height:2px;background:var(--terracotta);opacity:.55}.places-section{background:#dbe5da;background-image:linear-gradient(rgba(255,249,237,.22) 1px,transparent 1px);background-size:100% 28px}.stories-section{background:#e9dac4;background-image:radial-gradient(rgba(152,99,76,.08) 1px,transparent 1px);background-size:16px 16px}.content-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;min-height:120px}.empty-card{padding:30px 30px 32px;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(40,53,46,.13);border-radius:24px 24px 18px 24px;background:rgba(255,249,237,.52);box-shadow:0 12px 35px rgba(55,51,39,.06);position:relative;overflow:hidden}.empty-card:after{content:"";position:absolute;width:74px;height:74px;border:1px solid rgba(40,53,46,.10);border-radius:50%;right:-28px;top:-28px}.empty-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--terracotta);opacity:.7}.places-section .empty-card:before{background:var(--green)}.stories-section .empty-card:before{background:var(--clay)}.empty-card:nth-child(3n+1){border-radius:28px 18px 28px 22px}.empty-card:nth-child(3n+2){border-radius:18px 28px 22px 28px}.empty-card:nth-child(3n){border-radius:24px 24px 30px 18px}.empty-card:nth-child(4n+1){background:rgba(255,249,237,.62)}.empty-card:nth-child(4n+2){background:rgba(246,238,220,.68)}.empty-card:nth-child(4n+3){background:rgba(235,241,231,.66)}.empty-card:nth-child(4n){background:rgba(239,228,214,.66)}.empty-card strong{display:block;font-family:'Fraunces',serif;font-size:25px;line-height:1.05;margin-bottom:10px}.empty-card span{display:block;color:rgba(40,53,46,.78)}.route-banner{background:var(--river);color:var(--cream);padding:95px 0;position:relative;overflow:hidden}.route-banner:before{content:"";position:absolute;inset:0;opacity:.12;background:repeating-linear-gradient(135deg,transparent 0 22px,#fff 23px 24px)}.route-inner{display:flex;justify-content:space-between;align-items:center;gap:40px;position:relative}.route-drawing{font-size:80px;opacity:.65}.site-footer{display:flex;justify-content:space-between;gap:40px;padding:48px clamp(18px,6vw,90px);background:#222c27;color:#f2e8d5}.site-footer p{margin:5px 0;opacity:.7}.site-footer small{opacity:.65;line-height:1.7}
-@media(max-width:760px){.empty-card{min-height:170px;padding:24px}.content-section .section-heading:after{bottom:-12px}.main-nav{display:none;position:absolute;top:64px;left:0;right:0;padding:15px 20px;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.main-nav.open{display:flex}.menu-button{display:block}.hero{min-height:78vh;padding:55px 20px}.hero h1{font-size:55px}.sun{width:125px;height:125px;right:-15px}.branch{font-size:80px;right:2%;bottom:30%}.explore-grid{grid-template-columns:1fr 1fr}.explore-card{min-height:195px;padding:18px}.explore-card strong{font-size:25px}.content-grid{grid-template-columns:1fr}.welcome{padding:80px 0}.route-inner,.site-footer{flex-direction:column;align-items:flex-start}.route-drawing{font-size:55px}}@media(max-width:390px){.explore-grid{grid-template-columns:1fr}.hero h1{font-size:48px}.section-shell{width:min(100% - 28px,1180px)}}
-
-/* Mi Lugar · capa artesanal V2.1
-   Solo visual: no modifica estructura, navegación ni comportamiento. */
-.places-section .section-shell,
-.stories-section .section-shell{position:relative}
-.places-section .section-shell:before,
-.stories-section .section-shell:before{content:"";position:absolute;right:1%;top:48px;width:105px;height:38px;border-top:1px solid rgba(40,53,46,.18);border-radius:50%;transform:rotate(-7deg);pointer-events:none}
-.places-section .section-shell:after{content:"territorio";position:absolute;right:2%;top:78px;font:italic 14px 'Fraunces',serif;color:var(--green);opacity:.55;transform:rotate(-4deg);pointer-events:none}
-.stories-section .section-shell:after{content:"memoria";position:absolute;right:2%;top:78px;font:italic 14px 'Fraunces',serif;color:var(--clay);opacity:.55;transform:rotate(4deg);pointer-events:none}
-.empty-card{transition:transform .22s ease,box-shadow .22s ease,background .22s ease}
-.empty-card:hover{transform:translateY(-4px) rotate(-.25deg);box-shadow:0 18px 42px rgba(55,51,39,.12)}
-.empty-card:nth-child(5n+1):hover{transform:translateY(-4px) rotate(.35deg)}
-.empty-card:nth-child(5n+2):hover{transform:translateY(-4px) rotate(-.4deg)}
-.empty-card span{font-size:15px}
-.explore-card:nth-child(1){transform:rotate(-.7deg)}
-.explore-card:nth-child(2){transform:rotate(.5deg)}
-.explore-card:nth-child(3){transform:rotate(-.35deg)}
-.explore-card:nth-child(4){transform:rotate(.65deg)}
-.explore-card:nth-child(1):hover,.explore-card:nth-child(2):hover,.explore-card:nth-child(3):hover,.explore-card:nth-child(4):hover{transform:translateY(-6px) rotate(0)}
-.route-banner:after{content:"";position:absolute;right:8%;bottom:-25px;width:180px;height:90px;border:1px solid rgba(255,249,237,.18);border-radius:50%;transform:rotate(-8deg);pointer-events:none}
-.site-footer:after{content:"Chañar · cerca · despacio";position:absolute;right:clamp(18px,6vw,90px);bottom:18px;font:italic 13px 'Fraunces',serif;opacity:.28}
-@media(max-width:760px){
-  .places-section .section-shell:before,.stories-section .section-shell:before,
-  .places-section .section-shell:after,.stories-section .section-shell:after{display:none}
-  .explore-card:nth-child(n){transform:none}
-  .site-footer:after{position:static;display:block;margin-top:18px}
-}
-
-
-/* Mi Lugar · profundidad visual V2.2
-   Solo CSS: la estructura HTML, JS y navegación permanecen intactos. */
-.hero:before{content:"";position:absolute;inset:7% 5% auto auto;width:42%;height:55%;border:1px solid rgba(40,53,46,.12);border-radius:48% 52% 46% 54%;transform:rotate(8deg);pointer-events:none}
-.hero-copy{max-width:720px}
-.hero-text{max-width:590px}
-.explore-card{isolation:isolate}
-.explore-card .illustration{filter:drop-shadow(3px 4px 0 rgba(40,53,46,.08))}
-.empty-card{min-height:215px;padding:28px 28px 30px}
-.empty-card:after{width:150px;height:105px;right:-72px;top:-45px;border-radius:42% 58% 54% 46%;background:linear-gradient(135deg,rgba(255,249,237,.18),rgba(75,124,130,.08));box-shadow:inset 0 0 0 1px rgba(40,53,46,.06)}
-.empty-card:before{width:5px}
-.empty-card strong{max-width:90%;letter-spacing:-.02em}
-.empty-card span{max-width:92%;line-height:1.5}
-.places-section .empty-card:nth-child(3n+1):before{box-shadow:7px 0 0 rgba(82,103,76,.08)}
-.stories-section .empty-card:nth-child(3n+2):before{box-shadow:7px 0 0 rgba(182,108,78,.07)}
-.places-section .empty-card:nth-child(5n+1){background:linear-gradient(145deg,rgba(255,249,237,.72),rgba(202,214,195,.42))}
-.places-section .empty-card:nth-child(5n+2){background:linear-gradient(145deg,rgba(235,241,231,.76),rgba(255,249,237,.45))}
-.places-section .empty-card:nth-child(5n+3){background:linear-gradient(145deg,rgba(206,222,220,.55),rgba(255,249,237,.52))}
-.places-section .empty-card:nth-child(5n+4){background:linear-gradient(145deg,rgba(239,228,214,.72),rgba(255,249,237,.48))}
-.places-section .empty-card:nth-child(5n){background:linear-gradient(145deg,rgba(219,229,218,.72),rgba(229,214,185,.44))}
-.stories-section .empty-card:nth-child(5n+1){background:linear-gradient(145deg,rgba(255,249,237,.72),rgba(223,197,164,.42))}
-.stories-section .empty-card:nth-child(5n+2){background:linear-gradient(145deg,rgba(246,238,220,.75),rgba(182,108,78,.08))}
-.stories-section .empty-card:nth-child(5n+3){background:linear-gradient(145deg,rgba(235,241,231,.65),rgba(152,99,76,.09))}
-.stories-section .empty-card:nth-child(5n+4){background:linear-gradient(145deg,rgba(239,228,214,.72),rgba(75,124,130,.08))}
-.stories-section .empty-card:nth-child(5n){background:linear-gradient(145deg,rgba(255,249,237,.72),rgba(229,170,76,.12))}
-.route-inner h2{max-width:760px}
-.route-inner h2:after{content:"";display:block;width:110px;height:1px;margin-top:22px;background:rgba(255,249,237,.45);transform:rotate(-2deg)}
-@media(max-width:760px){
-  .hero:before{width:70%;height:40%;right:-18%;top:5%}
-  .empty-card{min-height:180px}
-}
-
-
-/* Mi Lugar · V2.3 · sistema editorial visual
-   Solo CSS. Estructura, JS y navegación congelados. */
+/* Mi Lugar · CAPA VISUAL CURADA
+   Solo presentación. No modifica HTML, JS, navegación ni datos.
+   Diseñada para GitHub Pages sin dependencias externas.
+*/
 :root{
-  --paper3:#efe2ca;
-  --sage:#aab8a0;
-  --dust:#cbb79b;
-  --night:#1f2924;
-}
-body{background-color:var(--paper);background-image:
- radial-gradient(rgba(40,53,46,.045) .55px,transparent .55px),
- linear-gradient(rgba(255,249,237,.10) 1px,transparent 1px);
- background-size:11px 11px,100% 34px}
-.hero{isolation:isolate}
-.hero-drawing{z-index:0}
-.hero-copy{z-index:3}
-.hero:before{z-index:1}
-.hero:after{z-index:2}
-.hero .primary-button{position:relative;z-index:4}
-.welcome{position:relative}
-.welcome:before{content:"";display:block;width:42px;height:1px;background:var(--terracotta);margin-bottom:28px;transform:rotate(-2deg);opacity:.7}
-.section-heading{gap:30px}
-.section-heading h2{max-width:760px}
-.explore{position:relative}
-.explore:before{content:"";position:absolute;left:0;right:0;top:44%;height:1px;background:rgba(40,53,46,.055);pointer-events:none}
-.explore-card{box-shadow:0 18px 45px rgba(55,51,39,.10)}
-.explore-card small{font-size:12px;letter-spacing:.03em}
-.content-section{position:relative}
-.content-section:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(40,53,46,.09)}
-.empty-card{box-shadow:0 13px 34px rgba(55,51,39,.055)}
-.empty-card:hover{box-shadow:0 20px 48px rgba(55,51,39,.11)}
-.route-banner{box-shadow:inset 0 1px 0 rgba(255,249,237,.12),inset 0 -1px 0 rgba(31,41,36,.14)}
-.site-footer{position:relative}
-.site-footer>div{position:relative;z-index:2}
-@media(max-width:760px){
- .hero{min-height:76vh}
- .hero h1{line-height:1.01}
- .welcome{padding:70px 0}
- .content-section{padding:78px 0}
- .content-grid{gap:12px}
- .empty-card{padding:23px 22px 25px}
- .explore{padding-bottom:78px}
- .route-banner{padding:76px 0}
-}
-@media(min-width:761px){
- .empty-card:nth-child(6n+1){transform:translateY(5px)}
- .empty-card:nth-child(6n+2){transform:translateY(-3px)}
- .empty-card:nth-child(6n+4){transform:translateY(4px)}
- .empty-card:nth-child(6n+5){transform:translateY(-5px)}
-}
-
-
-/* Mi Lugar · V2.4 · jerarquía territorial
-   Solo CSS. La estructura, navegación y funcionalidad permanecen congeladas.
-   El territorio ocupa visualmente el primer plano; la actividad comercial acompaña. */
-
-.places-section{
-  background-color:#dbe5da;
-  background-image:
-    radial-gradient(rgba(65,92,73,.045) .7px,transparent .7px),
-    linear-gradient(rgba(255,249,237,.24) 1px,transparent 1px);
-  background-size:14px 14px,100% 30px;
-}
-
-/* Los primeros lugares se sienten como paisaje y pertenencia. */
-.places-section .empty-card:nth-child(-n+8){
-  box-shadow:0 16px 40px rgba(55,75,58,.075);
-}
-.places-section .empty-card:nth-child(-n+5) strong{
-  font-size:clamp(26px,2.3vw,31px);
-}
-.places-section .empty-card:nth-child(-n+5):before{
-  width:6px;
-  background:var(--green);
-}
-.places-section .empty-card:nth-child(-n+5):after{
-  border-color:rgba(65,92,73,.13);
-  background:linear-gradient(135deg,rgba(202,214,195,.20),rgba(134,176,174,.10));
-}
-
-/* La cultura queda integrada al territorio, no como cartel institucional. */
-.places-section .empty-card:nth-child(6),
-.places-section .empty-card:nth-child(7),
-.places-section .empty-card:nth-child(8){
-  background:linear-gradient(145deg,rgba(255,249,237,.70),rgba(203,183,155,.20));
-}
-
-/* Los emprendimientos están presentes, pero visualmente funcionan como una capa secundaria. */
-.places-section .empty-card:nth-child(n+9){
-  min-height:185px;
-  padding:24px 26px 26px;
-  box-shadow:0 9px 25px rgba(55,51,39,.045);
-  background:rgba(255,249,237,.48);
-}
-.places-section .empty-card:nth-child(n+9) strong{
-  font-size:22px;
-}
-.places-section .empty-card:nth-child(n+9) span{
-  font-size:14px;
-  opacity:.72;
-}
-.places-section .empty-card:nth-child(n+9):before{
-  width:3px;
-  background:var(--terracotta);
-  opacity:.48;
-}
-
-/* La plaza vuelve a respirar como espacio comunitario, aunque aparezca después. */
-.places-section .empty-card:nth-child(14){
-  min-height:205px;
-  background:linear-gradient(145deg,rgba(235,241,231,.72),rgba(202,214,195,.30));
-  box-shadow:0 14px 34px rgba(55,75,58,.065);
-}
-.places-section .empty-card:nth-child(14) strong{
-  font-size:25px;
-}
-.places-section .empty-card:nth-child(14):before{
-  width:5px;
-  background:var(--green);
-  opacity:.65;
-}
-
-/* El relato general mantiene el foco en mirar, caminar y recordar. */
-.stories-section{
-  background-color:#e9dac4;
-  background-image:
-    radial-gradient(rgba(152,99,76,.055) 1px,transparent 1px),
-    linear-gradient(rgba(255,249,237,.12) 1px,transparent 1px);
-  background-size:17px 17px,100% 34px;
-}
-.stories-section .empty-card{
-  box-shadow:0 12px 30px rgba(80,61,43,.05);
-}
-.stories-section .empty-card strong{
-  font-size:clamp(24px,2.1vw,29px);
-}
-
-/* El lenguaje comercial no invade la pantalla: se percibe como una parte más del pueblo. */
-.places-section .empty-card:nth-child(n+9) .empty-card{
-  box-shadow:none;
-}
-
-@media(max-width:760px){
-  .places-section .empty-card:nth-child(n+9){
-    min-height:170px;
-    padding:22px 21px 24px;
-  }
-  .places-section .empty-card:nth-child(n+9) strong{
-    font-size:21px;
-  }
-  .places-section .empty-card:nth-child(-n+5) strong{
-    font-size:26px;
-  }
-}
-
-
-/* Mi Lugar · V2.5 · fotografía real + mirada de local
-   Solo CSS. No agrega ni modifica estructura, navegación ni funcionalidad. */
-
-/* Fotografías reales del territorio: se incorporan como grandes ventanas visuales,
-   usando material publicado por la Municipalidad de San Patricio del Chañar. */
-.places-section .empty-card:nth-child(1),
-.places-section .empty-card:nth-child(4),
-.places-section .empty-card:nth-child(5){
-  background-image:
-    linear-gradient(180deg,rgba(31,41,36,.02) 25%,rgba(31,41,36,.48) 100%),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG");
-  background-size:cover;
-  background-position:center;
-  color:var(--cream);
-  min-height:260px;
-  border-color:rgba(255,249,237,.22);
-  text-shadow:0 2px 14px rgba(31,41,36,.38);
-}
-.places-section .empty-card:nth-child(4){
-  background-image:
-    linear-gradient(180deg,rgba(31,41,36,.04) 20%,rgba(31,41,36,.55) 100%),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
-  background-position:center;
-}
-.places-section .empty-card:nth-child(5){
-  background-image:
-    linear-gradient(180deg,rgba(31,41,36,.02) 20%,rgba(31,41,36,.58) 100%),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
-  background-position:center bottom;
-}
-.places-section .empty-card:nth-child(1) strong,
-.places-section .empty-card:nth-child(4) strong,
-.places-section .empty-card:nth-child(5) strong{
-  color:var(--cream);
-}
-.places-section .empty-card:nth-child(1) span,
-.places-section .empty-card:nth-child(4) span,
-.places-section .empty-card:nth-child(5) span{
-  color:rgba(255,249,237,.9);
-}
-.places-section .empty-card:nth-child(1):before,
-.places-section .empty-card:nth-child(4):before,
-.places-section .empty-card:nth-child(5):before{
-  background:var(--sun);
-  box-shadow:none;
-}
-
-/* Una pequeña firma visual: “esto te lo mostraría alguien de acá”. */
-.places-section .empty-card:nth-child(1):after{
-  content:"un rincón para quedarse un rato";
-  width:auto;height:auto;right:18px;top:17px;
-  padding:7px 11px;
-  border:1px solid rgba(255,249,237,.45);
-  border-radius:999px;
-  background:rgba(31,41,36,.28);
-  color:var(--cream);
-  font:italic 12px 'Fraunces',serif;
-  letter-spacing:.01em;
-  transform:rotate(-2deg);
-}
-.places-section .empty-card:nth-child(4):after{
-  content:"miralo despacio";
-  width:auto;height:auto;right:18px;top:17px;
-  padding:7px 11px;
-  border:1px solid rgba(255,249,237,.42);
-  border-radius:999px;
-  background:rgba(31,41,36,.25);
-  color:var(--cream);
-  font:italic 12px 'Fraunces',serif;
-  transform:rotate(2deg);
-}
-.places-section .empty-card:nth-child(5):after{
-  content:"tierra, agua y trabajo";
-  width:auto;height:auto;right:18px;top:17px;
-  padding:7px 11px;
-  border:1px solid rgba(255,249,237,.42);
-  border-radius:999px;
-  background:rgba(31,41,36,.25);
-  color:var(--cream);
-  font:italic 12px 'Fraunces',serif;
-}
-
-/* El banner de recorridos se convierte visualmente en un croquis territorial.
-   No es un mapa interactivo: es una capa editorial, para no romper la estructura congelada. */
-.route-banner:after{
-  content:"";
-  position:absolute;
-  right:5%;
-  top:50%;
-  width:270px;
-  height:150px;
-  border:1px solid rgba(255,249,237,.28);
-  border-radius:48% 55% 42% 58%;
-  transform:translateY(-50%) rotate(-8deg);
-  box-shadow:
-    40px 18px 0 -39px rgba(255,249,237,.55),
-    -55px -22px 0 -53px rgba(255,249,237,.45),
-    75px -36px 0 -71px rgba(255,249,237,.38);
-  pointer-events:none;
-}
-.route-banner:before{
-  content:"";
-  position:absolute;
-  right:8%;
-  top:50%;
-  width:220px;
-  height:1px;
-  background:rgba(255,249,237,.28);
-  transform:rotate(-22deg);
-  box-shadow:
-    -30px 34px 0 rgba(255,249,237,.20),
-    45px -38px 0 rgba(255,249,237,.20);
-}
-
-/* “Consejos de acá” sin crear otra sección:
-   pequeños gestos editoriales repartidos por el recorrido existente. */
-.route-inner:after{
-  content:"Dejá el lugar como lo encontraste · saludá · llevate tu basura · respetá el silencio";
-  display:block;
-  position:absolute;
-  left:0;
-  bottom:-44px;
-  max-width:680px;
-  font:italic 14px 'Fraunces',serif;
-  color:rgba(255,249,237,.72);
-  letter-spacing:.01em;
-}
-
-/* La página termina con la misma idea con la que empieza: pertenencia antes que consumo. */
-.site-footer small:after{
-  content:"A Un consejo de vecino: cuidá este lugar como si fuera tuyo.";
-  white-space:pre;
-  display:block;
-  margin-top:12px;
-  font:italic 13px 'Fraunces',serif;
-  opacity:.68;
-}
-
-@media(max-width:760px){
-  .places-section .empty-card:nth-child(1),
-  .places-section .empty-card:nth-child(4),
-  .places-section .empty-card:nth-child(5){
-    min-height:220px;
-  }
-  .route-banner:after{
-    right:-85px;
-    top:24%;
-    width:220px;
-    height:120px;
-  }
-  .route-banner:before{
-    right:-50px;
-    top:24%;
-    width:180px;
-  }
-  .route-inner:after{
-    position:static;
-    margin-top:4px;
-    max-width:100%;
-  }
-}
-
-
-/* Mi Lugar · V2.6 · atlas del vecino
-   Solo CSS. No cambia HTML, JS, navegación ni comportamiento.
-   Profundiza fotografía, cartografía editorial y recomendaciones locales. */
-
-/* El recorrido se transforma en un verdadero “mapa de papel” visual.
-   Es un croquis editorial, no una representación GPS: evita prometer precisión que
-   esta versión congelada no puede garantizar. */
-.route-banner{
-  background:
-    radial-gradient(circle at 18% 30%,rgba(255,249,237,.08) 0 2px,transparent 3px),
-    radial-gradient(circle at 72% 62%,rgba(255,249,237,.07) 0 2px,transparent 3px),
-    linear-gradient(155deg,#47777b,#3e6d72);
-}
-.route-banner:after{
-  content:"";
-  position:absolute;
-  right:5%;
-  top:50%;
-  width:min(430px,42vw);
-  height:230px;
-  border:1px solid rgba(255,249,237,.30);
-  border-radius:47% 53% 44% 56%;
-  transform:translateY(-50%) rotate(-8deg);
-  background:
-    linear-gradient(17deg,transparent 47%,rgba(255,249,237,.34) 48%,rgba(255,249,237,.34) 49%,transparent 50%),
-    linear-gradient(105deg,transparent 49%,rgba(255,249,237,.22) 50%,transparent 51%);
-  box-shadow:
-    inset 0 0 0 16px rgba(255,249,237,.025),
-    0 0 0 1px rgba(31,41,36,.08);
-}
-.route-banner:before{
-  content:"RUTA 7       RUTA 8";
-  position:absolute;
-  right:8%;
-  top:50%;
-  z-index:1;
-  width:min(390px,38vw);
-  height:180px;
-  transform:translateY(-50%) rotate(-8deg);
-  border-top:1px dashed rgba(255,249,237,.28);
-  border-bottom:1px dashed rgba(255,249,237,.18);
-  color:rgba(255,249,237,.65);
-  font:700 9px 'DM Sans',sans-serif;
-  letter-spacing:.15em;
-  padding-top:12px;
-  text-align:right;
-  pointer-events:none;
-}
-
-/* Puntos de “te lo mostraría yo”: pequeñas señales de local dentro de las
-   tarjetas existentes, sin crear componentes nuevos. */
-.places-section .empty-card:nth-child(1) .empty-card{}
-.places-section .empty-card:nth-child(1):after{
-  content:"★  te lo mostraría al atardecer";
-  width:auto;height:auto;right:16px;top:16px;
-  padding:7px 10px;
-  border:1px solid rgba(255,249,237,.42);
-  border-radius:999px;
-  background:rgba(31,41,36,.34);
-  color:var(--cream);
-  font:italic 11px 'Fraunces',serif;
-  transform:rotate(-2deg);
-}
-.places-section .empty-card:nth-child(2):after{
-  content:"↗  mirá el paisaje completo";
-  width:auto;height:auto;right:16px;top:16px;
-  padding:7px 10px;
-  border:1px solid rgba(65,92,73,.20);
-  border-radius:999px;
-  background:rgba(255,249,237,.55);
-  color:var(--green);
-  font:italic 11px 'Fraunces',serif;
-  transform:rotate(1deg);
-}
-.places-section .empty-card:nth-child(3):after{
-  content:"◎  un rincón para mirar";
-  width:auto;height:auto;right:16px;top:16px;
-  padding:7px 10px;
-  border:1px solid rgba(65,92,73,.20);
-  border-radius:999px;
-  background:rgba(255,249,237,.55);
-  color:var(--green);
-  font:italic 11px 'Fraunces',serif;
-  transform:rotate(-1deg);
-}
-
-/* Marcos fotográficos: la imagen es tratada como recuerdo del lugar, no como
-   banner publicitario. Las clases quedan preparadas para futuras fotos locales. */
-.places-section .empty-card:nth-child(1),
-.places-section .empty-card:nth-child(4),
-.places-section .empty-card:nth-child(5){
-  position:relative;
-  isolation:isolate;
-}
-.places-section .empty-card:nth-child(1)::selection,
-.places-section .empty-card:nth-child(4)::selection,
-.places-section .empty-card:nth-child(5)::selection{
-  background:var(--sun);
-}
-
-/* La capa visual de “vida local” se mantiene pequeña frente al paisaje. */
-.places-section .empty-card:nth-child(n+9) .empty-card{}
-.places-section .empty-card:nth-child(9),
-.places-section .empty-card:nth-child(10),
-.places-section .empty-card:nth-child(11),
-.places-section .empty-card:nth-child(12),
-.places-section .empty-card:nth-child(15),
-.places-section .empty-card:nth-child(16){
-  border-top:2px solid rgba(182,108,78,.25);
-}
-.places-section .empty-card:nth-child(17),
-.places-section .empty-card:nth-child(18),
-.places-section .empty-card:nth-child(19){
-  border-top:2px solid rgba(182,108,78,.18);
-}
-
-/* “Reglas de la casa” integradas al paisaje, no como reglamento. */
-.route-inner h2{
-  position:relative;
-}
-.route-inner h2:before{
-  content:"como hacemos acá";
-  display:block;
-  margin-bottom:14px;
-  font:italic 15px 'Fraunces',serif;
-  letter-spacing:.02em;
-  color:rgba(255,249,237,.70);
-  transform:rotate(-2deg);
-}
-.route-inner:after{
-  content:"Saludá. Mirá. No dejes residuos. Respetá a quien vive acá. Si encontrás un lugar lindo, cuidalo.";
-  bottom:-48px;
-  font-size:13px;
-  letter-spacing:.015em;
-}
-
-@media(max-width:760px){
-  .route-banner:after{
-    width:300px;
-    height:165px;
-    right:-100px;
-    top:28%;
-  }
-  .route-banner:before{
-    width:270px;
-    right:-75px;
-    top:28%;
-  }
-  .route-inner h2:before{margin-bottom:10px}
-  .route-inner:after{
-    bottom:auto;
-    margin-top:8px;
-  }
-}
-
-
-/* Mi Lugar · V2.7 · mapa real + atlas afectivo
-   Solo CSS. La estructura y funcionalidad siguen congeladas.
-   El mapa se presenta como referencia visual; no reemplaza navegación ni GPS. */
-
-.route-banner{
-  background:
-    linear-gradient(90deg,rgba(62,109,114,.97) 0%,rgba(62,109,114,.90) 48%,rgba(62,109,114,.70) 100%),
-    url("https://staticmap.openstreetmap.de/staticmap.php?center=-38.62595,-68.29994&zoom=12&size=865x512&maptype=mapnik&markers=-38.62595,-68.29994,red-pushpin")
-    center right/cover no-repeat;
-}
-
-.route-banner:after{
-  content:"";
-  position:absolute;
-  right:3%;
-  top:50%;
-  width:min(480px,46vw);
-  height:255px;
-  transform:translateY(-50%) rotate(-1deg);
-  border:9px solid rgba(255,249,237,.82);
-  background:
-    linear-gradient(rgba(255,249,237,.05),rgba(255,249,237,.05)),
-    url("https://staticmap.openstreetmap.de/staticmap.php?center=-38.62595,-68.29994&zoom=12&size=865x512&maptype=mapnik&markers=-38.62595,-68.29994,red-pushpin")
-    center/cover no-repeat;
-  box-shadow:0 18px 50px rgba(31,41,36,.24),0 0 0 1px rgba(31,41,36,.16);
-  border-radius:3px;
-  opacity:.92;
-  pointer-events:none;
-}
-
-.route-banner:before{
-  content:"MAPA DE CHAÑAR  ·  REFERENCIA TERRITORIAL";
-  position:absolute;
-  right:4%;
-  top:calc(50% + 145px);
-  width:min(480px,46vw);
-  color:rgba(255,249,237,.72);
-  font:600 9px 'DM Sans',sans-serif;
-  letter-spacing:.12em;
-  text-align:center;
-  pointer-events:none;
-}
-
-.route-inner{
-  z-index:2;
-  max-width:1180px;
-}
-
-.route-inner:after{
-  content:"Saludá · llevate tu basura · respetá el paisaje · dejá el lugar como lo encontraste";
-  bottom:-48px;
-  color:rgba(255,249,237,.82);
-  font:italic 14px 'Fraunces',serif;
-}
-
-@media(max-width:760px){
-  .route-banner{
-    background:
-      linear-gradient(180deg,rgba(62,109,114,.96) 0%,rgba(62,109,114,.92) 100%),
-      url("https://staticmap.openstreetmap.de/staticmap.php?center=-38.62595,-68.29994&zoom=12&size=865x512&maptype=mapnik&markers=-38.62595,-68.29994,red-pushpin")
-      center/cover no-repeat;
-  }
-  .route-banner:after{
-    right:-80px;
-    top:31%;
-    width:340px;
-    height:195px;
-  }
-  .route-banner:before{
-    right:-55px;
-    top:calc(31% + 108px);
-    width:330px;
-    font-size:8px;
-  }
-  .route-inner:after{
-    position:static;
-    margin-top:16px;
-    max-width:92%;
-  }
-}
-
-/* Pequeñas “postales” tipográficas: la sensación de recomendación personal
-   crece sin agregar elementos funcionales nuevos. */
-.places-section .empty-card:nth-child(2) strong:after{
-  content:"  ·  si tenés tiempo, quedate";
-  display:block;
-  margin-top:7px;
-  font:italic 13px 'Fraunces',serif;
-  color:var(--green);
-  opacity:.68;
-}
-.places-section .empty-card:nth-child(3) strong:after{
-  content:"  ·  mirá antes de seguir";
-  display:block;
-  margin-top:7px;
-  font:italic 13px 'Fraunces',serif;
-  color:var(--green);
-  opacity:.68;
-}
-.places-section .empty-card:nth-child(14) strong:after{
-  content:"  ·  un lugar para encontrarse";
-  display:block;
-  margin-top:7px;
-  font:italic 13px 'Fraunces',serif;
-  color:var(--green);
-  opacity:.68;
-}
-
-@media(max-width:760px){
-  .places-section .empty-card:nth-child(2) strong:after,
-  .places-section .empty-card:nth-child(3) strong:after,
-  .places-section .empty-card:nth-child(14) strong:after{
-    margin-top:6px;
-  }
-}
-
-
-/* Mi Lugar · V2.8 · postal fotográfica + atlas afectivo
-   SOLO CSS. HTML, JS, navegación y estructura funcional permanecen congelados.
-   Objetivo: que la página se sienta más como un álbum de Chañar hecho por un vecino. */
-
-.hero{
-  background:
-    linear-gradient(90deg,rgba(233,221,196,.98) 0%,rgba(242,232,213,.93) 54%,rgba(242,232,213,.55) 100%),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG")
-    center right/cover no-repeat;
-}
-.hero:before{
-  width:min(520px,43vw);
-  height:340px;
-  right:5%;
-  top:12%;
-  border:10px solid rgba(255,249,237,.82);
-  border-radius:3px 3px 20px 3px;
-  transform:rotate(2deg);
-  background:
-    linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.12)),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG")
-    center/cover no-repeat;
-  box-shadow:0 24px 55px rgba(55,51,39,.18),0 0 0 1px rgba(40,53,46,.10);
-}
-.hero-copy:before{
-  content:"una postal de acá";
-  display:inline-block;
-  margin-bottom:5px;
-  padding:5px 9px;
-  border:1px solid rgba(40,53,46,.18);
-  border-radius:999px;
-  font:italic 11px 'Fraunces',serif;
-  color:var(--green);
-  background:rgba(255,249,237,.46);
-  transform:rotate(-2deg);
-}
-
-/* Más fotografías reales dentro de la primera capa territorial. */
-.places-section .empty-card:nth-child(2),
-.places-section .empty-card:nth-child(3){
-  background-size:cover;
-  background-position:center;
-}
-.places-section .empty-card:nth-child(2){
-  background-image:
-    linear-gradient(180deg,rgba(31,41,36,.02),rgba(31,41,36,.34)),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Dique-Compensador.JPG");
-  color:var(--cream);
-}
-.places-section .empty-card:nth-child(3){
-  background-image:
-    linear-gradient(180deg,rgba(31,41,36,.02),rgba(31,41,36,.38)),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Mirador-La-Virgen.JPG");
-  color:var(--cream);
-}
-.places-section .empty-card:nth-child(2) strong,
-.places-section .empty-card:nth-child(3) strong,
-.places-section .empty-card:nth-child(2) span,
-.places-section .empty-card:nth-child(3) span{
-  color:var(--cream);
-}
-.places-section .empty-card:nth-child(2):before,
-.places-section .empty-card:nth-child(3):before{
-  background:var(--sun);
-  box-shadow:none;
-}
-.places-section .empty-card:nth-child(2) strong:after,
-.places-section .empty-card:nth-child(3) strong:after{
-  color:var(--cream);
-}
-.places-section .empty-card:nth-child(2) .local-note,
-.places-section .empty-card:nth-child(3) .local-note{display:none}
-
-/* Pequeñas señales editoriales: no venden; acompañan. */
-.places-section .empty-card:nth-child(4):after{
-  content:"◎  si podés, quedate un rato";
-  width:auto;height:auto;right:16px;top:16px;
-  padding:7px 10px;
-  border:1px solid rgba(255,249,237,.42);
-  border-radius:999px;
-  background:rgba(31,41,36,.30);
-  color:var(--cream);
-  font:italic 11px 'Fraunces',serif;
-  transform:rotate(1deg);
-}
-.places-section .empty-card:nth-child(5):after{
-  content:"↗  mirá cómo cambia la tierra";
-  width:auto;height:auto;right:16px;top:16px;
-  padding:7px 10px;
-  border:1px solid rgba(255,249,237,.42);
-  border-radius:999px;
-  background:rgba(31,41,36,.30);
-  color:var(--cream);
-  font:italic 11px 'Fraunces',serif;
-}
-
-/* Una trama de caminos y agua muy tenue detrás de las tarjetas. */
-.places-section:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  opacity:.10;
-  background:
-    linear-gradient(28deg,transparent 0 48%,var(--river) 48.2% 48.5%,transparent 48.7%),
-    linear-gradient(156deg,transparent 0 63%,var(--green) 63.2% 63.4%,transparent 63.6%);
-  mask-image:linear-gradient(to bottom,transparent,black 18%,black 82%,transparent);
-}
-
-/* La sección de historias recibe una textura de papel más editorial. */
-.stories-section:after{
-  content:"";
-  position:absolute;
-  left:7%;
-  bottom:6%;
-  width:180px;
-  height:90px;
-  border:1px solid rgba(152,99,76,.13);
-  border-radius:48% 52% 44% 56%;
-  transform:rotate(-8deg);
-  pointer-events:none;
-}
-.stories-section .section-shell,
-.places-section .section-shell{z-index:1}
-
-/* El mapa ahora parece una pieza guardada dentro de un cuaderno de viaje. */
-.route-banner:after{
-  border-width:10px 10px 28px;
-  border-color:rgba(255,249,237,.88);
-  box-shadow:
-    0 22px 55px rgba(31,41,36,.28),
-    0 0 0 1px rgba(31,41,36,.18),
-    12px 14px 0 rgba(255,249,237,.08);
-}
-.route-drawing{
-  position:relative;
-  z-index:3;
-}
-.route-drawing:after{
-  content:"Mapa base: OpenStreetMap";
-  display:block;
-  margin-top:12px;
-  font:500 8px 'DM Sans',sans-serif;
-  letter-spacing:.08em;
-  opacity:.58;
-}
-
-/* Cuidado del lugar como parte de la identidad, no como cartel de normas. */
-.route-inner:after{
-  max-width:760px;
-  padding-top:9px;
-  border-top:1px solid rgba(255,249,237,.16);
-}
-
-/* El cierre recupera la idea de pueblo y pertenencia. */
-.site-footer{
-  background:
-    radial-gradient(circle at 85% 20%,rgba(229,170,76,.08),transparent 24%),
-    #222c27;
-}
-.site-footer:before{
-  content:"✦";
-  position:absolute;
-  right:clamp(18px,6vw,90px);
-  top:22px;
-  font:24px 'Fraunces',serif;
-  color:rgba(229,170,76,.55);
-  transform:rotate(-8deg);
-}
-
-/* Responsive: la foto acompaña, nunca tapa el texto. */
-@media(max-width:900px){
-  .hero:before{
-    width:42vw;
-    height:260px;
-    opacity:.78;
-  }
-}
-@media(max-width:760px){
-  .hero{
-    background:
-      linear-gradient(180deg,rgba(233,221,196,.96) 0%,rgba(242,232,213,.92) 62%,rgba(242,232,213,.76) 100%),
-      url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG")
-      center/cover no-repeat;
-  }
-  .hero:before{
-    width:210px;
-    height:145px;
-    right:-24px;
-    top:13%;
-    border-width:7px;
-    opacity:.62;
-  }
-  .hero-copy:before{margin-top:8px}
-  .places-section .empty-card:nth-child(2),
-  .places-section .empty-card:nth-child(3){
-    min-height:220px;
-  }
-  .route-drawing:after{
-    margin-top:8px;
-    font-size:7px;
-  }
-}
-
-
-/* Mi Lugar · VERSIÓN 1.4 · cierre visual
-   No modifica estructura, HTML, JS, navegación ni funcionalidad.
-   Consolida fotografía, mapa, recomendación local y cuidado del territorio. */
-
-body:after{
-  content:"";
-  position:fixed;
-  left:14px;
-  bottom:14px;
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--sun);
-  opacity:.28;
-  pointer-events:none;
-  z-index:31;
-}
-
-.hero .primary-button{
-  transition:transform .2s ease,box-shadow .2s ease;
-}
-.hero .primary-button:hover{
-  transform:translateY(-2px);
-  box-shadow:0 12px 28px rgba(40,53,46,.22);
-}
-
-.places-section .empty-card:nth-child(-n+5){
-  overflow:hidden;
-}
-.places-section .empty-card:nth-child(-n+5):hover{
-  transform:translateY(-5px) scale(1.008);
-}
-.places-section .empty-card:nth-child(-n+5):after{
-  z-index:2;
-}
-.places-section .empty-card:nth-child(-n+5) strong,
-.places-section .empty-card:nth-child(-n+5) span{
-  position:relative;
-  z-index:3;
-}
-
-.route-banner{
-  min-height:390px;
-}
-.route-banner .section-shell{
-  min-height:260px;
-}
-.route-banner .route-drawing{
-  min-width:120px;
-  text-align:center;
-}
-
-@media(max-width:760px){
-  .route-banner{
-    min-height:0;
-  }
-  .route-banner .section-shell{
-    min-height:0;
-  }
-  body:after{
-    left:8px;
-    bottom:8px;
-  }
-}
-
-
-/* Mi Lugar · 1.4 · PROFUNDIDAD DE EXPERIENCIA
-   Solo capa visual/editorial. El núcleo estructural y funcional permanece congelado. */
-
-:root{
-  --paper-light:#fbf3e3;
-  --ink-soft:#405047;
-  --olive:#65775b;
-  --photo-shadow:0 28px 70px rgba(55,51,39,.18);
-  --paper-edge:rgba(255,249,237,.82);
-}
-
-/* Ritmo tipográfico: más aire, mejor lectura y una jerarquía menos uniforme. */
-.hero-copy,.welcome,.section-heading,.route-inner{letter-spacing:-.005em}
-.hero-text{line-height:1.48;color:rgba(40,53,46,.84)}
-.welcome>p:last-child{line-height:1.7;color:rgba(40,53,46,.78)}
-.empty-card span{line-height:1.55}
-
-/* Encabezado como placa editorial, no como barra de aplicación. */
-.site-header{box-shadow:0 8px 24px rgba(55,51,39,.035)}
-.brand-mark{position:relative}
-.brand-mark:after{content:"";position:absolute;inset:-5px;border:1px solid rgba(229,170,76,.22);border-radius:50%;transform:rotate(12deg)}
-
-/* Profundidad fotográfica: borde, papel y sombra antes de la imagen. */
-.hero:before{box-shadow:var(--photo-shadow),0 0 0 1px rgba(40,53,46,.08)}
-.places-section .empty-card:nth-child(-n+5){box-shadow:var(--photo-shadow),0 0 0 1px rgba(255,249,237,.12)}
-
-/* Las postales principales ganan lectura visual sin convertirse en banners. */
-.places-section .empty-card:nth-child(1),
-.places-section .empty-card:nth-child(2),
-.places-section .empty-card:nth-child(3),
-.places-section .empty-card:nth-child(4),
-.places-section .empty-card:nth-child(5){
-  min-height:290px;
-  background-position:center;
-}
-.places-section .empty-card:nth-child(-n+5) span{max-width:82%;text-shadow:0 2px 10px rgba(31,41,36,.28)}
-
-/* Una leve pátina común une fotografías, papel y dibujos. */
-.places-section .empty-card:nth-child(-n+5):after{backdrop-filter:blur(2px)}
-.hero:after{background:linear-gradient(180deg,transparent 48%,rgba(65,92,73,.16))}
-
-/* Los títulos de sección dejan más espacio para respirar. */
-.section-heading h2{line-height:1.02}
-.content-section .section-heading{margin-bottom:42px}
-
-/* Historias: sensación de archivo personal. */
-.stories-section .empty-card{border-color:rgba(152,99,76,.16);box-shadow:0 16px 38px rgba(80,61,43,.065)}
-.stories-section .empty-card strong{font-size:clamp(25px,2.2vw,31px)}
-.stories-section .empty-card:after{transform:rotate(-7deg)}
-
-/* El mapa funciona como objeto físico dentro de la página. */
-.route-banner .section-shell{padding-top:8px;padding-bottom:8px}
-.route-banner:after{box-shadow:0 28px 65px rgba(31,41,36,.30),0 0 0 1px rgba(31,41,36,.18)}
-
-/* Microinteracciones sobrias: ningún gesto nuevo, solo tacto visual. */
-.explore-card,.empty-card{will-change:transform}
-.empty-card strong,.explore-card strong{transition:letter-spacing .2s ease}
-.empty-card:hover strong,.explore-card:hover strong{letter-spacing:-.015em}
-
-@media(min-width:901px){
-  .hero-copy{padding-bottom:20px}
-  .welcome{padding-top:135px;padding-bottom:125px}
-  .explore-grid{gap:18px}
-  .content-grid{gap:19px}
-  .places-section .empty-card:nth-child(1){grid-column:span 2}
-  .places-section .empty-card:nth-child(4){grid-column:span 2}
-}
-
-@media(max-width:760px){
-  .hero:before{box-shadow:0 18px 38px rgba(55,51,39,.15),0 0 0 1px rgba(40,53,46,.08)}
-  .content-section .section-heading{margin-bottom:30px}
-  .places-section .empty-card:nth-child(-n+5){min-height:235px}
-  .places-section .empty-card:nth-child(-n+5) span{max-width:92%}
-  .welcome>p:last-child{font-size:17px}
-  .route-banner .section-shell{padding-top:0;padding-bottom:0}
-}
-
-@media(max-width:390px){
-  .hero h1{letter-spacing:-.055em}
-  .places-section .empty-card:nth-child(-n+5){min-height:220px}
-}
-
-
-/* Mi Lugar 1.4 · SALTO VISUAL PROFUNDO
-   Experiencia: mucho sistema debajo, poca fricción arriba.
-   Solo CSS: estructura, HTML, JS y navegación siguen congelados. */
-
-/* 01 · Sistema de superficie: papel + fotografía + archivo */
-:root{
-  --paper-deep:#ddc9a7;
-  --paper-white:#fffaf0;
-  --charcoal:#202a25;
-  --moss:#596d53;
-  --river-deep:#365f64;
-  --sun-soft:#efbd61;
-  --photo-frame:rgba(255,250,240,.9);
-}
+  --paper:#f2e8d5;--paper-deep:#e5d4b5;--cream:#fff9ed;
+  --ink:#28352e;--muted:#667166;--green:#52674c;--green-dark:#354b3d;
+  --river:#4b7c82;--water:#86b0ae;--sun:#e5aa4c;
+  --terracotta:#b66c4e;--clay:#98634c;--line:rgba(40,53,46,.14);
+  --shadow:0 22px 60px rgba(55,51,39,.12);
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:Arial,"Helvetica Neue",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--paper)}
 body{
-  background-image:
-    radial-gradient(rgba(40,53,46,.035) .5px,transparent .5px),
-    linear-gradient(rgba(255,249,237,.12) 1px,transparent 1px);
+  margin:0;color:var(--ink);font-family:var(--sans);line-height:1.6;
+  background-color:var(--paper);
+  background-image:radial-gradient(rgba(40,53,46,.045) .6px,transparent .7px);
+  background-size:12px 12px;
 }
-body:before{opacity:.075}
+body:after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:100;
+  opacity:.035;background:linear-gradient(90deg,transparent 49.8%,#28352e 50%,transparent 50.2%),linear-gradient(transparent 49.8%,#28352e 50%,transparent 50.2%);
+  background-size:140px 140px;mix-blend-mode:multiply;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.section-shell{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.section-kicker,.eyebrow{
+  margin:0 0 12px;font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--terracotta);
+}
+.site-header{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;
+  justify-content:space-between;min-height:64px;padding:10px clamp(18px,4vw,60px);
+  background:rgba(242,232,213,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-mark{
+  display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--ink);
+  border-radius:50%;background:var(--sun);font-size:15px;box-shadow:3px 3px 0 rgba(182,108,78,.16);
+}
+.brand strong{display:block;font-family:var(--serif);font-size:20px;line-height:1}
+.brand small{display:block;margin-top:4px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;opacity:.62}
+.main-nav{display:flex;gap:30px;font-size:13px}
+.main-nav a{position:relative;padding:7px 0}
+.main-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:var(--terracotta);transition:right .2s ease}
+.main-nav a:hover:after{right:0}
+.menu-button{display:none;border:1px solid var(--line);background:rgba(255,249,237,.45);color:var(--ink);border-radius:999px;padding:8px 13px}
 
-/* 02 · El header deja de competir: se convierte en orientación */
-.site-header{min-height:66px}
-.brand strong{font-family:'Fraunces',serif;font-size:18px;letter-spacing:-.02em}
-.main-nav{font-size:13px;letter-spacing:.01em}
-.main-nav a{opacity:.78}
-.main-nav a:hover{opacity:1}
-
-/* 03 · Hero: una escena, no un bloque */
+/* PORTADA */
 .hero{
-  min-height:88vh;
-  padding-top:90px;
-  padding-bottom:105px;
-}
-.hero-copy{max-width:690px}
-.hero h1{
-  max-width:700px;
-  text-wrap:balance;
-  text-shadow:0 2px 0 rgba(255,249,237,.16);
-}
-.hero-text{max-width:560px}
-.primary-button{
-  padding:15px 21px;
-  letter-spacing:.01em;
-}
-.primary-button:after{
-  content:"↘";
-  font-size:16px;
-  opacity:.65;
-}
-
-/* 04 · Pequeños registros de cuaderno en lugar de más UI */
-.welcome{
-  max-width:960px;
-  position:relative;
-}
-.welcome:after{
-  content:"SAN PATRICIO DEL CHAÑAR · NEUQUÉN";
-  position:absolute;
-  right:0;
-  bottom:72px;
-  font:600 9px 'DM Sans',sans-serif;
-  letter-spacing:.18em;
-  color:var(--green);
-  opacity:.42;
-}
-.section-kicker{color:var(--green)}
-.scribble{opacity:.62}
-
-/* 05 · Explorar: cuatro puertas, no cuatro funcionalidades */
-.explore-grid{gap:16px}
-.explore-card{
-  min-height:285px;
-  border-color:rgba(40,53,46,.11);
-}
-.explore-card .illustration{
-  font-size:64px;
-  opacity:.82;
-}
-.explore-card small{max-width:180px}
-.explore-card strong{max-width:190px}
-
-/* 06 · Territorio: jerarquía fotográfica */
-.places-section{position:relative;overflow:hidden}
-.places-section .section-heading h2{max-width:670px}
-.places-section .empty-card:nth-child(1),
-.places-section .empty-card:nth-child(2),
-.places-section .empty-card:nth-child(3){
-  min-height:315px;
-}
-.places-section .empty-card:nth-child(4),
-.places-section .empty-card:nth-child(5){
-  min-height:270px;
-}
-.places-section .empty-card:nth-child(-n+5){
-  border:7px solid var(--photo-frame);
-  outline:1px solid rgba(40,53,46,.11);
-}
-.places-section .empty-card:nth-child(-n+5) strong{
-  font-size:clamp(28px,2.6vw,36px);
-  max-width:88%;
-}
-.places-section .empty-card:nth-child(-n+5) span{
-  max-width:78%;
-  font-size:15px;
-}
-
-/* 07 · El resto de lugares se siente como atlas, no catálogo */
-.places-section .empty-card:nth-child(n+6){
-  min-height:205px;
-}
-.places-section .empty-card:nth-child(n+9){
-  opacity:.93;
-}
-.places-section .empty-card:nth-child(n+9):hover{
-  opacity:1;
-}
-
-/* 08 · Historias: cada tarjeta es una ficha de archivo */
-.stories-section{position:relative;overflow:hidden}
-.stories-section .empty-card{
-  min-height:225px;
-  padding:31px 30px 32px;
-}
-.stories-section .empty-card strong{
-  max-width:90%;
-  font-size:clamp(25px,2.25vw,32px);
-}
-.stories-section .empty-card span{max-width:88%}
-.stories-section .empty-card:before{
-  width:2px;
-  opacity:.38;
-}
-.stories-section .empty-card:nth-child(3n+1):after{
-  border-radius:0;
-  transform:rotate(4deg);
-}
-.stories-section .empty-card:nth-child(3n+2):after{
-  border-radius:50%;
-  transform:rotate(-6deg);
-}
-
-/* 09 · El mapa gana protagonismo sin volverse herramienta */
-.route-banner{
-  min-height:430px;
-}
-.route-inner{
-  min-height:300px;
-}
-.route-inner h2{
-  max-width:680px;
-  font-size:clamp(42px,6vw,76px);
-}
-.route-drawing{font-size:76px}
-.route-banner:after{
-  filter:saturate(.82) sepia(.06);
-}
-
-/* 10 · Footer: cierre editorial, no pie técnico */
-.site-footer{
-  min-height:205px;
-  align-items:flex-start;
-}
-.site-footer>div:first-child strong{
-  font-family:'Fraunces',serif;
-  font-size:26px;
-}
-
-/* 11 · Pantallas pequeñas: una sola idea por vez */
-@media(max-width:760px){
-  .hero{
-    min-height:86vh;
-    padding-top:62px;
-    padding-bottom:72px;
-  }
-  .hero-copy{max-width:100%}
-  .hero h1{max-width:100%}
-  .welcome:after{display:none}
-  .explore-card{min-height:185px}
-  .places-section .empty-card:nth-child(-n+5){min-height:245px}
-  .places-section .empty-card:nth-child(-n+5){border-width:5px}
-  .places-section .empty-card:nth-child(-n+5) strong{font-size:27px}
-  .places-section .empty-card:nth-child(-n+5) span{max-width:92%}
-  .stories-section .empty-card{min-height:190px}
-  .route-banner{min-height:350px}
-  .route-inner{min-height:250px}
-  .site-footer{min-height:0}
-}
-
-@media(max-width:390px){
-  .hero{min-height:82vh;padding-top:52px}
-  .explore-card{min-height:175px}
-  .places-section .empty-card:nth-child(-n+5){min-height:225px}
-  .stories-section .empty-card{min-height:180px}
-}
-
-/* 12 · Reducción de movimiento: profundidad sin castigar accesibilidad */
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .explore-card,.empty-card,.hero .primary-button{transition:none}
-}
-
-
-/* Mi Lugar · 1.4 · SALTO DE PROFUNDIDAD II
-   Norte editorial: quien llega aprende Chañar sin sentir que entró a una tienda.
-   Solo CSS. Estructura, HTML, JS, navegación y funcionalidad siguen congelados.
-
-   Principio visual:
-   TERRITORIO → MEMORIA → COMUNIDAD → ACTIVIDAD.
-   La pantalla visible sigue siendo simple; la profundidad está en la composición.
-*/
-
-:root{
-  --field-line:rgba(40,53,46,.10);
-  --field-white:rgba(255,250,240,.94);
-  --field-shadow:0 30px 80px rgba(55,51,39,.14);
-}
-
-/* El sitio se lee como un cuaderno de viaje continuo, no como módulos aislados. */
-.hero + .welcome{
-  border-top:1px solid rgba(40,53,46,.055);
-}
-.welcome h2{
-  max-width:760px;
-}
-.welcome>p:last-child::first-letter{
-  font-family:'Fraunces',serif;
-  font-size:1.28em;
-}
-
-/* Cada sección tiene una pequeña marca de orientación. No agrega interacción. */
-.explore .section-heading::before,
-.places-section .section-heading::before,
-.stories-section .section-heading::before{
-  content:"";
-  display:block;
-  position:absolute;
-  width:34px;
-  height:1px;
-  background:currentColor;
-  opacity:.18;
-  transform:translateY(-14px) rotate(-2deg);
-}
-.explore .section-heading,
-.places-section .section-heading,
-.stories-section .section-heading{position:relative}
-
-/* Las cuatro puertas visuales funcionan como orientación para alguien que llega por primera vez. */
-.explore-card{
-  isolation:isolate;
-  border-color:rgba(40,53,46,.13);
-}
-.explore-card::before{
-  z-index:-1;
-}
-.explore-card::after{
-  box-shadow:inset 0 0 0 1px rgba(255,249,237,.14);
-}
-.explore-card small{
-  display:block;
-  line-height:1.45;
-}
-
-/* El territorio se convierte en álbum: las primeras piezas pesan visualmente más. */
-.places-section .empty-card:nth-child(1),
-.places-section .empty-card:nth-child(2),
-.places-section .empty-card:nth-child(3){
-  min-height:335px;
-  box-shadow:var(--field-shadow),0 0 0 1px rgba(40,53,46,.09);
-}
-.places-section .empty-card:nth-child(4),
-.places-section .empty-card:nth-child(5){
-  min-height:290px;
-}
-.places-section .empty-card:nth-child(-n+5){
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-blend-mode:normal;
-}
-.places-section .empty-card:nth-child(-n+5)::after{
-  width:190px;
-  height:120px;
-  opacity:.7;
-}
-.places-section .empty-card:nth-child(-n+5) span{
-  max-width:650px;
-  font-size:15.5px;
-}
-
-/* El bloque de lugares secundarios no desaparece: cambia de voz y se vuelve atlas. */
-.places-section .empty-card:nth-child(n+6){
-  border-radius:18px 24px 20px 22px;
-}
-.places-section .empty-card:nth-child(n+6) strong{
-  letter-spacing:-.025em;
-}
-.places-section .empty-card:nth-child(n+9)::after{
-  width:105px;
-  height:70px;
-  opacity:.45;
-}
-
-/* Historias: menos tarjeta de contenido, más documento encontrado. */
-.stories-section .empty-card{
-  border-left-color:rgba(152,99,76,.18);
-  background-image:linear-gradient(105deg,rgba(255,250,240,.35),transparent 55%);
-}
-.stories-section .empty-card strong{
-  text-wrap:balance;
-}
-.stories-section .empty-card span{
-  max-width:620px;
-}
-.stories-section .empty-card:nth-child(4n+1){
-  transform:rotate(-.35deg);
-}
-.stories-section .empty-card:nth-child(4n+2){
-  transform:rotate(.25deg);
-}
-.stories-section .empty-card:nth-child(4n+3){
-  transform:rotate(-.15deg);
-}
-.stories-section .empty-card:nth-child(4n){
-  transform:rotate(.35deg);
-}
-.stories-section .empty-card:hover{transform:translateY(-4px) rotate(0)}
-
-/* El mapa cierra la secuencia con sensación de destino, no de herramienta. */
-.route-banner{
+  position:relative;isolation:isolate;min-height:88vh;overflow:hidden;
+  display:flex;align-items:center;padding:clamp(70px,9vw,120px) clamp(20px,8vw,120px);
   background:
-    radial-gradient(circle at 16% 18%,rgba(239,189,97,.14),transparent 22%),
-    radial-gradient(circle at 82% 78%,rgba(255,250,240,.08),transparent 24%),
-    var(--river-deep);
-}
-.route-inner::before{
-  content:"RECORRER · MIRAR · ENTENDER";
-  position:absolute;
-  left:0;
-  top:-18px;
-  font:600 9px 'DM Sans',sans-serif;
-  letter-spacing:.19em;
-  opacity:.48;
-}
-
-/* El cierre devuelve al visitante al tono de vecino que acompaña. */
-.site-footer small{max-width:510px}
-.site-footer>div:first-child p{max-width:430px}
-
-/* Móvil: nunca más de una idea visual dominante a la vez. */
-@media(max-width:760px){
-  .welcome h2{max-width:100%}
-  .explore .section-heading::before,
-  .places-section .section-heading::before,
-  .stories-section .section-heading::before{display:none}
-  .places-section .empty-card:nth-child(1),
-  .places-section .empty-card:nth-child(2),
-  .places-section .empty-card:nth-child(3){min-height:255px}
-  .places-section .empty-card:nth-child(4),
-  .places-section .empty-card:nth-child(5){min-height:235px}
-  .places-section .empty-card:nth-child(-n+5) span{font-size:14.5px}
-  .stories-section .empty-card:nth-child(n){transform:none}
-  .route-inner::before{position:static;display:block;margin-bottom:12px}
-}
-
-@media(max-width:390px){
-  .places-section .empty-card:nth-child(1),
-  .places-section .empty-card:nth-child(2),
-  .places-section .empty-card:nth-child(3){min-height:230px}
-  .places-section .empty-card:nth-child(4),
-  .places-section .empty-card:nth-child(5){min-height:215px}
-}
-
-
-/* Mi Lugar 1.4 · REFORMA VISUAL VISIBLE · 24/09/2026
-   BLOQUEO ABSOLUTO: no cambia HTML, JS, navegación, datos estructurales ni funcionalidad.
-   Esta capa sí modifica de forma deliberada la composición visible.
-*/
-
-/* ===== PORTADA: Chañar entra por los ojos ===== */
-.hero{
-  min-height:92vh;
-  display:flex;
-  align-items:center;
-  padding:clamp(72px,10vh,120px) clamp(20px,7vw,110px);
-  background:
-    linear-gradient(90deg,rgba(242,232,213,.98) 0%,rgba(242,232,213,.90) 38%,rgba(242,232,213,.22) 73%,rgba(31,41,36,.08) 100%),
+    linear-gradient(90deg,rgba(242,232,213,.98) 0%,rgba(242,232,213,.88) 39%,rgba(242,232,213,.34) 72%,rgba(31,41,36,.08)),
     url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG") center/cover no-repeat;
 }
-.hero-copy{
-  max-width:760px;
-  padding:clamp(26px,4vw,52px);
-  background:rgba(255,250,240,.78);
-  border:1px solid rgba(255,250,240,.85);
-  box-shadow:0 30px 90px rgba(31,41,36,.13);
-  backdrop-filter:blur(4px);
+.hero:after{
+  content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;height:35%;
+  background:linear-gradient(180deg,transparent,rgba(40,53,46,.28));
 }
-.hero-copy:before{
-  content:"UN PUEBLO ENTRE EL RÍO, LAS BARDAS Y LAS CHACRAS";
-  display:block;
-  margin-bottom:18px;
-  font:700 9px 'DM Sans',sans-serif;
-  letter-spacing:.2em;
-  color:var(--green);
-}
-.hero h1{font-size:clamp(54px,8vw,104px);margin-top:6px}
-.hero-text{font-size:clamp(18px,2.1vw,23px);max-width:620px}
-.hero .primary-button{margin-top:30px}
-.hero-drawing .sun{width:180px;height:180px;opacity:.62;mix-blend-mode:multiply}
 .hero:before{
-  width:31%;height:54%;right:5%;top:18%;
-  border:8px solid rgba(255,250,240,.72);
-  box-shadow:0 20px 55px rgba(31,41,36,.22);
-  border-radius:2px;
-  transform:rotate(2deg);
+  content:"";position:absolute;z-index:1;right:7%;top:15%;width:min(30vw,370px);height:min(40vw,310px);
+  border:8px solid rgba(255,249,237,.76);transform:rotate(2.5deg);
+  box-shadow:0 30px 70px rgba(31,41,36,.2);pointer-events:none;
 }
+.hero-copy{
+  position:relative;z-index:3;width:min(760px,100%);padding:clamp(28px,4vw,52px);
+  background:linear-gradient(135deg,rgba(255,249,237,.9),rgba(255,249,237,.7));
+  border:1px solid rgba(255,249,237,.9);box-shadow:var(--shadow);
+}
+.hero-copy:after{
+  content:"hecho desde cerca · San Patricio del Chañar";display:block;margin-top:30px;
+  font:italic 16px var(--serif);color:var(--terracotta);
+}
+.hero h1{
+  margin:0;max-width:720px;font-family:var(--serif);font-size:clamp(54px,7vw,96px);
+  line-height:.94;letter-spacing:-.045em;font-weight:500;
+}
+.hero h1 em,.welcome h2 em{font-weight:500;color:var(--green);font-style:italic}
+.hero-text{max-width:590px;margin:28px 0 30px;font-size:clamp(17px,2vw,21px);color:#465148}
+.primary-button{
+  display:inline-flex;align-items:center;gap:18px;padding:12px 18px;
+  background:var(--ink);color:var(--cream);font-size:13px;font-weight:700;
+  border:1px solid var(--ink);transition:transform .2s ease,background .2s ease;
+}
+.primary-button span{font-size:18px}
+.primary-button:hover{transform:translateY(-2px);background:var(--green-dark)}
+.hero-drawing{position:absolute;inset:0;pointer-events:none;z-index:2}
+.hero-drawing .sun{
+  position:absolute;right:11%;top:12%;width:clamp(130px,17vw,250px);aspect-ratio:1;
+  border-radius:50%;background:rgba(229,170,76,.42);box-shadow:0 0 0 18px rgba(229,170,76,.08),0 0 0 40px rgba(229,170,76,.035);
+}
+.hero-drawing .hill{position:absolute;right:-4%;bottom:3%;width:55%;height:35%;border-radius:55% 45% 0 0;background:rgba(65,92,73,.2);transform:rotate(-4deg)}
+.hero-drawing .river{position:absolute;right:18%;bottom:0;width:38%;height:22%;border-top:2px solid rgba(75,124,130,.55);border-radius:50%;transform:rotate(-7deg)}
+.hero-drawing .branch{position:absolute;left:4%;bottom:8%;font:80px var(--serif);color:rgba(65,92,73,.18);transform:rotate(-18deg)}
 
-/* ===== BIENVENIDA: deja claro qué aprende el visitante ===== */
-.welcome{
-  max-width:1180px;
-  padding:clamp(78px,10vw,140px) 0;
-  display:grid;
-  grid-template-columns:minmax(0,1.15fr) minmax(260px,.65fr);
-  gap:clamp(35px,7vw,100px);
-  align-items:end;
+/* APERTURA */
+.welcome{padding:clamp(100px,13vw,170px) 0}
+.welcome:before{content:"";display:block;width:70px;height:2px;margin-bottom:30px;background:var(--terracotta)}
+.welcome h2{
+  max-width:900px;margin:0;font-family:var(--serif);font-weight:500;
+  font-size:clamp(42px,6.4vw,82px);line-height:1;letter-spacing:-.04em;
 }
-.welcome h2{font-size:clamp(42px,6.2vw,78px)}
 .welcome>p:last-child{
-  margin:0;
-  padding:24px 0 10px 28px;
-  border-left:2px solid var(--terracotta);
-  font-size:18px;
+  max-width:600px;margin:44px 0 0 auto;padding:22px 0 0;
+  border-top:1px solid rgba(182,108,78,.5);color:#526057;font-size:16px;
+}
+.welcome>p:last-child:before{
+  content:"una mirada local";display:block;margin-bottom:9px;
+  font-size:9px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--terracotta);
 }
 
-/* ===== EXPLORAR: se vuelve editorial, no menú de funciones ===== */
-.explore{padding-bottom:clamp(85px,10vw,125px)}
-.explore .section-heading{margin-bottom:38px}
-.explore-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+/* EXPLORAR */
+.explore{padding-bottom:clamp(95px,12vw,150px)}
+.section-heading{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:38px}
+.section-heading h2,.content-section h2{
+  margin:0;font-family:var(--serif);font-weight:500;line-height:1;
+  font-size:clamp(42px,6vw,76px);letter-spacing:-.04em;
+}
+.scribble{font:60px var(--serif);color:var(--terracotta);transform:rotate(-8deg)}
+.explore-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
 .explore-card{
-  min-height:330px;
-  border-radius:3px;
-  padding:28px;
-  box-shadow:0 22px 55px rgba(55,51,39,.12);
+  position:relative;overflow:hidden;min-height:300px;padding:27px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  border:1px solid rgba(40,53,46,.12);box-shadow:var(--shadow);
+  border-radius:4px 24px 4px 24px;transition:transform .22s ease,box-shadow .22s ease;
 }
-.explore-card:nth-child(1){background:linear-gradient(145deg,#b9cbb4,#e4eadc);transform:rotate(-1.1deg)}
-.explore-card:nth-child(2){background:linear-gradient(145deg,#d2b28b,#eadcc8);transform:rotate(.8deg)}
-.explore-card:nth-child(3){background:linear-gradient(145deg,#b7d1d0,#e4efeb);transform:rotate(-.6deg)}
-.explore-card:nth-child(4){background:linear-gradient(145deg,#c98f73,#ead2c3);transform:rotate(1.1deg)}
-.explore-card .illustration{font-size:76px;margin-bottom:auto}
-.explore-card strong{font-size:34px}
-.explore-card small{font-size:13px;line-height:1.55}
+.explore-card:before{content:"";position:absolute;inset:auto -30px -55px;width:170px;height:170px;border-radius:50%;border:1px solid rgba(40,53,46,.14)}
+.explore-card:after{content:"";position:absolute;right:22px;top:20px;width:36px;height:1px;background:currentColor;opacity:.25}
+.explore-card .illustration{font:78px/1 var(--serif);opacity:.58}
+.explore-card strong{font-family:var(--serif);font-size:30px;font-weight:500;letter-spacing:-.025em}
+.explore-card small{font-size:12px;opacity:.7;max-width:180px}
+.explore-card.nature{background:#d9e0cf}
+.explore-card.history{background:#eadcc4}
+.explore-card.places{background:#d7e1df}
+.explore-card.routes{background:#e6c8b8}
+.explore-card:hover{transform:translateY(-5px);box-shadow:0 30px 70px rgba(55,51,39,.17)}
 
-/* ===== LUGARES: ahora se ve como una colección fotográfica ===== */
-.places-section{padding-top:clamp(85px,10vw,125px)}
-.places-section .section-heading{margin-bottom:50px}
-.places-section .section-heading h2{font-size:clamp(44px,6.5vw,82px)}
-.places-section .content-grid{grid-template-columns:repeat(12,1fr);gap:18px}
-.places-section .empty-card{
-  grid-column:span 4;
-  min-height:250px;
-  border-radius:3px;
-  padding:28px;
-  border:8px solid rgba(255,250,240,.88);
-  outline:1px solid rgba(40,53,46,.12);
-  box-shadow:0 24px 65px rgba(55,75,58,.14);
-}
-.places-section .empty-card:nth-child(1),
-.places-section .empty-card:nth-child(2){
-  grid-column:span 6;
-  min-height:390px;
-}
-.places-section .empty-card:nth-child(3){
-  grid-column:span 4;
-  min-height:350px;
-}
-.places-section .empty-card:nth-child(4),
-.places-section .empty-card:nth-child(5){
-  grid-column:span 4;
-  min-height:300px;
-}
-.places-section .empty-card:nth-child(6){grid-column:span 4;min-height:300px}
-.places-section .empty-card:nth-child(n+7){min-height:205px}
-.places-section .empty-card:nth-child(n+9){
-  border-width:3px;
-  box-shadow:0 12px 32px rgba(55,51,39,.07);
-}
-.places-section .empty-card:nth-child(-n+6) strong{
-  font-size:clamp(27px,3vw,42px);
-  text-shadow:0 2px 15px rgba(0,0,0,.3);
-}
-.places-section .empty-card:nth-child(-n+6) span{
-  color:var(--cream);
-  text-shadow:0 1px 8px rgba(0,0,0,.45);
-  max-width:90%;
-}
+/* SECCIONES */
+.content-section{padding:clamp(95px,12vw,150px) 0}
+.places-section{background:rgba(229,212,181,.24);border-top:1px solid rgba(40,53,46,.07);border-bottom:1px solid rgba(40,53,46,.07)}
+.stories-section{background:rgba(255,249,237,.38)}
+.content-section .section-shell>h2{max-width:900px;margin-bottom:48px}
+.content-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 
-/* Fotografías reales como superficies principales. */
+/* TARJETAS DINÁMICAS
+   JS genera solo .empty-card. Toda la curaduría visual trabaja sobre eso. */
+.empty-card{
+  position:relative;overflow:hidden;min-height:245px;padding:30px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  border:1px solid rgba(40,53,46,.13);background:var(--cream);
+  box-shadow:0 14px 38px rgba(55,51,39,.08);border-radius:4px 18px 4px 18px;
+  isolation:isolate;transition:transform .2s ease,box-shadow .2s ease;
+}
+.empty-card:before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(180deg,rgba(255,249,237,0) 22%,rgba(31,41,36,.76) 100%);
+  opacity:0;
+}
+.empty-card:after{
+  content:"";position:absolute;right:-55px;top:-55px;width:150px;height:150px;
+  border-radius:50%;border:1px solid rgba(40,53,46,.1);z-index:-1;
+}
+.empty-card strong{
+  display:block;max-width:90%;font-family:var(--serif);font-size:clamp(25px,2.8vw,38px);
+  font-weight:500;line-height:1.02;letter-spacing:-.025em;
+}
+.empty-card span{display:block;max-width:700px;margin-top:13px;font-size:14px;color:#526057}
+.places-section .empty-card:nth-child(1),.places-section .empty-card:nth-child(2){
+  min-height:390px;color:var(--cream);background-position:center;background-size:cover;
+}
 .places-section .empty-card:nth-child(1){
-  background-image:linear-gradient(180deg,rgba(31,41,36,.02),rgba(31,41,36,.62)),url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG");
-  background-size:cover;background-position:center;
+  background-image:linear-gradient(180deg,rgba(31,41,36,.05),rgba(31,41,36,.8)),url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG");
 }
 .places-section .empty-card:nth-child(2){
-  background-image:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.62)),url("https://sanpatricio.gob.ar/assets/images/municipio/Dique-Compensador.JPG");
-  background-size:cover;background-position:center;
+  background-image:linear-gradient(180deg,rgba(31,41,36,.02),rgba(31,41,36,.82)),url("https://sanpatricio.gob.ar/assets/images/municipio/Dique-Compensador.JPG");
 }
 .places-section .empty-card:nth-child(3){
-  background-image:linear-gradient(180deg,rgba(31,41,36,.03),rgba(31,41,36,.65)),url("https://sanpatricio.gob.ar/assets/images/municipio/Mirador-La-Virgen.JPG");
-  background-size:cover;background-position:center;
+  min-height:330px;color:var(--cream);background:
+  linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.78)),
+  url("https://sanpatricio.gob.ar/assets/images/municipio/Mirador-La-Virgen.JPG") center/cover;
 }
 .places-section .empty-card:nth-child(4){
-  background-image:linear-gradient(180deg,rgba(31,41,36,.03),rgba(31,41,36,.65)),url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
-  background-size:cover;background-position:center;
+  min-height:280px;color:var(--cream);background:
+  linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.8)),
+  url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG") center/cover;
 }
-.places-section .empty-card:nth-child(5){
-  background-image:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.64)),url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
-  background-size:cover;background-position:center 65%;
+.places-section .empty-card:nth-child(5){min-height:280px;background:linear-gradient(135deg,#efe4cf,#d8c5a2)}
+.places-section .empty-card:nth-child(6){
+  min-height:280px;color:var(--cream);background:
+  linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.78)),
+  url("https://sanpatricio.gob.ar/assets/images/municipio/Centro-Cultural.JPG") center/cover;
 }
+.places-section .empty-card:nth-child(1) span,.places-section .empty-card:nth-child(2) span,
+.places-section .empty-card:nth-child(3) span,.places-section .empty-card:nth-child(4) span,
+.places-section .empty-card:nth-child(6) span{color:rgba(255,249,237,.9)}
+.places-section .empty-card:nth-child(n+7){min-height:220px}
+.places-section .empty-card:nth-child(n+13){min-height:195px;background:#f7eedf}
+.places-section .empty-card:nth-child(7),.places-section .empty-card:nth-child(8){background:#e5d8c0}
 
-/* ===== HISTORIAS: cambia radicalmente de ritmo ===== */
-.stories-section{padding-top:clamp(90px,11vw,135px);padding-bottom:clamp(90px,11vw,135px)}
-.stories-section .section-heading{margin-bottom:52px}
-.stories-section .content-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+/* HISTORIAS: archivo, no catálogo comercial */
 .stories-section .empty-card{
-  min-height:270px;
-  border-radius:2px;
-  padding:36px 38px;
-  border:1px solid rgba(152,99,76,.18);
-  border-top:5px solid rgba(152,99,76,.55);
-  background:#f8eddb;
-  box-shadow:0 18px 42px rgba(80,61,43,.08);
+  min-height:260px;padding:34px 36px;border-radius:3px 16px 3px 16px;
+  border-top:4px solid rgba(182,108,78,.7);background:
+  linear-gradient(135deg,rgba(255,249,237,.98),rgba(231,216,191,.58));
 }
-.stories-section .empty-card strong{font-size:clamp(27px,3vw,39px)}
-.stories-section .empty-card span{font-size:16px;line-height:1.62}
-
-/* ===== MAPA: pieza grande de viaje ===== */
-.route-banner{padding:clamp(85px,10vw,125px) 0}
-.route-inner{min-height:330px;align-items:center}
-.route-inner h2{font-size:clamp(48px,7vw,88px)}
-.route-drawing{font-size:110px;filter:drop-shadow(0 14px 20px rgba(0,0,0,.16))}
-
-/* ===== FOOTER ===== */
-.site-footer{padding-top:64px;padding-bottom:64px}
-.site-footer>div:first-child strong{font-size:30px}
-
-/* ===== MÓVIL: la transformación sigue siendo evidente, sin añadir funciones ===== */
-@media(max-width:760px){
-  .hero{
-    min-height:88vh;
-    padding:42px 16px 54px;
-    background:
-      linear-gradient(180deg,rgba(242,232,213,.72),rgba(242,232,213,.95) 70%),
-      url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG") center/cover no-repeat;
-  }
-  .hero-copy{padding:24px 20px;box-shadow:0 18px 55px rgba(31,41,36,.14)}
-  .hero-copy:before{font-size:8px;line-height:1.5}
-  .hero h1{font-size:clamp(48px,14vw,68px)}
-  .hero:before{display:none}
-  .welcome{display:block;padding:75px 0}
-  .welcome>p:last-child{margin-top:28px;padding:18px 0 0;border-left:0;border-top:2px solid var(--terracotta)}
-  .explore-grid{grid-template-columns:1fr 1fr;gap:10px}
-  .explore-card{min-height:205px;padding:19px;border-radius:3px}
-  .explore-card .illustration{font-size:48px}
-  .explore-card strong{font-size:25px}
-  .places-section .content-grid{grid-template-columns:1fr;gap:14px}
-  .places-section .empty-card,
-  .places-section .empty-card:nth-child(1),
-  .places-section .empty-card:nth-child(2),
-  .places-section .empty-card:nth-child(3),
-  .places-section .empty-card:nth-child(4),
-  .places-section .empty-card:nth-child(5),
-  .places-section .empty-card:nth-child(6){grid-column:auto;min-height:250px}
-  .places-section .empty-card:nth-child(1),
-  .places-section .empty-card:nth-child(2){min-height:285px}
-  .stories-section .content-grid{grid-template-columns:1fr}
-  .stories-section .empty-card{min-height:225px;padding:28px 24px}
-  .route-inner{min-height:270px}
-  .route-inner h2{font-size:clamp(44px,12vw,65px)}
-}
-@media(max-width:390px){
-  .explore-grid{grid-template-columns:1fr}
-  .explore-card{min-height:180px}
-  .places-section .empty-card:nth-child(1),
-  .places-section .empty-card:nth-child(2){min-height:255px}
-}
-
-
-/* ============================================================
-   MI LUGAR 1.4 · BLOQUE VISUAL + MATRIZ FOTOGRÁFICA
-   Principio congelado: colores, diseño y lenguaje visual no se
-   reemplazan; se profundizan.
-   Núcleo protegido: NO HTML / NO JS / NO navegación.
-   ============================================================ */
-
-.places-grid .empty-card{
-  position:relative;
-  overflow:hidden;
-  isolation:isolate;
-}
-
-.places-grid .empty-card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-2;
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  opacity:.96;
-  transform:scale(1.01);
-}
-
-.places-grid .empty-card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:
-    linear-gradient(180deg,rgba(22,31,27,.05) 20%,rgba(22,31,27,.74) 100%),
-    linear-gradient(90deg,rgba(255,249,237,.03),rgba(255,249,237,.10));
-  pointer-events:none;
-}
-
-/* 01 · Balneario Municipal — fuente municipal */
-.places-grid .empty-card:nth-child(1)::before{
-  background-image:url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG");
-}
-
-/* 02 · Dique Compensador — paisaje del sistema de agua y compuertas */
-.places-grid .empty-card:nth-child(2)::before{
-  background-image:url("https://media.lmneuquen.com/p/cdbeefa2f5cc06df2d43b11712afc975/adjuntos/195/imagenes/007/038/0007038205/770x0/smart/san-patricio-del-chanar-villa-manzano-kayak-3jpg.jpg");
-}
-
-/* 04 · Chacra Municipal Valles del Chañar — fuente municipal */
-.places-grid .empty-card:nth-child(4)::before{
-  background-image:url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
-}
-
-/* 06 · Centro Cultural — fuente municipal */
-.places-grid .empty-card:nth-child(6)::before{
-  background-image:url("https://sanpatricio.gob.ar/assets/images/municipio/Centro-Cultural.JPG");
-}
-
-/* 08 · Estadio Municipal Juan Bautista Jara — fuente municipal */
-.places-grid .empty-card:nth-child(8)::before{
-  background-image:url("https://sanpatricio.gob.ar/assets/images/municipio/estadio-municipal.JPG");
-}
-
-/* 09 · Familia Schroeder — Argentina Travel */
-.places-grid .empty-card:nth-child(9)::before{
-  background-image:url("https://api.argentina.travel/files/images/5327515b-adf5-44f2-aee7-3da6c014901f-Familia_Schroeder___Saurus_y_Saurus_Restaurant_webp.webp");
-}
-
-/* 10 · Malma — fotografía territorial de la bodega */
-.places-grid .empty-card:nth-child(10)::before{
-  background-image:url("https://media.lmneuquen.com/p/459796c0495bcaff64bb0e35273515d0/adjuntos/195/imagenes/008/191/0008191787/1200x675/smart/bodegas-malma.jpg");
-}
-
-/* 11 · Del Fin del Mundo — interior de elaboración */
-.places-grid .empty-card:nth-child(11)::before{
-  background-image:url("https://media.lmneuquen.com/p/0933d273c44fa0105ee71457f922fd2c/adjuntos/195/imagenes/007/917/0007917677/770x0/smart/maria-belen-probando-las-barricas-la-bodega-los-diferentes-cortes.jpeg");
-}
-
-/* 14 · Plaza de las Infancias */
-.places-grid .empty-card:nth-child(14)::before{
-  background-image:url("https://media.lmneuquen.com/p/05912a32056cd81028b581cf73234951/adjuntos/195/imagenes/007/062/0007062880/770x0/smart/plaza-las-infanciasjpeg.jpeg");
-}
-
-/* 16 · Patritti — Turismo Neuquén */
-.places-grid .empty-card:nth-child(16)::before{
-  background-image:url("https://turismo.neuquen.gob.ar/wp-content/uploads/2024/11/Bodega-Patriti-Ruta-del-Vino-San-Patricio-del-Chanar-1024x680.jpg");
-}
-
-/* 19 · Cerveza Haw — Neuquén Informa */
-.places-grid .empty-card:nth-child(19)::before{
-  background-image:url("https://cdn3.neuqueninforma.com.ar/s3i233/2025/04/neuqueninforma/images/01/83/18/1831888_49a489a1c3924f39b5371a26b31a16d73947edf6229ff887a0e98803748d5353/md.webp");
-}
-
-/* Tratamiento editorial común para fotografías */
-.places-grid .empty-card:nth-child(-n+19){
-  background:var(--paper-deep,#d8c7a9);
-  text-shadow:0 2px 18px rgba(20,25,22,.34);
-}
-
-.places-grid .empty-card:nth-child(1),
-.places-grid .empty-card:nth-child(2),
-.places-grid .empty-card:nth-child(4),
-.places-grid .empty-card:nth-child(6),
-.places-grid .empty-card:nth-child(8),
-.places-grid .empty-card:nth-child(9),
-.places-grid .empty-card:nth-child(10),
-.places-grid .empty-card:nth-child(11),
-.places-grid .empty-card:nth-child(14),
-.places-grid .empty-card:nth-child(16),
-.places-grid .empty-card:nth-child(19){
-  color:var(--cream,#fff9ed);
-}
-
-@media (max-width:760px){
-  .places-grid .empty-card::before{background-position:center 46%;}
-}
-
-@media (max-width:390px){
-  .places-grid .empty-card::before{background-position:center;}
-}
-
-
-/* ============================================================
-   MI LUGAR 1.4 · CAPA HUMANA · CHAÑAR TIENE GENTE
-   Solo visual. NO cambia HTML, JS, navegación ni funcionalidad.
-   Territorio → memoria → personas → presente.
-   ============================================================ */
-
-/* La experiencia deja de mostrar solamente paisajes:
-   las historias adquieren tratamiento de álbum familiar y archivo local. */
-.stories-section{
-  background:
-    radial-gradient(circle at 8% 18%,rgba(182,108,78,.10),transparent 18%),
-    radial-gradient(circle at 88% 76%,rgba(82,103,76,.10),transparent 20%),
-    #e9dac4;
-}
-
-.stories-section .empty-card{
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  min-height:290px;
-  padding-top:44px;
-  border-top-width:4px;
-  background:
-    linear-gradient(135deg,rgba(255,250,240,.96),rgba(239,228,214,.88));
-}
-
-/* Marco de retrato/archivo dibujado detrás del texto. */
-.stories-section .empty-card::after{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  right:-28px;
-  top:-20px;
-  width:190px;
-  height:220px;
-  border:1px solid rgba(65,92,73,.16);
-  background:
-    radial-gradient(ellipse at 50% 32%,rgba(82,103,76,.16) 0 22%,transparent 23%),
-    radial-gradient(ellipse at 50% 72%,rgba(82,103,76,.12) 0 35%,transparent 36%),
-    linear-gradient(145deg,transparent 0 44%,rgba(182,108,78,.10) 45% 46%,transparent 47%);
-  box-shadow:0 0 0 9px rgba(255,250,240,.38);
-  transform:rotate(4deg);
-  opacity:.8;
-}
-
-/* Algunas fichas se sienten como fotografías guardadas en una caja. */
 .stories-section .empty-card:nth-child(1),
 .stories-section .empty-card:nth-child(4),
 .stories-section .empty-card:nth-child(7),
 .stories-section .empty-card:nth-child(10){
-  background:
-    linear-gradient(90deg,rgba(255,250,240,.96) 0 62%,rgba(226,211,188,.68) 100%);
+  background:#efe3cc;
 }
+.stories-section .empty-card:nth-child(1){border-top-color:var(--green)}
+.stories-section .empty-card:nth-child(4){border-top-color:var(--clay)}
+.stories-section .empty-card:nth-child(7){border-top-color:var(--river)}
+.stories-section .empty-card:nth-child(10){border-top-color:var(--sun)}
+.stories-section .empty-card strong{font-size:clamp(25px,2.7vw,36px)}
+.stories-section .empty-card span{max-width:650px;color:#566159}
+.stories-section .empty-card:hover,.places-section .empty-card:hover{transform:translateY(-4px);box-shadow:0 24px 55px rgba(55,51,39,.13)}
 
-.stories-section .empty-card:nth-child(1)::before,
-.stories-section .empty-card:nth-child(4)::before,
-.stories-section .empty-card:nth-child(7)::before,
-.stories-section .empty-card:nth-child(10)::before{
-  width:7px;
-  background:var(--green);
-  opacity:.75;
-}
-
-/* Señales discretas de archivo humano, sin crear nuevos componentes. */
-.stories-section .empty-card:nth-child(1)::after{
-  content:"ARCHIVO · PIONERO";
-}
-.stories-section .empty-card:nth-child(4)::after{
-  content:"MEMORIA · COMUNIDAD";
-}
-.stories-section .empty-card:nth-child(7)::after{
-  content:"FUNDACIÓN · VECINOS";
-}
-.stories-section .empty-card:nth-child(10)::after{
-  content:"MEMORIA VIVA";
-}
-
-.stories-section .empty-card:nth-child(1)::after,
-.stories-section .empty-card:nth-child(4)::after,
-.stories-section .empty-card:nth-child(7)::after,
-.stories-section .empty-card:nth-child(10)::after{
-  font:700 8px 'DM Sans',sans-serif;
-  letter-spacing:.16em;
-}
-
-/* ============================================================
-   MI LUGAR 1.4 · CAPA HUMANA DOCUMENTAL · EJECUCIÓN VISIBLE
-   24/09/2026
-   No modifica HTML, JS, navegación ni funcionalidad.
-   Las historias empiezan a comportarse como piezas de territorio
-   y memoria, usando únicamente imágenes ya identificadas.
-   ============================================================ */
-
-/* La historia deja de ser una grilla uniforme: algunas piezas
-   funcionan como fotografías de archivo y otras como documentos. */
-.stories-section .empty-card{
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center;
-  border-top-width:5px;
-  text-shadow:none;
-}
-
-.stories-section .empty-card strong,
-.stories-section .empty-card span{
-  text-shadow:0 2px 16px rgba(31,41,36,.18);
-}
-
-/* 01 · El nombre del pueblo: territorio vegetal y memoria. */
+/* Algunas historias reciben territorio visual, nunca un rostro inventado. */
 .stories-section .empty-card:nth-child(1){
-  background-image:
-    linear-gradient(180deg,rgba(242,232,213,.18) 20%,rgba(31,41,36,.82) 100%),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Mirador-La-Virgen.JPG");
-  background-position:center;
   color:var(--cream);
+  background-image:linear-gradient(180deg,rgba(31,41,36,.08),rgba(31,41,36,.82)),url("https://sanpatricio.gob.ar/assets/images/municipio/Mirador-La-Virgen.JPG");
+  background-position:center;background-size:cover;
 }
-
-/* 04 · Gasparri: la transformación se mira a través del territorio
-   productivo, sin fabricar un retrato de la persona. */
+.stories-section .empty-card:nth-child(1) span{color:rgba(255,249,237,.9)}
 .stories-section .empty-card:nth-child(4){
-  background-image:
-    linear-gradient(180deg,rgba(242,232,213,.10) 15%,rgba(31,41,36,.84) 100%),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
-  color:var(--cream);
+  background-image:linear-gradient(135deg,rgba(255,249,237,.93),rgba(229,212,181,.75)),url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
+  background-position:center;background-size:cover;
 }
-
-/* 05 · Primeras cosechas: tierra trabajada como archivo visual. */
-.stories-section .empty-card:nth-child(5){
-  background-image:
-    linear-gradient(180deg,rgba(242,232,213,.08) 10%,rgba(31,41,36,.86) 100%),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
-  background-position:center bottom;
-  color:var(--cream);
-}
-
-/* 07 · Primera Comisión: el lugar institucional que conserva memoria. */
 .stories-section .empty-card:nth-child(7){
-  background-image:
-    linear-gradient(180deg,rgba(242,232,213,.08) 15%,rgba(31,41,36,.86) 100%),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Centro-Cultural.JPG");
-  color:var(--cream);
+  background-image:linear-gradient(135deg,rgba(255,249,237,.95),rgba(215,225,223,.78)),url("https://sanpatricio.gob.ar/assets/images/municipio/Centro-Cultural.JPG");
+  background-position:center;background-size:cover;
 }
 
-/* 10 · Primeros pobladores: comunidad antes que perfil. */
-.stories-section .empty-card:nth-child(10){
-  background-image:
-    linear-gradient(180deg,rgba(242,232,213,.08) 12%,rgba(31,41,36,.86) 100%),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/estadio-municipal.JPG");
-  color:var(--cream);
-}
-
-/* 16 · El río: memoria natural y experiencia contemporánea. */
-.stories-section .empty-card:nth-child(16){
-  background-image:
-    linear-gradient(180deg,rgba(242,232,213,.06) 15%,rgba(31,41,36,.82) 100%),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG");
-  color:var(--cream);
-}
-
-/* En las piezas fotográficas, el borde lateral se convierte en
-   una marca de archivo. */
-.stories-section .empty-card:nth-child(1)::before,
-.stories-section .empty-card:nth-child(4)::before,
-.stories-section .empty-card:nth-child(5)::before,
-.stories-section .empty-card:nth-child(7)::before,
-.stories-section .empty-card:nth-child(10)::before,
-.stories-section .empty-card:nth-child(16)::before{
-  background:var(--sun);
-  opacity:.9;
-  width:5px;
-}
-
-/* La etiqueta de archivo funciona como firma editorial, no como botón. */
-.stories-section .empty-card:nth-child(1)::after{
-  content:"TERRITORIO · MEMORIA";
-}
-.stories-section .empty-card:nth-child(4)::after{
-  content:"PERSONA · TRANSFORMACIÓN";
-}
-.stories-section .empty-card:nth-child(5)::after{
-  content:"TRABAJO · COSECHA";
-}
-.stories-section .empty-card:nth-child(7)::after{
-  content:"VECINOS · COMIENZO";
-}
-.stories-section .empty-card:nth-child(10)::after{
-  content:"PRIMEROS POBLADORES";
-}
-.stories-section .empty-card:nth-child(16)::after{
-  content:"RÍO · VIDA COTIDIANA";
-}
-
-.stories-section .empty-card:nth-child(1)::after,
-.stories-section .empty-card:nth-child(4)::after,
-.stories-section .empty-card:nth-child(5)::after,
-.stories-section .empty-card:nth-child(7)::after,
-.stories-section .empty-card:nth-child(10)::after,
-.stories-section .empty-card:nth-child(16)::after{
-  z-index:2;
-  right:18px;
-  top:18px;
-  width:auto;
-  height:auto;
-  padding:7px 10px;
-  border:1px solid rgba(255,249,237,.42);
-  border-radius:2px;
-  background:rgba(31,41,36,.38);
-  color:var(--cream);
-  font:700 8px/1.2 'DM Sans',sans-serif;
-  letter-spacing:.14em;
-  transform:none;
-  box-shadow:none;
-}
-
-/* Las historias sin fotografía mantienen el lenguaje de documento.
-   Así la ausencia de imagen también es una decisión editorial. */
-.stories-section .empty-card:nth-child(2),
-.stories-section .empty-card:nth-child(3),
-.stories-section .empty-card:nth-child(6),
-.stories-section .empty-card:nth-child(8),
-.stories-section .empty-card:nth-child(9),
-.stories-section .empty-card:nth-child(11),
-.stories-section .empty-card:nth-child(12),
-.stories-section .empty-card:nth-child(13),
-.stories-section .empty-card:nth-child(14),
-.stories-section .empty-card:nth-child(15),
-.stories-section .empty-card:nth-child(17),
-.stories-section .empty-card:nth-child(18),
-.stories-section .empty-card:nth-child(19),
-.stories-section .empty-card:nth-child(20){
-  background-image:
-    linear-gradient(135deg,rgba(255,250,240,.97),rgba(235,222,201,.90));
-}
-
-/* La jerarquía humana aparece primero en historias, después en lugares. */
-.stories-section .empty-card strong{
-  position:relative;
-  z-index:3;
-}
-.stories-section .empty-card span{
-  position:relative;
-  z-index:3;
-}
-.stories-section .empty-card:nth-child(4) strong,
-.stories-section .empty-card:nth-child(7) strong,
-.stories-section .empty-card:nth-child(10) strong{
-  max-width:76%;
-}
-
-/* Un pequeño sistema de "archivo" une todas las piezas sin sumar UI. */
-.stories-section .empty-card:nth-child(4n+1){
-  border-top-color:rgba(65,92,73,.65);
-}
-.stories-section .empty-card:nth-child(4n+2){
-  border-top-color:rgba(182,108,78,.55);
-}
-.stories-section .empty-card:nth-child(4n+3){
-  border-top-color:rgba(75,124,130,.55);
-}
-.stories-section .empty-card:nth-child(4n){
-  border-top-color:rgba(82,103,76,.55);
-}
-
-/* Móvil: la fotografía ocupa la superficie, pero el texto conserva
-   un bloque de lectura suficientemente ancho. */
-@media(max-width:760px){
-  .stories-section .empty-card:nth-child(1),
-  .stories-section .empty-card:nth-child(4),
-  .stories-section .empty-card:nth-child(5),
-  .stories-section .empty-card:nth-child(7),
-  .stories-section .empty-card:nth-child(10),
-  .stories-section .empty-card:nth-child(16){
-    min-height:270px;
-    background-position:center;
-  }
-  .stories-section .empty-card:nth-child(4) strong,
-  .stories-section .empty-card:nth-child(7) strong,
-  .stories-section .empty-card:nth-child(10) strong{
-    max-width:88%;
-  }
-}
-
-@media(max-width:390px){
-  .stories-section .empty-card:nth-child(1),
-  .stories-section .empty-card:nth-child(4),
-  .stories-section .empty-card:nth-child(5),
-  .stories-section .empty-card:nth-child(7),
-  .stories-section .empty-card:nth-child(10),
-  .stories-section .empty-card:nth-child(16){
-    min-height:250px;
-  }
-}
-
-
-/* ============================================================
-   MI LUGAR 1.4 · DIRECCIÓN DE ARTE FINAL · PROFUNDIDAD MÁXIMA
-   24/09/2026
-   SOLO VISUAL. HTML / JS / navegación / funcionalidad intactos.
-   ============================================================ */
-
-/* ---------- ATMÓSFERA GENERAL ---------- */
-html{background:var(--paper)}
-body{
-  overflow-x:hidden;
-  background-image:
-    radial-gradient(circle at 12% 8%,rgba(229,170,76,.08),transparent 18%),
-    radial-gradient(circle at 88% 32%,rgba(75,124,130,.055),transparent 22%),
-    radial-gradient(rgba(40,53,46,.035) .55px,transparent .55px),
-    linear-gradient(rgba(255,249,237,.12) 1px,transparent 1px);
-  background-size:auto,auto,12px 12px,100% 36px;
-}
-body:after{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:29;
-  opacity:.035;
-  background:
-    linear-gradient(90deg,transparent 0 49.8%,rgba(40,53,46,.7) 50%,transparent 50.2%),
-    linear-gradient(transparent 0 49.8%,rgba(40,53,46,.7) 50%,transparent 50.2%);
-  background-size:140px 140px;
-  mix-blend-mode:multiply;
-}
-
-/* ---------- HEADER · OBJETO DE ORIENTACIÓN ---------- */
-.site-header{
-  padding-top:11px;
-  padding-bottom:11px;
-  border-bottom-color:rgba(40,53,46,.10);
-  box-shadow:0 10px 30px rgba(55,51,39,.035);
-}
-.brand-mark{
-  box-shadow:3px 3px 0 rgba(182,108,78,.16),0 0 0 5px rgba(255,249,237,.45);
-}
-.brand strong{letter-spacing:-.025em}
-.main-nav a{padding:6px 0}
-.main-nav a:before{
-  content:"";
-  position:absolute;
-  left:-9px;
-  top:50%;
-  width:3px;
-  height:3px;
-  border-radius:50%;
-  background:var(--sun);
-  opacity:0;
-  transform:translateY(-50%);
-  transition:opacity .2s ease,left .2s ease;
-}
-.main-nav a:hover:before{opacity:.9;left:-6px}
-
-/* ---------- HERO · PORTADA FOTOGRÁFICA + DIBUJO ---------- */
-.hero{
-  min-height:94vh;
-  background:
-    linear-gradient(90deg,rgba(242,232,213,.98) 0%,rgba(242,232,213,.91) 34%,rgba(242,232,213,.28) 70%,rgba(31,41,36,.05) 100%),
-    url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG") center/cover no-repeat;
-}
-.hero:after{
-  height:55%;
-  background:
-    linear-gradient(180deg,transparent 0%,rgba(31,41,36,.06) 42%,rgba(31,41,36,.34) 100%);
-}
-.hero-copy{
-  max-width:760px;
-  padding:clamp(28px,4vw,52px);
-  background:linear-gradient(135deg,rgba(255,250,240,.88),rgba(255,250,240,.70));
-  border:1px solid rgba(255,250,240,.90);
-  box-shadow:0 34px 100px rgba(31,41,36,.17),0 0 0 8px rgba(255,250,240,.12);
-  backdrop-filter:blur(5px);
-}
-.hero-copy:after{
-  content:"hecho desde cerca · San Patricio del Chañar";
-  margin-top:32px;
-  font-size:16px;
-  letter-spacing:.015em;
-}
-.hero h1{
-  max-width:720px;
-  text-shadow:0 1px 0 rgba(255,249,237,.6);
-}
-.hero-text{font-weight:500}
-.hero-drawing .sun{
-  width:clamp(150px,18vw,260px);
-  height:clamp(150px,18vw,260px);
-  right:9%;
-  top:12%;
-  opacity:.58;
-  box-shadow:0 0 0 20px rgba(229,170,76,.07),0 0 0 42px rgba(229,170,76,.035);
-}
-.hero-drawing .hill{opacity:.62}
-.hero-drawing .river{opacity:.72}
-
-/* Marco fotográfico: parece una foto apoyada sobre el papel. */
-.hero:before{
-  width:min(31vw,390px);
-  height:min(42vw,330px);
-  right:6%;
-  top:18%;
-  border:9px solid rgba(255,250,240,.72);
-  background:rgba(255,250,240,.05);
-  box-shadow:0 28px 70px rgba(31,41,36,.20),0 0 0 1px rgba(40,53,46,.10);
-  transform:rotate(2.5deg);
-  z-index:2;
-}
-
-/* ---------- BIENVENIDA · CAMBIO DE RITMO ---------- */
-.welcome{
-  max-width:1120px;
-  padding-top:clamp(110px,12vw,155px);
-  padding-bottom:clamp(110px,12vw,155px);
-}
-.welcome:before{
-  width:74px;
-  height:2px;
-  margin-bottom:34px;
-}
-.welcome h2{
-  max-width:780px;
-  font-size:clamp(45px,6.8vw,84px);
-}
-.welcome>p:last-child{
-  max-width:590px;
-  margin-left:auto;
-  border-left:0;
-  border-top:1px solid rgba(182,108,78,.45);
-  padding:24px 0 0;
-  position:relative;
-}
-.welcome>p:last-child:before{
-  content:"una mirada local";
-  display:block;
-  margin-bottom:10px;
-  font:600 9px 'DM Sans',sans-serif;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--terracotta);
-  opacity:.72;
-}
-
-/* ---------- EXPLORAR · CUATRO POSTALES ---------- */
-.explore{
-  padding-top:12px;
-  padding-bottom:clamp(105px,12vw,145px);
-}
-.explore .section-heading{margin-bottom:44px}
-.explore .section-heading h2{font-size:clamp(42px,6vw,72px)}
-.explore-grid{gap:16px}
-.explore-card{
-  min-height:310px;
-  border-radius:4px 24px 4px 28px;
-  padding:29px;
-  border-color:rgba(40,53,46,.12);
-  box-shadow:0 24px 60px rgba(55,51,39,.11),0 0 0 1px rgba(255,249,237,.25);
-}
-.explore-card:after{
-  width:155px;
-  height:155px;
-  right:-78px;
-  top:-78px;
-  border-color:rgba(40,53,46,.13);
-}
-.explore-card .illustration{
-  font-size:82px;
-  line-height:.9;
-}
-.explore-card strong{
-  font-size:32px;
-  letter-spacing:-.025em;
-}
-.explore-card small{max-width:210px}
-
-/* ---------- LUGARES · ÁLBUM DEL TERRITORIO ---------- */
-.places-section{
-  padding-top:clamp(100px,12vw,150px);
-  padding-bottom:clamp(110px,12vw,155px);
-}
-.places-section .section-heading{margin-bottom:55px}
-.places-section .section-heading h2{font-size:clamp(45px,6.5vw,84px)}
-.places-section .content-grid{gap:18px}
-
-/* Las primeras seis piezas tienen presencia de postal. */
-.places-section .empty-card:nth-child(-n+6){
-  min-height:280px;
-  border:7px solid rgba(255,250,240,.88);
-  outline:1px solid rgba(40,53,46,.12);
-  border-radius:3px;
-  box-shadow:0 26px 68px rgba(55,75,58,.14),0 0 0 1px rgba(255,249,237,.35);
-}
-.places-section .empty-card:nth-child(1),
-.places-section .empty-card:nth-child(2){
-  min-height:405px;
-}
-.places-section .empty-card:nth-child(3){min-height:355px}
-.places-section .empty-card:nth-child(4),
-.places-section .empty-card:nth-child(5),
-.places-section .empty-card:nth-child(6){min-height:295px}
-
-.places-section .empty-card:nth-child(-n+6):after{
-  width:170px;
-  height:120px;
-  right:-65px;
-  top:-55px;
-  border-color:rgba(255,249,237,.20);
-  background:linear-gradient(135deg,rgba(255,249,237,.16),rgba(75,124,130,.08));
-}
-.places-section .empty-card:nth-child(-n+6) strong{
-  font-size:clamp(27px,2.8vw,39px);
-  max-width:86%;
-  letter-spacing:-.025em;
-}
-.places-section .empty-card:nth-child(-n+6) span{font-size:15px}
-
-/* Tratamiento fotográfico individual: no parece una repetición automática. */
-.places-section .empty-card:nth-child(1){background-position:center 52%}
-.places-section .empty-card:nth-child(2){background-position:center 48%}
-.places-section .empty-card:nth-child(3){background-position:center 42%}
-.places-section .empty-card:nth-child(4){background-position:center 58%}
-.places-section .empty-card:nth-child(5){background-position:center 65%}
-.places-section .empty-card:nth-child(6){background-position:center 40%}
-
-/* Segunda capa: atlas local, más silencioso. */
-.places-section .empty-card:nth-child(n+7){
-  border-radius:5px 18px 5px 18px;
-}
-.places-section .empty-card:nth-child(n+9){
-  min-height:190px;
-  border-width:2px;
-  outline:0;
-  box-shadow:0 10px 28px rgba(55,51,39,.055);
-}
-
-/* ---------- HISTORIAS · ARCHIVO HUMANO ---------- */
-.stories-section{
-  padding-top:clamp(105px,12vw,155px);
-  padding-bottom:clamp(110px,12vw,160px);
-}
-.stories-section .section-heading{margin-bottom:58px}
-.stories-section .section-heading h2{font-size:clamp(45px,6.5vw,84px)}
-.stories-section .content-grid{gap:24px}
-
-/* La grilla ya no parece un CMS: parece una mesa con documentos. */
-.stories-section .empty-card{
-  min-height:275px;
-  padding:37px 38px 34px;
-  border-radius:3px 18px 3px 18px;
-  border:1px solid rgba(152,99,76,.18);
-  border-top-width:5px;
-  box-shadow:0 18px 45px rgba(80,61,43,.07);
-}
-.stories-section .empty-card strong{
-  font-size:clamp(25px,2.55vw,35px);
-  max-width:88%;
-}
-.stories-section .empty-card span{
-  max-width:680px;
-  font-size:15.5px;
-}
-
-/* ---------- RUTA · ÚLTIMA GRAN IMAGEN ---------- */
+/* CIERRE */
 .route-banner{
-  min-height:470px;
-  padding:clamp(100px,12vw,145px) 0;
-  background:
-    radial-gradient(circle at 15% 22%,rgba(239,189,97,.17),transparent 23%),
-    radial-gradient(circle at 80% 70%,rgba(255,250,240,.08),transparent 25%),
-    linear-gradient(135deg,#355e63,#496f6f);
+  position:relative;overflow:hidden;min-height:450px;padding:clamp(95px,12vw,145px) 0;
+  color:var(--cream);background:
+  radial-gradient(circle at 80% 25%,rgba(229,170,76,.22),transparent 22%),
+  linear-gradient(135deg,#315a5f,#496f6f);
 }
 .route-banner:before{
-  opacity:.16;
-  background:
-    repeating-linear-gradient(135deg,transparent 0 28px,#fff 29px 30px),
-    radial-gradient(circle at 75% 30%,rgba(255,250,240,.13),transparent 22%);
+  content:"";position:absolute;inset:0;opacity:.13;
+  background:repeating-linear-gradient(135deg,transparent 0 30px,#fff 31px 32px);
 }
-.route-inner{min-height:330px}
-.route-inner h2{
-  font-size:clamp(50px,7vw,90px);
-  max-width:780px;
-  letter-spacing:-.045em;
-}
-.route-inner h2:after{width:150px}
-.route-drawing{
-  font-size:clamp(90px,10vw,135px);
-  opacity:.75;
-}
-
-/* ---------- FOOTER · FIRMA ---------- */
+.route-inner{position:relative;z-index:1;min-height:310px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.route-inner h2{max-width:800px;margin:0;font-family:var(--serif);font-size:clamp(50px,7vw,90px);font-weight:500;line-height:.95;letter-spacing:-.045em}
+.route-inner p:last-child{max-width:560px;color:rgba(255,249,237,.8);margin-top:28px}
+.route-drawing{font:clamp(70px,10vw,135px) var(--serif);opacity:.68;white-space:nowrap}
 .site-footer{
-  min-height:225px;
-  padding-top:70px;
-  padding-bottom:70px;
-  background:
-    radial-gradient(circle at 85% 20%,rgba(229,170,76,.08),transparent 18%),
-    #222c27;
+  display:grid;grid-template-columns:1fr 1fr;gap:50px;padding:65px clamp(20px,8vw,120px);
+  color:var(--cream);background:#222c27;
 }
-.site-footer>div:first-child strong{
-  font-size:32px;
-  letter-spacing:-.025em;
-}
-.site-footer p{max-width:440px}
-.site-footer small{max-width:520px}
+.site-footer strong{font:30px var(--serif);font-weight:500}
+.site-footer p{max-width:400px;margin:10px 0 0;color:rgba(255,249,237,.7)}
+.site-footer small{display:inline-block;max-width:480px;margin:3px 0;color:rgba(255,249,237,.58);font-size:11px;line-height:1.6}
 
-/* ---------- MICRO-DETALLE · SIN NUEVAS FUNCIONES ---------- */
-.empty-card,.explore-card,.primary-button{
-  -webkit-tap-highlight-color:transparent;
+/* MOBILE */
+@media(max-width:900px){
+  .section-shell{width:min(100% - 32px,720px)}
+  .explore-grid{grid-template-columns:repeat(2,1fr)}
+  .hero:before{right:4%;opacity:.65}
+  .route-inner{align-items:flex-start}
 }
-.empty-card,.explore-card{backface-visibility:hidden}
-@media(hover:hover){
-  .places-section .empty-card:nth-child(-n+6):hover{
-    transform:translateY(-7px) scale(1.006);
-    box-shadow:0 32px 78px rgba(55,75,58,.18),0 0 0 1px rgba(255,249,237,.42);
-  }
-  .stories-section .empty-card:hover{
-    transform:translateY(-6px) rotate(0);
-  }
-}
-
-/* ---------- MÓVIL · FOTOGRAFÍA PRIMERO ---------- */
 @media(max-width:760px){
-  .site-header{padding-left:14px;padding-right:14px}
+  .site-header{padding:10px 16px}
+  .menu-button{display:block}
+  .main-nav{
+    position:absolute;left:12px;right:12px;top:60px;display:none;flex-direction:column;gap:0;
+    padding:7px;background:rgba(242,232,213,.98);border:1px solid var(--line);
+    box-shadow:0 20px 50px rgba(55,51,39,.12);
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{padding:13px 12px;border-bottom:1px solid rgba(40,53,46,.08)}
+  .main-nav a:last-child{border-bottom:0}
   .hero{
-    min-height:91vh;
-    padding:46px 14px 60px;
-    background:
-      linear-gradient(180deg,rgba(242,232,213,.64),rgba(242,232,213,.95) 73%),
-      url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG") center/cover no-repeat;
+    min-height:88vh;padding:50px 16px 70px;align-items:end;
+    background:linear-gradient(180deg,rgba(242,232,213,.48),rgba(242,232,213,.96) 72%),url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG") center/cover no-repeat;
   }
-  .hero-copy{
-    padding:24px 20px 27px;
-    box-shadow:0 24px 60px rgba(31,41,36,.15);
-  }
-  .hero h1{font-size:clamp(47px,14vw,70px)}
-  .hero-text{font-size:17px}
   .hero:before{display:none}
-  .welcome{padding:82px 0 90px}
-  .welcome h2{font-size:clamp(42px,12vw,62px)}
-  .explore{padding-bottom:88px}
-  .explore-grid{gap:11px}
-  .explore-card{
-    min-height:215px;
-    padding:20px;
-  }
-  .explore-card .illustration{font-size:54px}
-  .explore-card strong{font-size:25px}
-  .places-section{padding-top:90px;padding-bottom:100px}
-  .places-section .section-heading{margin-bottom:38px}
-  .places-section .empty-card:nth-child(-n+6){
-    min-height:250px;
-    border-width:5px;
-  }
-  .places-section .empty-card:nth-child(1),
-  .places-section .empty-card:nth-child(2){min-height:300px}
-  .places-section .empty-card:nth-child(3){min-height:265px}
-  .places-section .empty-card:nth-child(4),
-  .places-section .empty-card:nth-child(5),
-  .places-section .empty-card:nth-child(6){min-height:235px}
-  .places-section .empty-card:nth-child(n+9){min-height:170px}
-  .stories-section{padding-top:92px;padding-bottom:105px}
-  .stories-section .section-heading{margin-bottom:38px}
-  .stories-section .empty-card{
-    min-height:230px;
-    padding:28px 23px;
-  }
-  .stories-section .empty-card strong{font-size:27px}
-  .route-banner{min-height:380px;padding:88px 0}
-  .route-inner{min-height:260px}
-  .route-inner h2{font-size:clamp(45px,12vw,66px)}
-  .route-drawing{font-size:72px}
-  .site-footer{min-height:0;padding-top:54px;padding-bottom:54px}
+  .hero-copy{padding:24px 20px}
+  .hero h1{font-size:clamp(46px,13vw,68px)}
+  .hero-text{font-size:16px;margin:22px 0 25px}
+  .hero-drawing .sun{right:7%;top:8%;width:120px}
+  .hero-drawing .hill{width:85%;height:28%}
+  .hero-drawing .river{right:5%;width:65%}
+  .welcome{padding:90px 0 100px}
+  .welcome h2{font-size:clamp(42px,12vw,60px)}
+  .welcome>p:last-child{margin-top:35px}
+  .explore{padding-bottom:95px}
+  .section-heading{margin-bottom:30px}
+  .section-heading h2,.content-section h2{font-size:clamp(41px,11vw,62px)}
+  .explore-grid{gap:10px}
+  .explore-card{min-height:205px;padding:20px}
+  .explore-card .illustration{font-size:55px}
+  .explore-card strong{font-size:24px}
+  .content-section{padding:90px 0 105px}
+  .content-grid{grid-template-columns:1fr;gap:14px}
+  .places-section .empty-card:nth-child(1),.places-section .empty-card:nth-child(2){min-height:300px}
+  .places-section .empty-card:nth-child(3){min-height:270px}
+  .places-section .empty-card:nth-child(4),.places-section .empty-card:nth-child(5),.places-section .empty-card:nth-child(6){min-height:235px}
+  .places-section .empty-card:nth-child(n+7){min-height:195px}
+  .stories-section .empty-card{min-height:220px;padding:27px 24px}
+  .route-banner{min-height:380px;padding:85px 0}
+  .route-inner{min-height:250px;display:block}
+  .route-inner h2{font-size:clamp(46px,12vw,66px)}
+  .route-drawing{display:block;margin-top:28px;font-size:70px}
+  .site-footer{grid-template-columns:1fr;gap:30px;padding:55px 20px}
 }
 @media(max-width:390px){
-  .hero{min-height:88vh}
+  .section-shell{width:calc(100% - 26px)}
   .explore-grid{grid-template-columns:1fr}
-  .explore-card{min-height:180px}
-  .places-section .empty-card:nth-child(1),
-  .places-section .empty-card:nth-child(2){min-height:265px}
-  .stories-section .empty-card{min-height:215px}
+  .explore-card{min-height:175px}
+  .hero{min-height:86vh}
+  .hero h1{font-size:45px}
+  .primary-button{width:100%;justify-content:space-between}
+  .welcome h2{font-size:40px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
 }
