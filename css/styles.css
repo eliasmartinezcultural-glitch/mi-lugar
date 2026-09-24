@@ -728,7 +728,7 @@ button{font:inherit}
 }
 .places-section .empty-card:nth-child(9){
   color:var(--paper);
-  background-image:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Bodega-Schroeder.JPG");
+  background-image:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://cdn3.neuqueninforma.com.ar/s3i233/2026/05/neuqueninforma/images/02/60/80/2608075_b6e8c378041672dbf2677b9ee78c9439bb3d94f327daf9b4dbfc075026972466/md.webp");
   background-position:center;background-size:cover;
 }
 .places-section .empty-card:nth-child(10){
@@ -765,7 +765,7 @@ button{font:inherit}
 /* FOTOGRAFÍA TERRITORIAL · LUGARES 16–19 */
 .places-section .empty-card:nth-child(16){
   color:var(--paper);
-  background-image:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Bodega-Patritti.JPG");
+  background-image:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://cdn3.neuqueninforma.com.ar/s3i233/2025/05/neuqueninforma/images/01/90/01/1900115_7cb651f8ff12445e9038d9ad68b82a2a250322c11b0904963ff79ead8aeffc91/");
   background-position:center;background-size:cover;
 }
 .places-section .empty-card:nth-child(17){
