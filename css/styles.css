@@ -925,3 +925,86 @@ body:after{
     bottom:8px;
   }
 }
+
+
+/* Mi Lugar · 1.4 · PROFUNDIDAD DE EXPERIENCIA
+   Solo capa visual/editorial. El núcleo estructural y funcional permanece congelado. */
+
+:root{
+  --paper-light:#fbf3e3;
+  --ink-soft:#405047;
+  --olive:#65775b;
+  --photo-shadow:0 28px 70px rgba(55,51,39,.18);
+  --paper-edge:rgba(255,249,237,.82);
+}
+
+/* Ritmo tipográfico: más aire, mejor lectura y una jerarquía menos uniforme. */
+.hero-copy,.welcome,.section-heading,.route-inner{letter-spacing:-.005em}
+.hero-text{line-height:1.48;color:rgba(40,53,46,.84)}
+.welcome>p:last-child{line-height:1.7;color:rgba(40,53,46,.78)}
+.empty-card span{line-height:1.55}
+
+/* Encabezado como placa editorial, no como barra de aplicación. */
+.site-header{box-shadow:0 8px 24px rgba(55,51,39,.035)}
+.brand-mark{position:relative}
+.brand-mark:after{content:"";position:absolute;inset:-5px;border:1px solid rgba(229,170,76,.22);border-radius:50%;transform:rotate(12deg)}
+
+/* Profundidad fotográfica: borde, papel y sombra antes de la imagen. */
+.hero:before{box-shadow:var(--photo-shadow),0 0 0 1px rgba(40,53,46,.08)}
+.places-section .empty-card:nth-child(-n+5){box-shadow:var(--photo-shadow),0 0 0 1px rgba(255,249,237,.12)}
+
+/* Las postales principales ganan lectura visual sin convertirse en banners. */
+.places-section .empty-card:nth-child(1),
+.places-section .empty-card:nth-child(2),
+.places-section .empty-card:nth-child(3),
+.places-section .empty-card:nth-child(4),
+.places-section .empty-card:nth-child(5){
+  min-height:290px;
+  background-position:center;
+}
+.places-section .empty-card:nth-child(-n+5) span{max-width:82%;text-shadow:0 2px 10px rgba(31,41,36,.28)}
+
+/* Una leve pátina común une fotografías, papel y dibujos. */
+.places-section .empty-card:nth-child(-n+5):after{backdrop-filter:blur(2px)}
+.hero:after{background:linear-gradient(180deg,transparent 48%,rgba(65,92,73,.16))}
+
+/* Los títulos de sección dejan más espacio para respirar. */
+.section-heading h2{line-height:1.02}
+.content-section .section-heading{margin-bottom:42px}
+
+/* Historias: sensación de archivo personal. */
+.stories-section .empty-card{border-color:rgba(152,99,76,.16);box-shadow:0 16px 38px rgba(80,61,43,.065)}
+.stories-section .empty-card strong{font-size:clamp(25px,2.2vw,31px)}
+.stories-section .empty-card:after{transform:rotate(-7deg)}
+
+/* El mapa funciona como objeto físico dentro de la página. */
+.route-banner .section-shell{padding-top:8px;padding-bottom:8px}
+.route-banner:after{box-shadow:0 28px 65px rgba(31,41,36,.30),0 0 0 1px rgba(31,41,36,.18)}
+
+/* Microinteracciones sobrias: ningún gesto nuevo, solo tacto visual. */
+.explore-card,.empty-card{will-change:transform}
+.empty-card strong,.explore-card strong{transition:letter-spacing .2s ease}
+.empty-card:hover strong,.explore-card:hover strong{letter-spacing:-.015em}
+
+@media(min-width:901px){
+  .hero-copy{padding-bottom:20px}
+  .welcome{padding-top:135px;padding-bottom:125px}
+  .explore-grid{gap:18px}
+  .content-grid{gap:19px}
+  .places-section .empty-card:nth-child(1){grid-column:span 2}
+  .places-section .empty-card:nth-child(4){grid-column:span 2}
+}
+
+@media(max-width:760px){
+  .hero:before{box-shadow:0 18px 38px rgba(55,51,39,.15),0 0 0 1px rgba(40,53,46,.08)}
+  .content-section .section-heading{margin-bottom:30px}
+  .places-section .empty-card:nth-child(-n+5){min-height:235px}
+  .places-section .empty-card:nth-child(-n+5) span{max-width:92%}
+  .welcome>p:last-child{font-size:17px}
+  .route-banner .section-shell{padding-top:0;padding-bottom:0}
+}
+
+@media(max-width:390px){
+  .hero h1{letter-spacing:-.055em}
+  .places-section .empty-card:nth-child(-n+5){min-height:220px}
+}
