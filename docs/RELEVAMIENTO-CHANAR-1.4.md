@@ -99,3 +99,80 @@ Mi Lugar no debe parecer una colección de tarjetas con fotos.
 Debe parecer un **archivo visual de San Patricio del Chañar**: agua, bardas, chacras, calles, edificios, deporte, memoria, vino, oficios, sabores y personas; cada cosa con su propia imagen y con una historia breve detrás.
 
 > Mucha investigación detrás. Muy poca fricción delante.
+
+
+## Capa humana prioritaria — 2026-09-24
+
+La siguiente profundización editorial queda definida: **Mi Lugar debe contar Chañar también a través de las personas que lo hicieron y lo hacen.**
+
+La investigación histórica permite identificar, entre otros, a Roberto Gasparri, los primeros propietarios vinculados a la construcción del Dique Ballester, Tulio Ferraresso, Alfredo Rodríguez, Alberto Pampiglioni, Mario Roa, Erika Barion viuda de Werro, Michiko Matsui, Juan Bautista Jara y Delia Richetti de Ferraresso. La Municipalidad y fuentes provinciales registran estos nombres en distintos contextos históricos y de reconocimiento comunitario. citeturn0search0turn0search2turn0search11
+
+Esto no significa convertir el sitio en una biografía de funcionarios o en una galería de personalidades. El foco será:
+
+### 1. Pioneros
+Personas vinculadas a la transformación inicial del territorio, la agricultura, el riego, la organización comunitaria y la fundación.
+
+### 2. Primeros pobladores
+Familias y vecinos que aparecen en documentos históricos, aniversarios, reconocimientos y testimonios verificables.
+
+### 3. Constructores del pueblo
+Quienes participaron en escuelas, clubes, consorcios de riego, instituciones culturales, espacios religiosos, deporte y servicios.
+
+### 4. Productores y trabajadores
+Agricultores, chacareros, horticultores, trabajadores rurales, vitivinicultores y personas que sostienen el territorio productivo.
+
+### 5. Vecinos actuales
+El Chañar cotidiano: quienes abren un comercio, trabajan una chacra, enseñan, entrenan, fotografían, cocinan, producen, crean, cuidan un espacio o mantienen viva una tradición.
+
+### 6. Memoria viva
+Cuando sea posible y con consentimiento, las personas mayores podrán funcionar como fuentes de memoria oral. Sus recuerdos deben identificarse como testimonios, no transformarse automáticamente en hechos históricos.
+
+## Regla humana
+
+**No mostrar solamente lugares donde no aparecen personas. Mostrar las personas que dan sentido a esos lugares.**
+
+Una fotografía del estadio puede ser arquitectura; una fotografía de un vecino que pasó décadas ligado al club puede explicar qué significa ese estadio.
+
+Una chacra puede ser paisaje; un productor puede explicar cómo se trabaja esa tierra.
+
+Una calle puede ser infraestructura; una familia antigua puede contar cómo cambió.
+
+Una fiesta puede ser evento; sus participantes pueden explicar por qué importa.
+
+## Regla de representación
+
+No se inventarán historias personales, frases, parentescos, oficios, fechas ni testimonios.
+
+Cada persona deberá tener una ficha editorial mínima de investigación:
+
+- nombre;
+- vínculo con Chañar;
+- época o período;
+- lugar asociado;
+- qué puede afirmarse documentalmente;
+- fuente;
+- fotografía disponible;
+- autorización para uso de fotografía, cuando corresponda;
+- tipo de material: documento / fotografía / testimonio / archivo.
+
+## Dirección visual
+
+La capa humana conservará el lenguaje visual 1.4:
+
+- retratos grandes;
+- fotografías de archivo;
+- manos trabajando;
+- herramientas;
+- ropa de trabajo;
+- patios;
+- chacras;
+- clubes;
+- escuelas;
+- talleres;
+- espacios de encuentro;
+- documentos y fotografías antiguas;
+- detalles cotidianos.
+
+La persona no será presentada como una tarjeta corporativa ni como una celebridad. Será tratada como **parte del territorio**.
+
+> **Chañar no solamente tiene lugares. Chañar tiene gente que hizo esos lugares.**
