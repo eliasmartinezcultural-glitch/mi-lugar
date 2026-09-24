@@ -1798,327 +1798,212 @@ body:before{opacity:.075}
 .stories-section .empty-card:nth-child(10)::after{
   font:700 8px 'DM Sans',sans-serif;
   letter-spacing:.16em;
-  color:var(--green);
-  text-align:center;
-  padding-top:8px;
-  background:
-    radial-gradient(ellipse at 50% 32%,rgba(82,103,76,.12) 0 20%,transparent 21%),
-    radial-gradient(ellipse at 50% 72%,rgba(82,103,76,.09) 0 34%,transparent 35%),
-    rgba(255,250,240,.58);
-}
-
-/* Los nombres propios pesan como memoria, no como perfil corporativo. */
-.stories-section .empty-card strong{
-  position:relative;
-  z-index:2;
-  max-width:78%;
-  letter-spacing:-.035em;
-}
-.stories-section .empty-card span{
-  position:relative;
-  z-index:2;
-  max-width:74%;
-}
-
-/* Dibujo territorial de fondo: cerro + árbol + agua, muy tenue. */
-.hero-drawing::after{
-  content:"";
-  position:absolute;
-  left:5%;
-  bottom:8%;
-  width:250px;
-  height:120px;
-  opacity:.18;
-  background:
-    radial-gradient(ellipse at 24% 72%,var(--green) 0 28%,transparent 29%),
-    radial-gradient(ellipse at 55% 65%,var(--green2) 0 33%,transparent 34%),
-    linear-gradient(12deg,transparent 0 46%,var(--river) 47% 49%,transparent 50%);
-  filter:blur(.1px);
-  transform:rotate(-3deg);
-}
-
-/* La portada incorpora una pequeña “fotografía de pueblo” dibujada:
-   no pretende representar a una persona real; es lenguaje editorial. */
-.hero-copy::after{
-  content:"un pueblo se reconoce por sus lugares · y por su gente";
-  max-width:360px;
-  line-height:1.35;
-}
-
-/* El sistema de tarjetas de lugares recibe pequeños signos humanos:
-   manos/trabajo/casa representados como trazos, no como rostros inventados. */
-.places-section .empty-card:nth-child(4)::after{
-  content:"✦  tierra trabajada";
-}
-.places-section .empty-card:nth-child(6)::after{
-  content:"✦  gente que hace comunidad";
-}
-.places-section .empty-card:nth-child(8)::after{
-  content:"✦  historias que se juegan";
-}
-.places-section .empty-card:nth-child(4)::after,
-.places-section .empty-card:nth-child(6)::after,
-.places-section .empty-card:nth-child(8)::after{
-  width:auto;
-  height:auto;
-  right:16px;
-  top:16px;
-  padding:7px 10px;
-  border:1px solid rgba(255,249,237,.42);
-  border-radius:999px;
-  background:rgba(31,41,36,.30);
-  color:var(--cream);
-  font:italic 11px 'Fraunces',serif;
-  z-index:4;
-}
-
-/* La secuencia de lectura termina mirando a las personas que sostienen el lugar. */
-.route-banner .route-drawing::before{
-  content:"agua · caminos · chacras · casas · personas";
-  display:block;
-  max-width:190px;
-  margin:0 auto 14px;
-  font:italic 13px 'Fraunces',serif;
-  line-height:1.35;
-  color:rgba(255,249,237,.72);
-}
-
-@media(max-width:760px){
-  .stories-section .empty-card{
-    min-height:245px;
-    padding-top:34px;
-  }
-  .stories-section .empty-card::after{
-    width:145px;
-    height:175px;
-    right:-42px;
-    opacity:.65;
-  }
-  .stories-section .empty-card strong{max-width:88%}
-  .stories-section .empty-card span{max-width:86%}
-  .hero-drawing::after{
-    left:-30px;
-    bottom:8%;
-    transform:scale(.72) rotate(-3deg);
-    transform-origin:left bottom;
-  }
-}
 
 
 /* ============================================================
-   MI LUGAR 1.4 · MOTOR VISUAL CONSOLIDADO
+   MI LUGAR 1.4 · CAPA HUMANA DOCUMENTAL · EJECUCIÓN VISIBLE
    24/09/2026
-   OBJETIVO: corregir la ejecución visual y dejar una base orgánica
-   para futuras capas de fotografía, archivo, vecinos y memoria.
-   PROTEGIDO: HTML / JS / navegación / funcionalidad.
+   No modifica HTML, JS, navegación ni funcionalidad.
+   Las historias empiezan a comportarse como piezas de territorio
+   y memoria, usando únicamente imágenes ya identificadas.
    ============================================================ */
 
-/* 01. Reparación: todos los elementos decorativos quedan dentro
-   de su propia superficie y no interfieren con el contenido. */
-.hero,.welcome,.explore,.places-section,.stories-section,.route-banner,.site-footer{
-  position:relative;
-}
-.hero-copy::after{
-  display:block;
-  margin-top:22px;
-  color:var(--green);
-  font:italic 15px/1.45 'Fraunces',serif;
-  opacity:.72;
-}
-.hero-drawing,.route-drawing{
-  position:relative;
-}
-
-/* 02. Sistema humano: una textura común conecta paisaje, archivo
-   y comunidad sin crear componentes nuevos. */
-.stories-section{
-  background:
-    radial-gradient(circle at 12% 18%,rgba(182,108,78,.12),transparent 19%),
-    radial-gradient(circle at 87% 78%,rgba(82,103,76,.11),transparent 22%),
-    linear-gradient(135deg,#eadcc8 0%,#f2e8d5 52%,#e5d5bd 100%);
-}
+/* La historia deja de ser una grilla uniforme: algunas piezas
+   funcionan como fotografías de archivo y otras como documentos. */
 .stories-section .empty-card{
-  overflow:hidden;
-  isolation:isolate;
-  background:
-    linear-gradient(115deg,rgba(255,250,240,.97),rgba(242,232,213,.88));
-}
-.stories-section .empty-card::after{
-  pointer-events:none;
-}
-
-/* 03. Personas: el archivo aparece como una presencia visual,
-   nunca como un perfil corporativo. */
-.stories-section .empty-card:nth-child(4n+1)::after{
-  content:"ARCHIVO · PERSONA · TERRITORIO";
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  padding:0 12px 12px;
-  box-sizing:border-box;
-  color:rgba(65,92,73,.62);
-  font:700 8px/1.2 'DM Sans',sans-serif;
-  letter-spacing:.13em;
-  text-align:center;
-}
-.stories-section .empty-card:nth-child(4n+2)::after{
-  content:"MEMORIA · TRABAJO · PUEBLO";
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  padding:0 12px 12px;
-  box-sizing:border-box;
-  color:rgba(152,99,76,.58);
-  font:700 8px/1.2 'DM Sans',sans-serif;
-  letter-spacing:.13em;
-  text-align:center;
-}
-.stories-section .empty-card:nth-child(4n+3)::after{
-  content:"VECINOS · LUGARES · HISTORIA";
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  padding:0 12px 12px;
-  box-sizing:border-box;
-  color:rgba(75,124,130,.58);
-  font:700 8px/1.2 'DM Sans',sans-serif;
-  letter-spacing:.13em;
-  text-align:center;
-}
-.stories-section .empty-card:nth-child(4n)::after{
-  content:"CHAÑAR · MEMORIA VIVA";
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  padding:0 12px 12px;
-  box-sizing:border-box;
-  color:rgba(82,103,76,.58);
-  font:700 8px/1.2 'DM Sans',sans-serif;
-  letter-spacing:.13em;
-  text-align:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  border-top-width:5px;
+  text-shadow:none;
 }
 
 .stories-section .empty-card strong,
 .stories-section .empty-card span{
+  text-shadow:0 2px 16px rgba(31,41,36,.18);
+}
+
+/* 01 · El nombre del pueblo: territorio vegetal y memoria. */
+.stories-section .empty-card:nth-child(1){
+  background-image:
+    linear-gradient(180deg,rgba(242,232,213,.18) 20%,rgba(31,41,36,.82) 100%),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Mirador-La-Virgen.JPG");
+  background-position:center;
+  color:var(--cream);
+}
+
+/* 04 · Gasparri: la transformación se mira a través del territorio
+   productivo, sin fabricar un retrato de la persona. */
+.stories-section .empty-card:nth-child(4){
+  background-image:
+    linear-gradient(180deg,rgba(242,232,213,.10) 15%,rgba(31,41,36,.84) 100%),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
+  color:var(--cream);
+}
+
+/* 05 · Primeras cosechas: tierra trabajada como archivo visual. */
+.stories-section .empty-card:nth-child(5){
+  background-image:
+    linear-gradient(180deg,rgba(242,232,213,.08) 10%,rgba(31,41,36,.86) 100%),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
+  background-position:center bottom;
+  color:var(--cream);
+}
+
+/* 07 · Primera Comisión: el lugar institucional que conserva memoria. */
+.stories-section .empty-card:nth-child(7){
+  background-image:
+    linear-gradient(180deg,rgba(242,232,213,.08) 15%,rgba(31,41,36,.86) 100%),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Centro-Cultural.JPG");
+  color:var(--cream);
+}
+
+/* 10 · Primeros pobladores: comunidad antes que perfil. */
+.stories-section .empty-card:nth-child(10){
+  background-image:
+    linear-gradient(180deg,rgba(242,232,213,.08) 12%,rgba(31,41,36,.86) 100%),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/estadio-municipal.JPG");
+  color:var(--cream);
+}
+
+/* 16 · El río: memoria natural y experiencia contemporánea. */
+.stories-section .empty-card:nth-child(16){
+  background-image:
+    linear-gradient(180deg,rgba(242,232,213,.06) 15%,rgba(31,41,36,.82) 100%),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG");
+  color:var(--cream);
+}
+
+/* En las piezas fotográficas, el borde lateral se convierte en
+   una marca de archivo. */
+.stories-section .empty-card:nth-child(1)::before,
+.stories-section .empty-card:nth-child(4)::before,
+.stories-section .empty-card:nth-child(5)::before,
+.stories-section .empty-card:nth-child(7)::before,
+.stories-section .empty-card:nth-child(10)::before,
+.stories-section .empty-card:nth-child(16)::before{
+  background:var(--sun);
+  opacity:.9;
+  width:5px;
+}
+
+/* La etiqueta de archivo funciona como firma editorial, no como botón. */
+.stories-section .empty-card:nth-child(1)::after{
+  content:"TERRITORIO · MEMORIA";
+}
+.stories-section .empty-card:nth-child(4)::after{
+  content:"PERSONA · TRANSFORMACIÓN";
+}
+.stories-section .empty-card:nth-child(5)::after{
+  content:"TRABAJO · COSECHA";
+}
+.stories-section .empty-card:nth-child(7)::after{
+  content:"VECINOS · COMIENZO";
+}
+.stories-section .empty-card:nth-child(10)::after{
+  content:"PRIMEROS POBLADORES";
+}
+.stories-section .empty-card:nth-child(16)::after{
+  content:"RÍO · VIDA COTIDIANA";
+}
+
+.stories-section .empty-card:nth-child(1)::after,
+.stories-section .empty-card:nth-child(4)::after,
+.stories-section .empty-card:nth-child(5)::after,
+.stories-section .empty-card:nth-child(7)::after,
+.stories-section .empty-card:nth-child(10)::after,
+.stories-section .empty-card:nth-child(16)::after{
+  z-index:2;
+  right:18px;
+  top:18px;
+  width:auto;
+  height:auto;
+  padding:7px 10px;
+  border:1px solid rgba(255,249,237,.42);
+  border-radius:2px;
+  background:rgba(31,41,36,.38);
+  color:var(--cream);
+  font:700 8px/1.2 'DM Sans',sans-serif;
+  letter-spacing:.14em;
+  transform:none;
+  box-shadow:none;
+}
+
+/* Las historias sin fotografía mantienen el lenguaje de documento.
+   Así la ausencia de imagen también es una decisión editorial. */
+.stories-section .empty-card:nth-child(2),
+.stories-section .empty-card:nth-child(3),
+.stories-section .empty-card:nth-child(6),
+.stories-section .empty-card:nth-child(8),
+.stories-section .empty-card:nth-child(9),
+.stories-section .empty-card:nth-child(11),
+.stories-section .empty-card:nth-child(12),
+.stories-section .empty-card:nth-child(13),
+.stories-section .empty-card:nth-child(14),
+.stories-section .empty-card:nth-child(15),
+.stories-section .empty-card:nth-child(17),
+.stories-section .empty-card:nth-child(18),
+.stories-section .empty-card:nth-child(19),
+.stories-section .empty-card:nth-child(20){
+  background-image:
+    linear-gradient(135deg,rgba(255,250,240,.97),rgba(235,222,201,.90));
+}
+
+/* La jerarquía humana aparece primero en historias, después en lugares. */
+.stories-section .empty-card strong{
   position:relative;
   z-index:3;
 }
-
-/* 04. Archivo dibujado: siluetas abstractas, NO retratos reales.
-   Esto prepara el lenguaje para futuras fotografías autorizadas. */
-.stories-section .empty-card::before{
-  content:"";
-  position:absolute;
-  right:18px;
-  top:20px;
-  width:2px;
-  height:110px;
-  background:linear-gradient(var(--terracotta),transparent);
-  opacity:.35;
+.stories-section .empty-card span{
+  position:relative;
+  z-index:3;
 }
-.stories-section .empty-card:nth-child(3n)::before{
-  box-shadow:
-    0 0 0 18px rgba(82,103,76,.025),
-    0 0 0 36px rgba(82,103,76,.018);
+.stories-section .empty-card:nth-child(4) strong,
+.stories-section .empty-card:nth-child(7) strong,
+.stories-section .empty-card:nth-child(10) strong{
+  max-width:76%;
 }
 
-/* 05. La primera mitad de Lugares se lee como paisaje.
-   La segunda, como álbum de pueblo. */
-.places-section .empty-card:nth-child(n+6){
-  background-image:
-    linear-gradient(135deg,rgba(255,250,240,.92),rgba(230,214,185,.78));
-  border-color:rgba(255,250,240,.72);
+/* Un pequeño sistema de "archivo" une todas las piezas sin sumar UI. */
+.stories-section .empty-card:nth-child(4n+1){
+  border-top-color:rgba(65,92,73,.65);
 }
-.places-section .empty-card:nth-child(n+6)::after{
-  pointer-events:none;
+.stories-section .empty-card:nth-child(4n+2){
+  border-top-color:rgba(182,108,78,.55);
 }
-
-/* 06. Marcadores humanos: no son botones ni funciones. */
-.places-section .empty-card:nth-child(6)::after{
-  content:"✦ comunidad";
+.stories-section .empty-card:nth-child(4n+3){
+  border-top-color:rgba(75,124,130,.55);
 }
-.places-section .empty-card:nth-child(7)::after{
-  content:"✦ memoria";
-}
-.places-section .empty-card:nth-child(8)::after{
-  content:"✦ encuentro";
-}
-.places-section .empty-card:nth-child(6)::after,
-.places-section .empty-card:nth-child(7)::after,
-.places-section .empty-card:nth-child(8)::after{
-  display:block;
-  position:absolute;
-  right:14px;
-  top:14px;
-  width:auto;
-  height:auto;
-  padding:6px 9px;
-  border:1px solid rgba(255,249,237,.55);
-  border-radius:999px;
-  background:rgba(31,41,36,.30);
-  color:var(--cream);
-  font:italic 11px 'Fraunces',serif;
-  z-index:5;
+.stories-section .empty-card:nth-child(4n){
+  border-top-color:rgba(82,103,76,.55);
 }
 
-/* 07. Dibujo territorial común: río + chacras + caminos.
-   Es deliberadamente abstracto para no falsear cartografía. */
-.welcome::before{
-  content:"";
-  position:absolute;
-  right:2%;
-  top:8%;
-  width:min(330px,30vw);
-  height:220px;
-  opacity:.13;
-  background:
-    linear-gradient(19deg,transparent 0 45%,var(--river) 46% 47%,transparent 48%),
-    linear-gradient(157deg,transparent 0 58%,var(--green) 59% 60%,transparent 61%),
-    radial-gradient(ellipse at 68% 32%,var(--sun) 0 9%,transparent 10%);
-  transform:rotate(-4deg);
-  pointer-events:none;
-}
-
-/* 08. Engranaje editorial: cada capa termina dejando una pista
-   visual hacia la siguiente. */
-.hero + .welcome::after{
-  content:"paisaje → memoria → personas → vida cotidiana";
-  bottom:28px;
-  right:0;
-  color:var(--green);
-  font:italic 12px 'Fraunces',serif;
-  letter-spacing:.02em;
-  opacity:.46;
-}
-.explore + .places-section{
-  border-top:1px solid rgba(40,53,46,.06);
-}
-.places-section + .stories-section{
-  border-top:1px solid rgba(152,99,76,.08);
-}
-
-/* 09. Fotografía futura: clases preparadas sin exigir todavía
-   una carpeta nueva ni modificar el HTML. */
-[data-human="portrait"],
-[data-human="archive"],
-[data-human="work"],
-[data-human="community"]{
-  object-fit:cover;
-  object-position:center;
-}
-
-/* 10. Móvil: el relato sigue respirando y no se rompe. */
+/* Móvil: la fotografía ocupa la superficie, pero el texto conserva
+   un bloque de lectura suficientemente ancho. */
 @media(max-width:760px){
-  .hero-copy::after{
-    margin-top:16px;
-    font-size:13px;
+  .stories-section .empty-card:nth-child(1),
+  .stories-section .empty-card:nth-child(4),
+  .stories-section .empty-card:nth-child(5),
+  .stories-section .empty-card:nth-child(7),
+  .stories-section .empty-card:nth-child(10),
+  .stories-section .empty-card:nth-child(16){
+    min-height:270px;
+    background-position:center;
   }
-  .welcome::before{display:none}
-  .hero + .welcome::after{display:none}
-  .stories-section .empty-card::after{
-    right:-35px;
-    width:145px;
-    height:175px;
-    font-size:7px;
+  .stories-section .empty-card:nth-child(4) strong,
+  .stories-section .empty-card:nth-child(7) strong,
+  .stories-section .empty-card:nth-child(10) strong{
+    max-width:88%;
+  }
+}
+
+@media(max-width:390px){
+  .stories-section .empty-card:nth-child(1),
+  .stories-section .empty-card:nth-child(4),
+  .stories-section .empty-card:nth-child(5),
+  .stories-section .empty-card:nth-child(7),
+  .stories-section .empty-card:nth-child(10),
+  .stories-section .empty-card:nth-child(16){
+    min-height:250px;
   }
 }
