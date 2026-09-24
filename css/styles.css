@@ -788,3 +788,21 @@ button{font:inherit}
   .places-section .empty-card:nth-child(14){min-height:270px}
 }
 
+
+/* GALERIA FOTOGRAFICA TERRITORIAL */
+.stories-section .empty-card:nth-child(2){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.08),rgba(31,41,36,.82)),url("https://sanpatricio.gob.ar/assets/images/municipio/Dique-Compensador.JPG") center/cover}
+.stories-section .empty-card:nth-child(3){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.05),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG") center/cover}
+.stories-section .empty-card:nth-child(5){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG") center/cover}
+.stories-section .empty-card:nth-child(6){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.05),rgba(31,41,36,.82)),url("https://sanpatricio.gob.ar/assets/images/municipio/Dique-Compensador.JPG") center/cover}
+.stories-section .empty-card:nth-child(8){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG") center/cover}
+.stories-section .empty-card:nth-child(9){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.03),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG") center/cover}
+.stories-section .empty-card:nth-child(11){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.05),rgba(31,41,36,.82)),url("https://sanpatricio.gob.ar/assets/images/municipio/Mirador-La-Virgen.JPG") center/cover}
+.stories-section .empty-card:nth-child(12){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.05),rgba(31,41,36,.82)),url("https://sanpatricio.gob.ar/assets/images/municipio/Plaza-de-las-Infancias.JPG") center/cover}
+.stories-section .empty-card:nth-child(14){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Dique-Compensador.JPG") center/cover}
+.stories-section .empty-card:nth-child(15){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.82)),url("https://sanpatricio.gob.ar/assets/images/municipio/Mirador-La-Virgen.JPG") center/cover}
+.stories-section .empty-card:nth-child(16){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.05),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Dique-Compensador.JPG") center/cover}
+.stories-section .empty-card:nth-child(17){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.03),rgba(31,41,36,.82)),url("https://sanpatricio.gob.ar/assets/images/municipio/Dique-Compensador.JPG") center/cover}
+.stories-section .empty-card:nth-child(18){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.05),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Dique-Compensador.JPG") center/cover}
+.stories-section .empty-card:nth-child(19){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.82)),url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG") center/cover}
+.stories-section .empty-card:nth-child(20){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG") center/cover}
+.stories-section .empty-card:nth-child(2) span,.stories-section .empty-card:nth-child(3) span,.stories-section .empty-card:nth-child(5) span,.stories-section .empty-card:nth-child(6) span,.stories-section .empty-card:nth-child(8) span,.stories-section .empty-card:nth-child(9) span,.stories-section .empty-card:nth-child(11) span,.stories-section .empty-card:nth-child(12) span,.stories-section .empty-card:nth-child(14) span,.stories-section .empty-card:nth-child(15) span,.stories-section .empty-card:nth-child(16) span,.stories-section .empty-card:nth-child(17) span,.stories-section .empty-card:nth-child(18) span,.stories-section .empty-card:nth-child(19) span,.stories-section .empty-card:nth-child(20) span{color:rgba(255,249,237,.94);text-shadow:0 1px 14px rgba(0,0,0,.38)}
