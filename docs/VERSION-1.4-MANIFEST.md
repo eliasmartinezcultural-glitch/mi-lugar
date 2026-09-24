@@ -124,3 +124,15 @@ No se agregan funciones solo para que el proyecto parezca más grande.
 El proyecto puede continuar creciendo sin volver a discutir su arquitectura en cada paso.
 
 > **Simple para quien llega. Profundo para quien quiere quedarse.**
+
+## 12. Bloqueo operativo reforzado
+
+A partir del cierre del 24/09/2026, cualquier avance dentro de 1.4 debe cumplir esta separación:
+
+1. No tocar index.html.
+2. No tocar js/app.js.
+3. No cambiar navegación, flujo, secciones ni comportamiento.
+4. Concentrar el crecimiento en CSS, fotografía, ilustración, composición, tipografía, color, textura, responsive y contenido verificable.
+5. Si una idea exige alterar el núcleo protegido, detenerla y documentarla como propuesta para una futura versión, sin incorporarla a 1.4.
+
+**La experiencia puede crecer en profundidad; la arquitectura no.**
