@@ -1,45 +1,15 @@
 {
-  "version":"0.2.0",
+  "version":"0.3.0",
   "items":[
-    {
-      "id":"historia-el-chanar-antes-del-pueblo",
-      "title":"Antes del pueblo: el paraje El Chañar",
-      "slug":"antes-del-pueblo-el-chanar",
-      "summary":"El nombre Chañar aparece ligado a la memoria del territorio mucho antes de la localidad fundada en 1973. La documentación municipal reconstruye postas, rastrilladas y mensuras que permiten mirar ese paisaje con otra profundidad.",
-      "period":"siglo XIX–XX",
-      "places":["lugar-territorio-chanar"],
-      "sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad"],
-      "verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La fuente municipal documenta referencias al Mangrullo Chañar, la rastrillada de Paso de Indios y mensuras de 1881-1882 y 1913."}
-    },
-    {
-      "id":"historia-del-desierto-al-oasis",
-      "title":"Del monte bruto al oasis de riego",
-      "slug":"del-desierto-al-oasis",
-      "summary":"A fines de la década de 1960 comenzó un proceso de sistematización de tierras y riego que transformó profundamente el paisaje productivo del lugar. En 1969 comenzaron las primeras obras y cultivos.",
-      "period":"1966–1973",
-      "places":["lugar-territorio-chanar"],
-      "sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad","Consejo Federal de Inversiones — Valle Inferior del Río Neuquén"],
-      "verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar / CFI","notes":"Las fuentes describen la adquisición y sistematización de tierras, el bombeo desde el río Neuquén y el inicio de los primeros cultivos."}
-    },
-    {
-      "id":"historia-fundacion-1973",
-      "title":"El pueblo toma forma",
-      "slug":"fundacion-san-patricio-del-chanar",
-      "summary":"San Patricio del Chañar fue fundado el 21 de mayo de 1973. La historia del pueblo está atravesada por el agua, la producción, las familias y la construcción cotidiana de una comunidad.",
-      "period":"1973 en adelante",
-      "places":["lugar-territorio-chanar"],
-      "sources":["Consejo Federal de Inversiones — Valle Inferior del Río Neuquén","Neuquén Informa"],
-      "verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"CFI / Neuquén Informa","notes":"Ambas fuentes consultadas registran la fecha de fundación del 21 de mayo de 1973."}
-    },
-    {
-      "id":"historia-el-vino-en-el-paisaje",
-      "title":"Cuando el viñedo cambió el paisaje",
-      "slug":"el-vino-en-el-paisaje",
-      "summary":"El desarrollo vitivinícola convirtió grandes superficies del paisaje productivo del Chañar en viñedos. Turismo Neuquén señala plantaciones desde 1999 y presenta a la localidad dentro de la ruta del vino neuquina.",
-      "period":"desde 1999",
-      "places":["lugar-bodega-del-fin-del-mundo","lugar-familia-schroeder"],
-      "sources":["Turismo Neuquén","Bodega NQN"],
-      "verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Turismo Neuquén / Bodega NQN","notes":"Información contrastada sobre el inicio del desarrollo vitivinícola moderno y la relación entre viñedos, producción y turismo."}
-    }
+    {"id":"historia-nombre-chanar","title":"Un árbol que dejó su nombre","slug":"un-arbol-que-dejo-su-nombre","summary":"El nombre El Chañar quedó ligado al paraje por la presencia histórica de este árbol. La documentación municipal explica que el término se vincula al nombre quichua del chical y recuerda su presencia en el territorio.","period":"memoria territorial","places":["lugar-mirador-la-virgen"],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"Relato basado en la sección oficial Nuestra Identidad."}},
+    {"id":"historia-mangrullo-chanar","title":"El paisaje antes de las chacras","slug":"el-mangrullo-chanar","summary":"Antes del paisaje productivo actual, la zona aparece en documentación vinculada a un antiguo mangrullo, una posta y caminos de circulación. La rastrillada de Paso de Indios atravesaba este territorio.","period":"siglo XIX","places":[],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La fuente municipal cita documentación de mensura de 1881-1882 y referencias históricas posteriores."}},
+    {"id":"historia-tratayen-y-la-crecida","title":"Una colonia que el río también recuerda","slug":"tratayen-y-la-crecida","summary":"La mensura de 1913 registra la colonia Tratayen como un núcleo urbano que habría alcanzado unas veinte manzanas. La historia municipal plantea que una gran crecida del río Neuquén pudo haber contribuido a su desaparición.","period":"1913","places":[],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La desaparición por una gran crecida está presentada por la fuente como una hipótesis histórica, por eso no se formula aquí como certeza absoluta."}},
+    {"id":"historia-20000-hectareas","title":"20.000 hectáreas y una apuesta enorme","slug":"20000-hectareas-y-una-apuesta","summary":"A fines de los años sesenta, la compra y posterior sistematización de unas 20.000 hectáreas de monte bruto inició una transformación radical del paisaje.","period":"1966–1969","places":[],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La fuente municipal detalla la compra de tierras y el proyecto de sistematización."}},
+    {"id":"historia-primeras-cosechas","title":"Cuando llegaron las primeras cosechas","slug":"primeras-cosechas","summary":"En 1969 comenzaron obras de sistematización y riego. Los primeros cultivos incluyeron papas de distintas variedades, comercializadas durante varios años en la zona.","period":"1969 en adelante","places":["lugar-chacra-municipal-valles-del-chanar","lugar-establecimiento-san-juan"],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"Información tomada de la reconstrucción histórica municipal."}},
+    {"id":"historia-agua-y-transformacion","title":"El agua cambió la tierra","slug":"el-agua-cambio-la-tierra","summary":"Bombas, bocatomas, canales y riego hicieron posible transformar un paisaje de monte en un valle productivo. La historia del Chañar también puede contarse siguiendo el recorrido del agua.","period":"1969–1973","places":["lugar-dique-compensador","lugar-mirador-la-virgen"],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Identidad","Municipalidad de San Patricio del Chañar — Nuestra Ciudad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"Las fuentes oficiales describen las obras de riego y el paisaje actual asociado al río y al valle productivo."}},
+    {"id":"historia-fundacion-1973","title":"21 de mayo: nace la localidad","slug":"21-de-mayo-nace-la-localidad","summary":"San Patricio del Chañar fue fundado el 21 de mayo de 1973. Desde entonces, la historia local se construyó alrededor del trabajo, la producción, las familias y la relación permanente con el territorio.","period":"1973 en adelante","places":["lugar-centro-cultural-erika-baron-de-werro","lugar-parroquia-san-patricio"],"sources":["Consejo Federal de Inversiones — Valle Inferior del Río Neuquén","Neuquén Informa"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"CFI / Neuquén Informa","notes":"Fecha de fundación contrastada en fuentes institucionales."}},
+    {"id":"historia-pelon-identidad","title":"El pelón como memoria productiva","slug":"el-pelon-como-memoria","summary":"La Fiesta Provincial del Pelón, inaugurada en 1985, homenajea a uno de los primeros frutos emblemáticos de la localidad y convierte una producción agrícola en una celebración comunitaria.","period":"desde 1985","places":[],"sources":["Municipalidad de San Patricio del Chañar — Qué hacer"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La fuente municipal registra la inauguración de la fiesta en 1985."}},
+    {"id":"historia-vinedos","title":"El viñedo entra en la historia reciente","slug":"el-vinedo-entra-en-la-historia","summary":"Desde fines de la década de 1990, la vitivinicultura se convirtió en una parte visible del paisaje productivo y de la identidad turística del Chañar.","period":"desde 1999","places":["lugar-bodega-familia-schroeder","lugar-bodega-malma","lugar-bodega-del-fin-del-mundo"],"sources":["Municipalidad de San Patricio del Chañar — Qué hacer"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La página municipal presenta el desarrollo vitivinícola y sus bodegas como parte de la propuesta turística local."}},
+    {"id":"historia-pueblo-hecho-por-gente","title":"Un pueblo también se construye todos los días","slug":"un-pueblo-se-construye-todos-los-dias","summary":"Escuela, chacra, club, parroquia, centro cultural, comercio, deporte y trabajo forman una historia que no termina en una fecha. Mi Lugar irá reuniendo esas pequeñas memorias cuando puedan documentarse con nombre, fuente y contexto.","period":"memoria viva","places":["lugar-puesto-chanar","lugar-estadio-juan-bautista-jara","lugar-centro-cultural-erika-baron-de-werro"],"sources":["Municipalidad de San Patricio del Chañar — Nuestra Ciudad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"Pieza editorial que conecta instituciones y espacios documentados; no atribuye testimonios individuales no verificados."}}
   ]
 }
