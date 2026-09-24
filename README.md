@@ -1,8 +1,31 @@
 # Mi Lugar — San Patricio del Chañar
 
-**Versión actual: 1.4 · CAPA VISUAL CONSOLIDADA**
+**VERSIÓN VIGENTE: 1.4 · CAPA VISUAL CONSOLIDADA · BLOQUEADA**
+
+> **Fuente única de verdad de versión:** `docs/VERSION-STATUS.md`
 
 Proyecto turístico, cultural y territorial independiente dedicado a descubrir San Patricio del Chañar desde una mirada cercana, visual y profundamente documentada.
+
+## Estado actual — 1.4
+
+La versión **1.4** es la versión pública vigente del proyecto. La estructura y la funcionalidad están congeladas; el trabajo activo queda limitado a profundización visual, editorial, fotográfica, de contenido y responsive.
+
+### Bloqueado en 1.4
+- `index.html` sin cambios estructurales.
+- `js/app.js` sin cambios funcionales.
+- Navegación y flujo sin cambios.
+- Secciones públicas sin cambios.
+- GitHub Pages como destino técnico.
+- No Vercel.
+- No crecimiento por cantidad de funciones.
+
+### Permitido dentro de 1.4
+- Fotografía real y tratamiento visual.
+- Mapa como pieza editorial no interactiva.
+- Ilustración editorial.
+- Color, textura, composición y responsive.
+- Profundización y corrección del contenido verificable.
+- Mejoras de consistencia visual sin alterar la arquitectura congelada.
 
 ## Principio rector
 **Simple por fuera. Profundo por dentro.**
