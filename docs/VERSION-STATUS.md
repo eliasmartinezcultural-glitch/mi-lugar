@@ -33,8 +33,35 @@ La versión 1.4 permite profundizar únicamente:
 - responsive
 - calidad, corrección y trazabilidad del contenido
 - coherencia visual del conjunto
+- relevamiento territorial y curaduría fotográfica
 
-## 3. Qué ya forma parte de 1.4
+## 3. Principio visual bloqueado — 2026-09-24
+
+Queda bloqueado como **lenguaje visual base de Mi Lugar 1.4**:
+
+- paleta cálida territorial;
+- papel, archivo y postal;
+- verdes/musgos, río/agua, terracota y arena;
+- tipografía editorial;
+- marcos y tratamientos de fotografía;
+- texturas discretas;
+- composición orgánica;
+- fotografía real como protagonista;
+- ilustración editorial como apoyo.
+
+Este principio **no se reemplaza** durante 1.4. Se puede profundizar, refinar y hacer más visible, pero no cambiar de identidad.
+
+La investigación de lugares y fotografías debe alimentar este lenguaje sin modificar la estructura ni la funcionalidad.
+
+## 4. Regla fotografía = lugar
+
+Cuando una tarjeta identifica un lugar concreto, la capa visual debe intentar mostrar ese mismo lugar.
+
+No se utilizará una fotografía genérica de otra localidad para hacerla pasar por una fotografía del sitio.
+
+Cuando no exista una fotografía exacta cuya fuente o autorización pueda establecerse, se mantendrá la tarjeta sin falsa identificación fotográfica hasta conseguir una fuente válida.
+
+## 5. Qué ya forma parte de 1.4
 
 - identidad territorial consolidada
 - fotografía real como protagonista
@@ -45,8 +72,9 @@ La versión 1.4 permite profundizar únicamente:
 - prioridad visual: territorio → memoria → comunidad → actividad comercial
 - sistema visual responsive
 - documentación de versión consolidada
+- relevamiento territorial y matriz fotográfica
 
-## 4. Qué NO significa 1.4
+## 6. Qué NO significa 1.4
 
 1.4 no es una nueva aplicación ni una nueva arquitectura.
 
@@ -58,14 +86,14 @@ No habilita:
 - reemplazo del núcleo funcional
 - crecimiento de interfaz sin justificación
 
-## 5. Antecedentes
+## 7. Antecedentes
 
 - **1.0:** base funcional congelada.
 - **1.4:** estado público vigente y consolidación visual.
 
 La numeración intermedia queda absorbida por la evolución del proyecto y no constituye estados públicos independientes mientras no exista documentación específica de cierre.
 
-## 6. Próxima etapa
+## 8. Próxima etapa
 
 Hasta una nueva orden de versión, todo trabajo continúa dentro de **1.4**.
 
@@ -75,17 +103,16 @@ Una futura versión solo existe cuando sea creada y documentada explícitamente.
 
 > **Si no dice 1.4, no es el estado vigente. Si dice 1.0, es antecedente histórico.**
 
-
-## 7. Manifiesto técnico
+## 9. Manifiesto técnico
 
 El cierre técnico detallado de esta versión está registrado en `docs/VERSION-1.4-MANIFEST.md`.
 
-## 8. Bloqueo reforzado — 2026-09-24
+## 10. Bloqueo reforzado — 2026-09-24
 
 Desde este punto, la evolución de Mi Lugar 1.4 queda dividida en dos capas:
 
 - **Capa protegida:** estructura, HTML, JavaScript, navegación, flujo y funcionalidad pública.
-- **Capa de experiencia:** fotografía, tratamiento de imágenes, color, tipografía, escala, composición, textura, ilustración, responsive y curaduría editorial.
+- **Capa de experiencia:** fotografía, tratamiento de imágenes, color, tipografía, escala, composición, textura, ilustración, responsive, curaduría editorial y relevamiento territorial.
 
 El objetivo es profundizar radicalmente la experiencia sin reconstruir la aplicación. Una mejora visual que requiera modificar index.html o js/app.js queda fuera de 1.4 y no debe aplicarse de forma implícita.
 
