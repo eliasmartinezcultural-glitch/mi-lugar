@@ -1,7 +1,8 @@
 # Mi Lugar — Versión 1.0 · BLOQUEADA
 
-Estado: BASE FUNCIONAL CONGELADA
-Fecha: 2026-09-24
+**Estado histórico:** BASE FUNCIONAL CONGELADA  
+**Fecha:** 2026-09-24  
+**Relación con el estado actual:** antecedente directo de la **Versión 1.4**
 
 ## Qué queda protegido
 - Arquitectura base del proyecto.
@@ -11,21 +12,27 @@ Fecha: 2026-09-24
 - Principio: simple por fuera, profundo por dentro.
 - Constitución, leyes y esquema de contenido existentes.
 
-## Regla de trabajo desde ahora
-La Versión 1.0 no se reemplaza ni se degrada. Todo avance de historia, diseño, fotografía, ilustración, color, textura, responsive y experiencia se construirá encima de esta base.
+## Regla de continuidad
+La Versión 1.0 no se reemplaza ni se degrada: queda registrada como la base funcional sobre la que se consolidó la Versión 1.4.
 
-No se agregan funcionalidades por cantidad. Una nueva capa debe aumentar la capacidad de descubrir, comprender, recorrer o valorar San Patricio del Chañar.
+La evolución posterior se realizó mediante capas visuales y editoriales sin romper esta base.
 
-## Próxima etapa
-VERSION 2 — PROFUNDIZACIÓN CULTURAL Y VISUAL.
+## Evolución hasta 1.4
+La **Versión 1.4 · CAPA VISUAL CONSOLIDADA** es actualmente la versión pública vigente.
 
-Prioridades:
+Entre 1.0 y 1.4 se profundizaron:
 1. Historia y memoria territorial.
 2. Sistema fotográfico y archivo visual.
-3. Ilustración editorial propia.
+3. Ilustración editorial.
 4. Color, textura y materiales del territorio.
 5. Experiencia multidispositivo.
-6. Interacciones sencillas pero profundas.
-7. Contenido verificable y relaciones entre lugares, personas, historias, paisajes y recorridos.
+6. Tratamiento editorial de mapa y mirada local.
+7. Contenido verificable y relaciones territoriales.
 
-La interfaz pública debe seguir siendo sencilla aunque el sistema interno gane profundidad.
+La interfaz pública continúa siendo sencilla aunque el sistema interno gane profundidad.
+
+## Regla histórica
+Este documento describe el congelamiento de la **base 1.0**. No debe interpretarse como la versión vigente del proyecto.
+
+Para el estado actual consultar:
+`docs/VERSION-STATUS.md`.
