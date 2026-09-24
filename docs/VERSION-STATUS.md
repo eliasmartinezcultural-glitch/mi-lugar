@@ -74,3 +74,8 @@ Una futura versión solo existe cuando sea creada y documentada explícitamente.
 ## Regla final
 
 > **Si no dice 1.4, no es el estado vigente. Si dice 1.0, es antecedente histórico.**
+
+
+## 7. Manifiesto técnico
+
+El cierre técnico detallado de esta versión está registrado en `docs/VERSION-1.4-MANIFEST.md`.
