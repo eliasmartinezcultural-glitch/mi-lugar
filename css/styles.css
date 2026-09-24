@@ -326,3 +326,156 @@ button{font:inherit}
   html{scroll-behavior:auto}
   *{transition:none!important}
 }
+
+
+/* CURADURÍA PROFUNDA · 1.4
+   Esta capa no agrega estructura: ordena la lectura de la estructura existente.
+*/
+.hero-copy{max-width:690px;border-left:4px solid var(--terracotta)}
+.hero-copy .eyebrow{color:var(--green-dark)}
+.hero h1{max-width:650px}
+.hero-text{max-width:520px}
+.hero-drawing .sun{mix-blend-mode:multiply}
+.hero-drawing .hill{clip-path:ellipse(65% 70% at 50% 80%)}
+
+.welcome{position:relative}
+.welcome:after{
+  content:"RÍO · TIERRA · MEMORIA";
+  position:absolute;right:0;top:50%;transform:translateY(-50%) rotate(90deg);
+  font-size:9px;letter-spacing:.25em;color:rgba(40,53,46,.34);font-weight:700;
+}
+
+.explore-card{min-height:320px}
+.explore-card .illustration{position:relative;z-index:1}
+.explore-card strong,.explore-card small{position:relative;z-index:1}
+.explore-card.nature{background:linear-gradient(145deg,#dfe6d4,#c8d4c1)}
+.explore-card.history{background:linear-gradient(145deg,#f0e3ca,#dfccb0)}
+.explore-card.places{background:linear-gradient(145deg,#dce8e6,#c8d9d7)}
+.explore-card.routes{background:linear-gradient(145deg,#e9d0c0,#dcb7a4)}
+
+.content-section .section-shell{position:relative}
+.places-section .section-shell:before,
+.stories-section .section-shell:before{
+  content:"";
+  position:absolute;top:4px;right:0;
+  font-size:9px;font-weight:700;letter-spacing:.18em;color:rgba(40,53,46,.35);
+}
+.places-section .section-shell:before{content:"01 · TERRITORIO"}
+.stories-section .section-shell:before{content:"02 · MEMORIA"}
+
+.places-section .empty-card{
+  border-radius:2px 22px 2px 22px;
+}
+.places-section .empty-card strong{max-width:620px}
+.places-section .empty-card:after{border-color:rgba(255,249,237,.28)}
+.places-section .empty-card:nth-child(1),
+.places-section .empty-card:nth-child(2){min-height:430px}
+.places-section .empty-card:nth-child(1){grid-column:span 1}
+.places-section .empty-card:nth-child(2){grid-column:span 1}
+.places-section .empty-card:nth-child(3){min-height:350px}
+.places-section .empty-card:nth-child(4){min-height:350px}
+.places-section .empty-card:nth-child(5){
+  min-height:350px;
+  background:
+    radial-gradient(circle at 78% 20%,rgba(229,170,76,.42) 0 7%,transparent 7.5%),
+    linear-gradient(135deg,#eee2cc 0%,#d7c29e 100%);
+}
+.places-section .empty-card:nth-child(6){min-height:350px}
+.places-section .empty-card:nth-child(7),
+.places-section .empty-card:nth-child(8){
+  min-height:245px;background:linear-gradient(135deg,#e9dfca,#d9c8a9);
+}
+.places-section .empty-card:nth-child(9),
+.places-section .empty-card:nth-child(10),
+.places-section .empty-card:nth-child(11),
+.places-section .empty-card:nth-child(12){
+  min-height:245px;background:#f7eedf;
+}
+.places-section .empty-card:nth-child(n+13){
+  min-height:210px;background:#efe4d0;
+}
+.places-section .empty-card:nth-child(n+13):nth-child(even){
+  background:#e5ded0;
+}
+.places-section .empty-card:nth-child(n+7) strong{font-size:30px}
+
+.stories-section .empty-card{
+  position:relative;
+  min-height:280px;
+  background-color:#f8efdf;
+}
+.stories-section .empty-card:before{
+  content:"";
+  position:absolute;left:28px;top:28px;width:38px;height:38px;
+  border:1px solid rgba(182,108,78,.42);border-radius:50%;
+  background:transparent;opacity:1;z-index:0;
+}
+.stories-section .empty-card:after{
+  content:"MEMORIA";
+  right:auto;top:39px;width:auto;height:auto;border:0;border-radius:0;
+  font-size:8px;letter-spacing:.18em;font-weight:700;color:rgba(40,53,46,.42);
+  z-index:1;
+}
+.stories-section .empty-card strong,
+.stories-section .empty-card span{position:relative;z-index:2}
+.stories-section .empty-card strong{max-width:82%;padding-top:30px}
+.stories-section .empty-card span{max-width:680px}
+.stories-section .empty-card:nth-child(1){
+  color:var(--ink);
+  background-image:linear-gradient(135deg,rgba(248,239,223,.96),rgba(226,213,189,.82));
+}
+.stories-section .empty-card:nth-child(1) span{color:#566159}
+.stories-section .empty-card:nth-child(4){
+  background-image:linear-gradient(135deg,rgba(248,239,223,.97),rgba(229,212,181,.72));
+}
+.stories-section .empty-card:nth-child(7){
+  background-image:linear-gradient(135deg,rgba(248,239,223,.97),rgba(215,225,223,.72));
+}
+.stories-section .empty-card:nth-child(10){
+  background-image:linear-gradient(135deg,rgba(248,239,223,.97),rgba(229,170,76,.18));
+}
+.stories-section .empty-card:nth-child(2),
+.stories-section .empty-card:nth-child(3),
+.stories-section .empty-card:nth-child(5),
+.stories-section .empty-card:nth-child(6),
+.stories-section .empty-card:nth-child(8),
+.stories-section .empty-card:nth-child(9){
+  border-top-color:rgba(75,124,130,.42);
+}
+.stories-section .empty-card:nth-child(n+11){border-top-color:rgba(65,92,73,.4)}
+
+.route-banner{
+  border-top:7px solid rgba(229,170,76,.72);
+  background:
+    radial-gradient(circle at 15% 80%,rgba(134,176,174,.18),transparent 24%),
+    radial-gradient(circle at 82% 18%,rgba(229,170,76,.22),transparent 25%),
+    linear-gradient(135deg,#315a5f,#496f6f);
+}
+.route-inner:before{
+  content:"";
+  position:absolute;left:0;top:0;width:64px;height:1px;background:rgba(255,249,237,.65);
+}
+.route-inner:after{
+  content:"";
+  position:absolute;left:0;bottom:0;width:180px;height:1px;background:rgba(255,249,237,.28);
+}
+
+.site-footer{border-top:1px solid rgba(255,249,237,.12)}
+.site-footer>div:first-child:after{
+  content:"agua · tierra · memoria · comunidad";
+  display:block;margin-top:24px;font-size:9px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,249,237,.36);
+}
+
+@media(max-width:760px){
+  .welcome:after{display:none}
+  .places-section .section-shell:before,.stories-section .section-shell:before{position:static;display:block;margin-bottom:10px}
+  .places-section .empty-card:nth-child(1),
+  .places-section .empty-card:nth-child(2){min-height:330px}
+  .places-section .empty-card:nth-child(3),
+  .places-section .empty-card:nth-child(4),
+  .places-section .empty-card:nth-child(5),
+  .places-section .empty-card:nth-child(6){min-height:260px}
+  .stories-section .empty-card{min-height:240px}
+  .stories-section .empty-card strong{max-width:94%}
+}
