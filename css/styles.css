@@ -1903,3 +1903,222 @@ body:before{opacity:.075}
     transform-origin:left bottom;
   }
 }
+
+
+/* ============================================================
+   MI LUGAR 1.4 · MOTOR VISUAL CONSOLIDADO
+   24/09/2026
+   OBJETIVO: corregir la ejecución visual y dejar una base orgánica
+   para futuras capas de fotografía, archivo, vecinos y memoria.
+   PROTEGIDO: HTML / JS / navegación / funcionalidad.
+   ============================================================ */
+
+/* 01. Reparación: todos los elementos decorativos quedan dentro
+   de su propia superficie y no interfieren con el contenido. */
+.hero,.welcome,.explore,.places-section,.stories-section,.route-banner,.site-footer{
+  position:relative;
+}
+.hero-copy::after{
+  display:block;
+  margin-top:22px;
+  color:var(--green);
+  font:italic 15px/1.45 'Fraunces',serif;
+  opacity:.72;
+}
+.hero-drawing,.route-drawing{
+  position:relative;
+}
+
+/* 02. Sistema humano: una textura común conecta paisaje, archivo
+   y comunidad sin crear componentes nuevos. */
+.stories-section{
+  background:
+    radial-gradient(circle at 12% 18%,rgba(182,108,78,.12),transparent 19%),
+    radial-gradient(circle at 87% 78%,rgba(82,103,76,.11),transparent 22%),
+    linear-gradient(135deg,#eadcc8 0%,#f2e8d5 52%,#e5d5bd 100%);
+}
+.stories-section .empty-card{
+  overflow:hidden;
+  isolation:isolate;
+  background:
+    linear-gradient(115deg,rgba(255,250,240,.97),rgba(242,232,213,.88));
+}
+.stories-section .empty-card::after{
+  pointer-events:none;
+}
+
+/* 03. Personas: el archivo aparece como una presencia visual,
+   nunca como un perfil corporativo. */
+.stories-section .empty-card:nth-child(4n+1)::after{
+  content:"ARCHIVO · PERSONA · TERRITORIO";
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:0 12px 12px;
+  box-sizing:border-box;
+  color:rgba(65,92,73,.62);
+  font:700 8px/1.2 'DM Sans',sans-serif;
+  letter-spacing:.13em;
+  text-align:center;
+}
+.stories-section .empty-card:nth-child(4n+2)::after{
+  content:"MEMORIA · TRABAJO · PUEBLO";
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:0 12px 12px;
+  box-sizing:border-box;
+  color:rgba(152,99,76,.58);
+  font:700 8px/1.2 'DM Sans',sans-serif;
+  letter-spacing:.13em;
+  text-align:center;
+}
+.stories-section .empty-card:nth-child(4n+3)::after{
+  content:"VECINOS · LUGARES · HISTORIA";
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:0 12px 12px;
+  box-sizing:border-box;
+  color:rgba(75,124,130,.58);
+  font:700 8px/1.2 'DM Sans',sans-serif;
+  letter-spacing:.13em;
+  text-align:center;
+}
+.stories-section .empty-card:nth-child(4n)::after{
+  content:"CHAÑAR · MEMORIA VIVA";
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:0 12px 12px;
+  box-sizing:border-box;
+  color:rgba(82,103,76,.58);
+  font:700 8px/1.2 'DM Sans',sans-serif;
+  letter-spacing:.13em;
+  text-align:center;
+}
+
+.stories-section .empty-card strong,
+.stories-section .empty-card span{
+  position:relative;
+  z-index:3;
+}
+
+/* 04. Archivo dibujado: siluetas abstractas, NO retratos reales.
+   Esto prepara el lenguaje para futuras fotografías autorizadas. */
+.stories-section .empty-card::before{
+  content:"";
+  position:absolute;
+  right:18px;
+  top:20px;
+  width:2px;
+  height:110px;
+  background:linear-gradient(var(--terracotta),transparent);
+  opacity:.35;
+}
+.stories-section .empty-card:nth-child(3n)::before{
+  box-shadow:
+    0 0 0 18px rgba(82,103,76,.025),
+    0 0 0 36px rgba(82,103,76,.018);
+}
+
+/* 05. La primera mitad de Lugares se lee como paisaje.
+   La segunda, como álbum de pueblo. */
+.places-section .empty-card:nth-child(n+6){
+  background-image:
+    linear-gradient(135deg,rgba(255,250,240,.92),rgba(230,214,185,.78));
+  border-color:rgba(255,250,240,.72);
+}
+.places-section .empty-card:nth-child(n+6)::after{
+  pointer-events:none;
+}
+
+/* 06. Marcadores humanos: no son botones ni funciones. */
+.places-section .empty-card:nth-child(6)::after{
+  content:"✦ comunidad";
+}
+.places-section .empty-card:nth-child(7)::after{
+  content:"✦ memoria";
+}
+.places-section .empty-card:nth-child(8)::after{
+  content:"✦ encuentro";
+}
+.places-section .empty-card:nth-child(6)::after,
+.places-section .empty-card:nth-child(7)::after,
+.places-section .empty-card:nth-child(8)::after{
+  display:block;
+  position:absolute;
+  right:14px;
+  top:14px;
+  width:auto;
+  height:auto;
+  padding:6px 9px;
+  border:1px solid rgba(255,249,237,.55);
+  border-radius:999px;
+  background:rgba(31,41,36,.30);
+  color:var(--cream);
+  font:italic 11px 'Fraunces',serif;
+  z-index:5;
+}
+
+/* 07. Dibujo territorial común: río + chacras + caminos.
+   Es deliberadamente abstracto para no falsear cartografía. */
+.welcome::before{
+  content:"";
+  position:absolute;
+  right:2%;
+  top:8%;
+  width:min(330px,30vw);
+  height:220px;
+  opacity:.13;
+  background:
+    linear-gradient(19deg,transparent 0 45%,var(--river) 46% 47%,transparent 48%),
+    linear-gradient(157deg,transparent 0 58%,var(--green) 59% 60%,transparent 61%),
+    radial-gradient(ellipse at 68% 32%,var(--sun) 0 9%,transparent 10%);
+  transform:rotate(-4deg);
+  pointer-events:none;
+}
+
+/* 08. Engranaje editorial: cada capa termina dejando una pista
+   visual hacia la siguiente. */
+.hero + .welcome::after{
+  content:"paisaje → memoria → personas → vida cotidiana";
+  bottom:28px;
+  right:0;
+  color:var(--green);
+  font:italic 12px 'Fraunces',serif;
+  letter-spacing:.02em;
+  opacity:.46;
+}
+.explore + .places-section{
+  border-top:1px solid rgba(40,53,46,.06);
+}
+.places-section + .stories-section{
+  border-top:1px solid rgba(152,99,76,.08);
+}
+
+/* 09. Fotografía futura: clases preparadas sin exigir todavía
+   una carpeta nueva ni modificar el HTML. */
+[data-human="portrait"],
+[data-human="archive"],
+[data-human="work"],
+[data-human="community"]{
+  object-fit:cover;
+  object-position:center;
+}
+
+/* 10. Móvil: el relato sigue respirando y no se rompe. */
+@media(max-width:760px){
+  .hero-copy::after{
+    margin-top:16px;
+    font-size:13px;
+  }
+  .welcome::before{display:none}
+  .hero + .welcome::after{display:none}
+  .stories-section .empty-card::after{
+    right:-35px;
+    width:145px;
+    height:175px;
+    font-size:7px;
+  }
+}
