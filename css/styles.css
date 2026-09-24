@@ -217,3 +217,166 @@ body{background-color:var(--paper);background-image:
     font-size:26px;
   }
 }
+
+
+/* Mi Lugar · V2.5 · fotografía real + mirada de local
+   Solo CSS. No agrega ni modifica estructura, navegación ni funcionalidad. */
+
+/* Fotografías reales del territorio: se incorporan como grandes ventanas visuales,
+   usando material publicado por la Municipalidad de San Patricio del Chañar. */
+.places-section .empty-card:nth-child(1),
+.places-section .empty-card:nth-child(4),
+.places-section .empty-card:nth-child(5){
+  background-image:
+    linear-gradient(180deg,rgba(31,41,36,.02) 25%,rgba(31,41,36,.48) 100%),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG");
+  background-size:cover;
+  background-position:center;
+  color:var(--cream);
+  min-height:260px;
+  border-color:rgba(255,249,237,.22);
+  text-shadow:0 2px 14px rgba(31,41,36,.38);
+}
+.places-section .empty-card:nth-child(4){
+  background-image:
+    linear-gradient(180deg,rgba(31,41,36,.04) 20%,rgba(31,41,36,.55) 100%),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
+  background-position:center;
+}
+.places-section .empty-card:nth-child(5){
+  background-image:
+    linear-gradient(180deg,rgba(31,41,36,.02) 20%,rgba(31,41,36,.58) 100%),
+    url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
+  background-position:center bottom;
+}
+.places-section .empty-card:nth-child(1) strong,
+.places-section .empty-card:nth-child(4) strong,
+.places-section .empty-card:nth-child(5) strong{
+  color:var(--cream);
+}
+.places-section .empty-card:nth-child(1) span,
+.places-section .empty-card:nth-child(4) span,
+.places-section .empty-card:nth-child(5) span{
+  color:rgba(255,249,237,.9);
+}
+.places-section .empty-card:nth-child(1):before,
+.places-section .empty-card:nth-child(4):before,
+.places-section .empty-card:nth-child(5):before{
+  background:var(--sun);
+  box-shadow:none;
+}
+
+/* Una pequeña firma visual: “esto te lo mostraría alguien de acá”. */
+.places-section .empty-card:nth-child(1):after{
+  content:"un rincón para quedarse un rato";
+  width:auto;height:auto;right:18px;top:17px;
+  padding:7px 11px;
+  border:1px solid rgba(255,249,237,.45);
+  border-radius:999px;
+  background:rgba(31,41,36,.28);
+  color:var(--cream);
+  font:italic 12px 'Fraunces',serif;
+  letter-spacing:.01em;
+  transform:rotate(-2deg);
+}
+.places-section .empty-card:nth-child(4):after{
+  content:"miralo despacio";
+  width:auto;height:auto;right:18px;top:17px;
+  padding:7px 11px;
+  border:1px solid rgba(255,249,237,.42);
+  border-radius:999px;
+  background:rgba(31,41,36,.25);
+  color:var(--cream);
+  font:italic 12px 'Fraunces',serif;
+  transform:rotate(2deg);
+}
+.places-section .empty-card:nth-child(5):after{
+  content:"tierra, agua y trabajo";
+  width:auto;height:auto;right:18px;top:17px;
+  padding:7px 11px;
+  border:1px solid rgba(255,249,237,.42);
+  border-radius:999px;
+  background:rgba(31,41,36,.25);
+  color:var(--cream);
+  font:italic 12px 'Fraunces',serif;
+}
+
+/* El banner de recorridos se convierte visualmente en un croquis territorial.
+   No es un mapa interactivo: es una capa editorial, para no romper la estructura congelada. */
+.route-banner:after{
+  content:"";
+  position:absolute;
+  right:5%;
+  top:50%;
+  width:270px;
+  height:150px;
+  border:1px solid rgba(255,249,237,.28);
+  border-radius:48% 55% 42% 58%;
+  transform:translateY(-50%) rotate(-8deg);
+  box-shadow:
+    40px 18px 0 -39px rgba(255,249,237,.55),
+    -55px -22px 0 -53px rgba(255,249,237,.45),
+    75px -36px 0 -71px rgba(255,249,237,.38);
+  pointer-events:none;
+}
+.route-banner:before{
+  content:"";
+  position:absolute;
+  right:8%;
+  top:50%;
+  width:220px;
+  height:1px;
+  background:rgba(255,249,237,.28);
+  transform:rotate(-22deg);
+  box-shadow:
+    -30px 34px 0 rgba(255,249,237,.20),
+    45px -38px 0 rgba(255,249,237,.20);
+}
+
+/* “Consejos de acá” sin crear otra sección:
+   pequeños gestos editoriales repartidos por el recorrido existente. */
+.route-inner:after{
+  content:"Dejá el lugar como lo encontraste · saludá · llevate tu basura · respetá el silencio";
+  display:block;
+  position:absolute;
+  left:0;
+  bottom:-44px;
+  max-width:680px;
+  font:italic 14px 'Fraunces',serif;
+  color:rgba(255,249,237,.72);
+  letter-spacing:.01em;
+}
+
+/* La página termina con la misma idea con la que empieza: pertenencia antes que consumo. */
+.site-footer small:after{
+  content:"A Un consejo de vecino: cuidá este lugar como si fuera tuyo.";
+  white-space:pre;
+  display:block;
+  margin-top:12px;
+  font:italic 13px 'Fraunces',serif;
+  opacity:.68;
+}
+
+@media(max-width:760px){
+  .places-section .empty-card:nth-child(1),
+  .places-section .empty-card:nth-child(4),
+  .places-section .empty-card:nth-child(5){
+    min-height:220px;
+  }
+  .route-banner:after{
+    right:-85px;
+    top:24%;
+    width:220px;
+    height:120px;
+  }
+  .route-banner:before{
+    right:-50px;
+    top:24%;
+    width:180px;
+  }
+  .route-inner:after{
+    position:static;
+    margin-top:4px;
+    max-width:100%;
+  }
+}
