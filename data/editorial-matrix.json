@@ -1,0 +1,170 @@
+{
+  "version": "1.0.0",
+  "project_version": "1.4",
+  "principle": "paisaje -> memoria -> personas -> vida-cotidiana -> experiencia",
+  "rules": {
+    "exact_place_photo": true,
+    "fictional_portraits": false,
+    "invented_quotes": false,
+    "generic_photo_as_exact_place": false,
+    "public_text_short": true
+  },
+  "people": [
+    {
+      "id": "roberto-gasparri",
+      "name": "Roberto Gasparri",
+      "layer": "personas",
+      "documented": true
+    },
+    {
+      "id": "tulio-ferraresso",
+      "name": "Tulio Ferraresso",
+      "layer": "personas",
+      "documented": true
+    },
+    {
+      "id": "alfredo-rodriguez",
+      "name": "Alfredo Rodríguez",
+      "layer": "personas",
+      "documented": true
+    },
+    {
+      "id": "alberto-pampiglioni",
+      "name": "Alberto Pampiglioni",
+      "layer": "personas",
+      "documented": true
+    },
+    {
+      "id": "mario-roa",
+      "name": "Mario Roa",
+      "layer": "personas",
+      "documented": true
+    },
+    {
+      "id": "erika-barion",
+      "name": "Erika Barion viuda de Werro",
+      "layer": "personas",
+      "documented": true
+    },
+    {
+      "id": "michiko-matsui",
+      "name": "Michiko Matsui",
+      "layer": "personas",
+      "documented": true
+    },
+    {
+      "id": "juan-bautista-jara",
+      "name": "Juan Bautista Jara",
+      "layer": "personas",
+      "documented": true
+    },
+    {
+      "id": "delia-richetti",
+      "name": "Delia Richetti de Ferraresso",
+      "layer": "personas",
+      "documented": true
+    }
+  ],
+  "stories": {
+    "historia-nombre-chanar": {
+      "layer": "memoria",
+      "visual": "territory-photo",
+      "place": "lugar-mirador-la-virgen"
+    },
+    "historia-mangrullo-chanar": {
+      "layer": "memoria",
+      "visual": "archive-document"
+    },
+    "historia-tratayen-y-la-crecida": {
+      "layer": "memoria",
+      "visual": "archive-document"
+    },
+    "historia-20000-hectareas": {
+      "layer": "personas",
+      "visual": "territory-photo",
+      "person": "roberto-gasparri"
+    },
+    "historia-primeras-cosechas": {
+      "layer": "personas",
+      "visual": "work-territory",
+      "place": "lugar-chacra-municipal-valles-del-chanar"
+    },
+    "historia-agua-y-transformacion": {
+      "layer": "memoria",
+      "visual": "water-territory",
+      "place": "lugar-dique-compensador"
+    },
+    "historia-fundacion-1973": {
+      "layer": "personas",
+      "visual": "community-place",
+      "people": [
+        "tulio-ferraresso",
+        "alfredo-rodriguez",
+        "alberto-pampiglioni",
+        "mario-roa"
+      ]
+    },
+    "historia-pelon-identidad": {
+      "layer": "vida-cotidiana",
+      "visual": "archive-document"
+    },
+    "historia-vinedos": {
+      "layer": "vida-cotidiana",
+      "visual": "productive-landscape"
+    },
+    "historia-pueblo-hecho-por-gente": {
+      "layer": "personas",
+      "visual": "community-place",
+      "people": [
+        "erika-barion",
+        "michiko-matsui",
+        "juan-bautista-jara",
+        "delia-richetti"
+      ]
+    },
+    "historia-rutas-y-llegadas": {
+      "layer": "experiencia",
+      "visual": "territory-map"
+    },
+    "historia-plaza-como-memoria": {
+      "layer": "vida-cotidiana",
+      "visual": "community-place",
+      "place": "lugar-plaza-de-las-infancias"
+    },
+    "historia-fiesta-pelon": {
+      "layer": "vida-cotidiana",
+      "visual": "community-archive"
+    },
+    "historia-pueblo-entre-agua-y-tierra": {
+      "layer": "memoria",
+      "visual": "water-territory"
+    },
+    "historia-viento-y-vinedo": {
+      "layer": "paisaje",
+      "visual": "productive-landscape"
+    },
+    "historia-rio-que-se-mira": {
+      "layer": "paisaje",
+      "visual": "river-photo",
+      "place": "lugar-balneario-municipal"
+    },
+    "historia-mas-de-25-aves": {
+      "layer": "paisaje",
+      "visual": "nature-photo"
+    },
+    "historia-kayak-en-verano": {
+      "layer": "experiencia",
+      "visual": "river-photo",
+      "place": "lugar-establecimiento-lara"
+    },
+    "historia-paleontologia-entre-vinedos": {
+      "layer": "memoria",
+      "visual": "productive-landscape",
+      "place": "lugar-bodega-familia-schroeder"
+    },
+    "historia-pequenos-proyectos": {
+      "layer": "vida-cotidiana",
+      "visual": "local-life"
+    }
+  }
+}
