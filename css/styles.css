@@ -858,3 +858,69 @@ body{background-color:var(--paper);background-image:
     font-size:7px;
   }
 }
+
+
+/* Mi Lugar · VERSIÓN 1.4 · cierre visual
+   No modifica estructura, HTML, JS, navegación ni funcionalidad.
+   Consolida fotografía, mapa, recomendación local y cuidado del territorio. */
+
+body:after{
+  content:"";
+  position:fixed;
+  left:14px;
+  bottom:14px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--sun);
+  opacity:.28;
+  pointer-events:none;
+  z-index:31;
+}
+
+.hero .primary-button{
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.hero .primary-button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(40,53,46,.22);
+}
+
+.places-section .empty-card:nth-child(-n+5){
+  overflow:hidden;
+}
+.places-section .empty-card:nth-child(-n+5):hover{
+  transform:translateY(-5px) scale(1.008);
+}
+.places-section .empty-card:nth-child(-n+5):after{
+  z-index:2;
+}
+.places-section .empty-card:nth-child(-n+5) strong,
+.places-section .empty-card:nth-child(-n+5) span{
+  position:relative;
+  z-index:3;
+}
+
+.route-banner{
+  min-height:390px;
+}
+.route-banner .section-shell{
+  min-height:260px;
+}
+.route-banner .route-drawing{
+  min-width:120px;
+  text-align:center;
+}
+
+@media(max-width:760px){
+  .route-banner{
+    min-height:0;
+  }
+  .route-banner .section-shell{
+    min-height:0;
+  }
+  body:after{
+    left:8px;
+    bottom:8px;
+  }
+}
