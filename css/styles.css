@@ -113,3 +113,107 @@ body{background-color:var(--paper);background-image:
  .empty-card:nth-child(6n+4){transform:translateY(4px)}
  .empty-card:nth-child(6n+5){transform:translateY(-5px)}
 }
+
+
+/* Mi Lugar · V2.4 · jerarquía territorial
+   Solo CSS. La estructura, navegación y funcionalidad permanecen congeladas.
+   El territorio ocupa visualmente el primer plano; la actividad comercial acompaña. */
+
+.places-section{
+  background-color:#dbe5da;
+  background-image:
+    radial-gradient(rgba(65,92,73,.045) .7px,transparent .7px),
+    linear-gradient(rgba(255,249,237,.24) 1px,transparent 1px);
+  background-size:14px 14px,100% 30px;
+}
+
+/* Los primeros lugares se sienten como paisaje y pertenencia. */
+.places-section .empty-card:nth-child(-n+8){
+  box-shadow:0 16px 40px rgba(55,75,58,.075);
+}
+.places-section .empty-card:nth-child(-n+5) strong{
+  font-size:clamp(26px,2.3vw,31px);
+}
+.places-section .empty-card:nth-child(-n+5):before{
+  width:6px;
+  background:var(--green);
+}
+.places-section .empty-card:nth-child(-n+5):after{
+  border-color:rgba(65,92,73,.13);
+  background:linear-gradient(135deg,rgba(202,214,195,.20),rgba(134,176,174,.10));
+}
+
+/* La cultura queda integrada al territorio, no como cartel institucional. */
+.places-section .empty-card:nth-child(6),
+.places-section .empty-card:nth-child(7),
+.places-section .empty-card:nth-child(8){
+  background:linear-gradient(145deg,rgba(255,249,237,.70),rgba(203,183,155,.20));
+}
+
+/* Los emprendimientos están presentes, pero visualmente funcionan como una capa secundaria. */
+.places-section .empty-card:nth-child(n+9){
+  min-height:185px;
+  padding:24px 26px 26px;
+  box-shadow:0 9px 25px rgba(55,51,39,.045);
+  background:rgba(255,249,237,.48);
+}
+.places-section .empty-card:nth-child(n+9) strong{
+  font-size:22px;
+}
+.places-section .empty-card:nth-child(n+9) span{
+  font-size:14px;
+  opacity:.72;
+}
+.places-section .empty-card:nth-child(n+9):before{
+  width:3px;
+  background:var(--terracotta);
+  opacity:.48;
+}
+
+/* La plaza vuelve a respirar como espacio comunitario, aunque aparezca después. */
+.places-section .empty-card:nth-child(14){
+  min-height:205px;
+  background:linear-gradient(145deg,rgba(235,241,231,.72),rgba(202,214,195,.30));
+  box-shadow:0 14px 34px rgba(55,75,58,.065);
+}
+.places-section .empty-card:nth-child(14) strong{
+  font-size:25px;
+}
+.places-section .empty-card:nth-child(14):before{
+  width:5px;
+  background:var(--green);
+  opacity:.65;
+}
+
+/* El relato general mantiene el foco en mirar, caminar y recordar. */
+.stories-section{
+  background-color:#e9dac4;
+  background-image:
+    radial-gradient(rgba(152,99,76,.055) 1px,transparent 1px),
+    linear-gradient(rgba(255,249,237,.12) 1px,transparent 1px);
+  background-size:17px 17px,100% 34px;
+}
+.stories-section .empty-card{
+  box-shadow:0 12px 30px rgba(80,61,43,.05);
+}
+.stories-section .empty-card strong{
+  font-size:clamp(24px,2.1vw,29px);
+}
+
+/* El lenguaje comercial no invade la pantalla: se percibe como una parte más del pueblo. */
+.places-section .empty-card:nth-child(n+9) .empty-card{
+  box-shadow:none;
+}
+
+@media(max-width:760px){
+  .places-section .empty-card:nth-child(n+9){
+    min-height:170px;
+    padding:22px 21px 24px;
+  }
+  .places-section .empty-card:nth-child(n+9) strong{
+    font-size:21px;
+  }
+  .places-section .empty-card:nth-child(-n+5) strong{
+    font-size:26px;
+  }
+}
