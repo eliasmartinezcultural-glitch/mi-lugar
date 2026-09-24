@@ -1008,3 +1008,206 @@ body:after{
   .hero h1{letter-spacing:-.055em}
   .places-section .empty-card:nth-child(-n+5){min-height:220px}
 }
+
+
+/* Mi Lugar 1.4 · SALTO VISUAL PROFUNDO
+   Experiencia: mucho sistema debajo, poca fricción arriba.
+   Solo CSS: estructura, HTML, JS y navegación siguen congelados. */
+
+/* 01 · Sistema de superficie: papel + fotografía + archivo */
+:root{
+  --paper-deep:#ddc9a7;
+  --paper-white:#fffaf0;
+  --charcoal:#202a25;
+  --moss:#596d53;
+  --river-deep:#365f64;
+  --sun-soft:#efbd61;
+  --photo-frame:rgba(255,250,240,.9);
+}
+body{
+  background-image:
+    radial-gradient(rgba(40,53,46,.035) .5px,transparent .5px),
+    linear-gradient(rgba(255,249,237,.12) 1px,transparent 1px);
+}
+body:before{opacity:.075}
+
+/* 02 · El header deja de competir: se convierte en orientación */
+.site-header{min-height:66px}
+.brand strong{font-family:'Fraunces',serif;font-size:18px;letter-spacing:-.02em}
+.main-nav{font-size:13px;letter-spacing:.01em}
+.main-nav a{opacity:.78}
+.main-nav a:hover{opacity:1}
+
+/* 03 · Hero: una escena, no un bloque */
+.hero{
+  min-height:88vh;
+  padding-top:90px;
+  padding-bottom:105px;
+}
+.hero-copy{max-width:690px}
+.hero h1{
+  max-width:700px;
+  text-wrap:balance;
+  text-shadow:0 2px 0 rgba(255,249,237,.16);
+}
+.hero-text{max-width:560px}
+.primary-button{
+  padding:15px 21px;
+  letter-spacing:.01em;
+}
+.primary-button:after{
+  content:"↘";
+  font-size:16px;
+  opacity:.65;
+}
+
+/* 04 · Pequeños registros de cuaderno en lugar de más UI */
+.welcome{
+  max-width:960px;
+  position:relative;
+}
+.welcome:after{
+  content:"SAN PATRICIO DEL CHAÑAR · NEUQUÉN";
+  position:absolute;
+  right:0;
+  bottom:72px;
+  font:600 9px 'DM Sans',sans-serif;
+  letter-spacing:.18em;
+  color:var(--green);
+  opacity:.42;
+}
+.section-kicker{color:var(--green)}
+.scribble{opacity:.62}
+
+/* 05 · Explorar: cuatro puertas, no cuatro funcionalidades */
+.explore-grid{gap:16px}
+.explore-card{
+  min-height:285px;
+  border-color:rgba(40,53,46,.11);
+}
+.explore-card .illustration{
+  font-size:64px;
+  opacity:.82;
+}
+.explore-card small{max-width:180px}
+.explore-card strong{max-width:190px}
+
+/* 06 · Territorio: jerarquía fotográfica */
+.places-section{position:relative;overflow:hidden}
+.places-section .section-heading h2{max-width:670px}
+.places-section .empty-card:nth-child(1),
+.places-section .empty-card:nth-child(2),
+.places-section .empty-card:nth-child(3){
+  min-height:315px;
+}
+.places-section .empty-card:nth-child(4),
+.places-section .empty-card:nth-child(5){
+  min-height:270px;
+}
+.places-section .empty-card:nth-child(-n+5){
+  border:7px solid var(--photo-frame);
+  outline:1px solid rgba(40,53,46,.11);
+}
+.places-section .empty-card:nth-child(-n+5) strong{
+  font-size:clamp(28px,2.6vw,36px);
+  max-width:88%;
+}
+.places-section .empty-card:nth-child(-n+5) span{
+  max-width:78%;
+  font-size:15px;
+}
+
+/* 07 · El resto de lugares se siente como atlas, no catálogo */
+.places-section .empty-card:nth-child(n+6){
+  min-height:205px;
+}
+.places-section .empty-card:nth-child(n+9){
+  opacity:.93;
+}
+.places-section .empty-card:nth-child(n+9):hover{
+  opacity:1;
+}
+
+/* 08 · Historias: cada tarjeta es una ficha de archivo */
+.stories-section{position:relative;overflow:hidden}
+.stories-section .empty-card{
+  min-height:225px;
+  padding:31px 30px 32px;
+}
+.stories-section .empty-card strong{
+  max-width:90%;
+  font-size:clamp(25px,2.25vw,32px);
+}
+.stories-section .empty-card span{max-width:88%}
+.stories-section .empty-card:before{
+  width:2px;
+  opacity:.38;
+}
+.stories-section .empty-card:nth-child(3n+1):after{
+  border-radius:0;
+  transform:rotate(4deg);
+}
+.stories-section .empty-card:nth-child(3n+2):after{
+  border-radius:50%;
+  transform:rotate(-6deg);
+}
+
+/* 09 · El mapa gana protagonismo sin volverse herramienta */
+.route-banner{
+  min-height:430px;
+}
+.route-inner{
+  min-height:300px;
+}
+.route-inner h2{
+  max-width:680px;
+  font-size:clamp(42px,6vw,76px);
+}
+.route-drawing{font-size:76px}
+.route-banner:after{
+  filter:saturate(.82) sepia(.06);
+}
+
+/* 10 · Footer: cierre editorial, no pie técnico */
+.site-footer{
+  min-height:205px;
+  align-items:flex-start;
+}
+.site-footer>div:first-child strong{
+  font-family:'Fraunces',serif;
+  font-size:26px;
+}
+
+/* 11 · Pantallas pequeñas: una sola idea por vez */
+@media(max-width:760px){
+  .hero{
+    min-height:86vh;
+    padding-top:62px;
+    padding-bottom:72px;
+  }
+  .hero-copy{max-width:100%}
+  .hero h1{max-width:100%}
+  .welcome:after{display:none}
+  .explore-card{min-height:185px}
+  .places-section .empty-card:nth-child(-n+5){min-height:245px}
+  .places-section .empty-card:nth-child(-n+5){border-width:5px}
+  .places-section .empty-card:nth-child(-n+5) strong{font-size:27px}
+  .places-section .empty-card:nth-child(-n+5) span{max-width:92%}
+  .stories-section .empty-card{min-height:190px}
+  .route-banner{min-height:350px}
+  .route-inner{min-height:250px}
+  .site-footer{min-height:0}
+}
+
+@media(max-width:390px){
+  .hero{min-height:82vh;padding-top:52px}
+  .explore-card{min-height:175px}
+  .places-section .empty-card:nth-child(-n+5){min-height:225px}
+  .stories-section .empty-card{min-height:180px}
+}
+
+/* 12 · Reducción de movimiento: profundidad sin castigar accesibilidad */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .explore-card,.empty-card,.hero .primary-button{transition:none}
+}
