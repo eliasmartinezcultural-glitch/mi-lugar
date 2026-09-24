@@ -806,3 +806,93 @@ button{font:inherit}
 .stories-section .empty-card:nth-child(19){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.82)),url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG") center/cover}
 .stories-section .empty-card:nth-child(20){color:var(--paper);background:linear-gradient(180deg,rgba(31,41,36,.04),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG") center/cover}
 .stories-section .empty-card:nth-child(2) span,.stories-section .empty-card:nth-child(3) span,.stories-section .empty-card:nth-child(5) span,.stories-section .empty-card:nth-child(6) span,.stories-section .empty-card:nth-child(8) span,.stories-section .empty-card:nth-child(9) span,.stories-section .empty-card:nth-child(11) span,.stories-section .empty-card:nth-child(12) span,.stories-section .empty-card:nth-child(14) span,.stories-section .empty-card:nth-child(15) span,.stories-section .empty-card:nth-child(16) span,.stories-section .empty-card:nth-child(17) span,.stories-section .empty-card:nth-child(18) span,.stories-section .empty-card:nth-child(19) span,.stories-section .empty-card:nth-child(20) span{color:rgba(255,249,237,.94);text-shadow:0 1px 14px rgba(0,0,0,.38)}
+
+/* GALERIA FOTOGRAFICA AMPLIADA · 4 FOTOGRAFIAS REALES CONFIRMADAS
+   Repetición editorial intencional para que el sitio tenga presencia
+   fotográfica constante mientras se incorporan fotografías específicas
+   de cada establecimiento.
+*/
+.places-section .empty-card:nth-child(5),
+.places-section .empty-card:nth-child(8),
+.places-section .empty-card:nth-child(9),
+.places-section .empty-card:nth-child(10),
+.places-section .empty-card:nth-child(11),
+.places-section .empty-card:nth-child(12),
+.places-section .empty-card:nth-child(13),
+.places-section .empty-card:nth-child(15),
+.places-section .empty-card:nth-child(16),
+.places-section .empty-card:nth-child(17),
+.places-section .empty-card:nth-child(18),
+.places-section .empty-card:nth-child(19){
+  color:var(--paper);
+  min-height:260px;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.places-section .empty-card:nth-child(5),
+.places-section .empty-card:nth-child(9),
+.places-section .empty-card:nth-child(13),
+.places-section .empty-card:nth-child(17){
+  background-image:linear-gradient(180deg,rgba(31,41,36,.12),rgba(31,41,36,.84)),url("https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG");
+  background-position:center;
+}
+.places-section .empty-card:nth-child(8),
+.places-section .empty-card:nth-child(12),
+.places-section .empty-card:nth-child(16){
+  background-image:linear-gradient(180deg,rgba(31,41,36,.10),rgba(31,41,36,.86)),url("https://sanpatricio.gob.ar/assets/images/municipio/Dique-Compensador.JPG");
+  background-position:58% center;
+}
+.places-section .empty-card:nth-child(10),
+.places-section .empty-card:nth-child(15),
+.places-section .empty-card:nth-child(18){
+  background-image:linear-gradient(180deg,rgba(31,41,36,.10),rgba(31,41,36,.86)),url("https://sanpatricio.gob.ar/assets/images/municipio/Mirador-La-Virgen.JPG");
+  background-position:center 38%;
+}
+.places-section .empty-card:nth-child(11),
+.places-section .empty-card:nth-child(19){
+  background-image:linear-gradient(180deg,rgba(31,41,36,.10),rgba(31,41,36,.86)),url("https://sanpatricio.gob.ar/assets/images/municipio/Chacra-Municipal.JPG");
+  background-position:center 58%;
+}
+.places-section .empty-card:nth-child(5) span,
+.places-section .empty-card:nth-child(8) span,
+.places-section .empty-card:nth-child(9) span,
+.places-section .empty-card:nth-child(10) span,
+.places-section .empty-card:nth-child(11) span,
+.places-section .empty-card:nth-child(12) span,
+.places-section .empty-card:nth-child(13) span,
+.places-section .empty-card:nth-child(15) span,
+.places-section .empty-card:nth-child(16) span,
+.places-section .empty-card:nth-child(17) span,
+.places-section .empty-card:nth-child(18) span,
+.places-section .empty-card:nth-child(19) span{
+  color:rgba(255,249,237,.94);
+  text-shadow:0 1px 14px rgba(0,0,0,.42);
+}
+.places-section .empty-card:nth-child(5) strong,
+.places-section .empty-card:nth-child(8) strong,
+.places-section .empty-card:nth-child(9) strong,
+.places-section .empty-card:nth-child(10) strong,
+.places-section .empty-card:nth-child(11) strong,
+.places-section .empty-card:nth-child(12) strong,
+.places-section .empty-card:nth-child(13) strong,
+.places-section .empty-card:nth-child(15) strong,
+.places-section .empty-card:nth-child(16) strong,
+.places-section .empty-card:nth-child(17) strong,
+.places-section .empty-card:nth-child(18) strong,
+.places-section .empty-card:nth-child(19) strong{
+  text-shadow:0 2px 18px rgba(0,0,0,.44);
+}
+@media(max-width:760px){
+  .places-section .empty-card:nth-child(5),
+  .places-section .empty-card:nth-child(8),
+  .places-section .empty-card:nth-child(9),
+  .places-section .empty-card:nth-child(10),
+  .places-section .empty-card:nth-child(11),
+  .places-section .empty-card:nth-child(12),
+  .places-section .empty-card:nth-child(13),
+  .places-section .empty-card:nth-child(15),
+  .places-section .empty-card:nth-child(16),
+  .places-section .empty-card:nth-child(17),
+  .places-section .empty-card:nth-child(18),
+  .places-section .empty-card:nth-child(19){min-height:250px}
+}
