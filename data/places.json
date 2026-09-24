@@ -1,1 +1,32 @@
-{"version":"0.1.0","items":[]}
+{
+  "version":"0.2.0",
+  "items":[
+    {
+      "id":"lugar-bodega-del-fin-del-mundo",
+      "title":"Bodega Del Fin del Mundo",
+      "slug":"bodega-del-fin-del-mundo",
+      "summary":"Una de las expresiones más reconocibles del paisaje vitivinícola de San Patricio del Chañar, integrada a la ruta del vino neuquina.",
+      "category":"vino",
+      "tags":["vino","viñedos","patagonia","turismo"],
+      "verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Turismo Neuquén","notes":"La fuente oficial de Turismo Neuquén informa plantaciones desde 1999 y visitas en Ruta Provincial 8 km 9."}
+    },
+    {
+      "id":"lugar-familia-schroeder",
+      "title":"Bodega Familia Schroeder",
+      "slug":"bodega-familia-schroeder",
+      "summary":"Viñedos, arquitectura integrada al relieve y una historia paleontológica que conecta la producción actual con el territorio profundo.",
+      "category":"vino-cultura",
+      "tags":["vino","paleontologia","arquitectura","viñedos"],
+      "verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Turismo Neuquén / Municipalidad de San Patricio del Chañar","notes":"La oferta turística oficial registra la bodega y sus recorridos; la información municipal destaca el hallazgo paleontológico asociado a sus tierras."}
+    },
+    {
+      "id":"lugar-establecimiento-san-juan",
+      "title":"Establecimiento San Juan",
+      "slug":"establecimiento-san-juan",
+      "summary":"Una mirada a la producción de las chacras: cultivos hortícolas, invernaderos y trabajo ligado al sistema de riego.",
+      "category":"agroturismo",
+      "tags":["chacras","produccion","agroturismo","picada-8"],
+      "verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La página municipal de qué hacer lo presenta dentro del circuito agroturístico y ubica sus invernaderos en Picada Nº8."}
+    }
+  ]
+}
