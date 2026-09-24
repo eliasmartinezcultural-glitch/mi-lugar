@@ -1,32 +1,18 @@
 {
-  "version":"0.2.0",
+  "version":"0.3.0",
   "items":[
-    {
-      "id":"lugar-bodega-del-fin-del-mundo",
-      "title":"Bodega Del Fin del Mundo",
-      "slug":"bodega-del-fin-del-mundo",
-      "summary":"Una de las expresiones más reconocibles del paisaje vitivinícola de San Patricio del Chañar, integrada a la ruta del vino neuquina.",
-      "category":"vino",
-      "tags":["vino","viñedos","patagonia","turismo"],
-      "verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Turismo Neuquén","notes":"La fuente oficial de Turismo Neuquén informa plantaciones desde 1999 y visitas en Ruta Provincial 8 km 9."}
-    },
-    {
-      "id":"lugar-familia-schroeder",
-      "title":"Bodega Familia Schroeder",
-      "slug":"bodega-familia-schroeder",
-      "summary":"Viñedos, arquitectura integrada al relieve y una historia paleontológica que conecta la producción actual con el territorio profundo.",
-      "category":"vino-cultura",
-      "tags":["vino","paleontologia","arquitectura","viñedos"],
-      "verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Turismo Neuquén / Municipalidad de San Patricio del Chañar","notes":"La oferta turística oficial registra la bodega y sus recorridos; la información municipal destaca el hallazgo paleontológico asociado a sus tierras."}
-    },
-    {
-      "id":"lugar-establecimiento-san-juan",
-      "title":"Establecimiento San Juan",
-      "slug":"establecimiento-san-juan",
-      "summary":"Una mirada a la producción de las chacras: cultivos hortícolas, invernaderos y trabajo ligado al sistema de riego.",
-      "category":"agroturismo",
-      "tags":["chacras","produccion","agroturismo","picada-8"],
-      "verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar","notes":"La página municipal de qué hacer lo presenta dentro del circuito agroturístico y ubica sus invernaderos en Picada Nº8."}
-    }
+    {"id":"lugar-balneario-municipal","title":"Balneario Municipal","slug":"balneario-municipal","summary":"Un espacio recreativo vinculado al brazo del río Neuquén, con piletones, áreas deportivas, camping y servicios de temporada.","category":"agua y encuentro","tags":["río","familias","verano","recreación"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Nuestra Ciudad","notes":"La fuente municipal describe ocho piletones, áreas deportivas, sendas, camping y servicios de temporada."}},
+    {"id":"lugar-dique-compensador","title":"Dique Compensador","slug":"dique-compensador","summary":"Un paisaje donde el agua y las bardas se encuentran, con concentración de aves y valor ambiental reconocido a escala municipal.","category":"naturaleza","tags":["agua","aves","bardas","paisaje"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Nuestra Ciudad","notes":"Declarado Área Natural Protegida Municipal en octubre de 2006 según la fuente municipal."}},
+    {"id":"lugar-mirador-la-virgen","title":"Mirador La Virgen","slug":"mirador-la-virgen","summary":"Desde las bardas se abre una lectura del valle productivo: la tierra agreste, el riego y las chacras aparecen como un mismo paisaje.","category":"mirador","tags":["bardas","paisaje","mirador","valle"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Nuestra Ciudad","notes":"La fuente municipal lo ubica a 2 km de la intersección de las rutas provinciales 7 y 8, por Calle 11 Norte."}},
+    {"id":"lugar-chacra-municipal-valles-del-chanar","title":"Chacra Municipal Valles del Chañar","slug":"chacra-municipal-valles-del-chanar","summary":"Un espacio productivo donde decenas de familias trabajan con horticultura, riego e invernaderos durante las distintas estaciones.","category":"producción","tags":["chacras","horticultura","riego","familias"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Nuestra Ciudad","notes":"La fuente municipal describe una chacra de 10 hectáreas en Picada Nº5, con 27 invernaderos y producción de 40 familias."}},
+    {"id":"lugar-puesto-chanar","title":"Puesto Chañar","slug":"puesto-chanar","summary":"Un espacio de formación ligado al trabajo y la producción, donde educación y territorio se encuentran.","category":"cultura y producción","tags":["educación","trabajo","producción","comunidad"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Nuestra Ciudad","notes":"La fuente municipal identifica al Centro de Formación Profesional Agropecuaria Nº2 y su vínculo con productores locales y regionales."}},
+    {"id":"lugar-centro-cultural-erika-baron-de-werro","title":"Centro Cultural Erika Barión de Werro","slug":"centro-cultural-erika-baron-de-werro","summary":"Un lugar de encuentro cultural con auditorio donde la comunidad comparte teatro, música, proyecciones y otras expresiones.","category":"cultura","tags":["cultura","comunidad","teatro","música"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Nuestra Ciudad","notes":"La fuente municipal registra su inauguración en 2013 y describe su auditorio y actividades."}},
+    {"id":"lugar-parroquia-san-patricio","title":"Parroquia San Patricio","slug":"parroquia-san-patricio","summary":"Un edificio construido por la propia comunidad, ligado a la historia pastoral de las familias que acompañaron los primeros años del pueblo.","category":"memoria","tags":["comunidad","memoria","arquitectura","historia"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Nuestra Ciudad","notes":"La fuente municipal registra la bendición del templo el 11 de septiembre de 1983 y la posterior creación de la parroquia en 1996."}},
+    {"id":"lugar-estadio-juan-bautista-jara","title":"Estadio Municipal Juan Bautista Jara","slug":"estadio-juan-bautista-jara","summary":"Un espacio deportivo que también guarda memoria comunitaria, incluido el Muro de la Identidad construido colectivamente.","category":"deporte y comunidad","tags":["deporte","fútbol","comunidad","arte"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Nuestra Ciudad","notes":"La fuente municipal registra el primer partido oficial en 2000 y describe el Muro de la Identidad."}},
+    {"id":"lugar-bodega-familia-schroeder","title":"Bodega Familia Schroeder","slug":"bodega-familia-schroeder","summary":"Viñedos y arquitectura integrados al paisaje productivo, con una historia paleontológica que forma parte de su identidad turística.","category":"vino y territorio","tags":["vino","viñedos","paleontología","gastronomía"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Qué hacer","notes":"La fuente municipal informa fundación en 2001, hallazgo paleontológico y visitas a viñedos y restaurante."}},
+    {"id":"lugar-bodega-malma","title":"Bodega Malma","slug":"bodega-malma","summary":"Una de las bodegas que forman parte del paisaje vitivinícola y turístico del Chañar.","category":"vino","tags":["vino","viñedos","turismo"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Qué hacer","notes":"La fuente municipal informa su fundación en 2003, visitas guiadas y restaurante."}},
+    {"id":"lugar-bodega-del-fin-del-mundo","title":"Bodega Del Fin del Mundo","slug":"bodega-del-fin-del-mundo","summary":"Un nombre inseparable del desarrollo vitivinícola moderno del Chañar y de su incorporación a la ruta del vino neuquina.","category":"vino","tags":["vino","viñedos","patagonia","turismo"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Qué hacer","notes":"La fuente municipal informa su inauguración en 2002 y una importante superficie de viñedos."}},
+    {"id":"lugar-establecimiento-san-juan","title":"Establecimiento San Juan","slug":"establecimiento-san-juan","summary":"Una ventana a la producción hortícola local: invernaderos, riego por goteo y trabajo de chacra en Picada Nº8.","category":"agroturismo","tags":["chacras","horticultura","agroturismo","riego"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Qué hacer","notes":"La fuente municipal describe producción de tomates, morrones y lechugas y registra su participación en una feria rural."}},
+    {"id":"lugar-establecimiento-lara","title":"Establecimiento Lara","slug":"establecimiento-lara","summary":"Un espacio junto al río donde aparecen actividades rurales, pesca, kayak, producción artesanal y observación de aves.","category":"río y campo","tags":["río","pesca","kayak","quesos","aves"],"verification":{"status":"VERIFIED","checkedAt":"2026-09-24","source":"Municipalidad de San Patricio del Chañar — Qué hacer","notes":"La fuente municipal describe actividades y producción del establecimiento y su ubicación en el entorno de las rutas 7 y 8."}}
   ]
 }
