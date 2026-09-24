@@ -536,3 +536,120 @@ body{background-color:var(--paper);background-image:
     margin-top:8px;
   }
 }
+
+
+/* Mi Lugar · V2.7 · mapa real + atlas afectivo
+   Solo CSS. La estructura y funcionalidad siguen congeladas.
+   El mapa se presenta como referencia visual; no reemplaza navegación ni GPS. */
+
+.route-banner{
+  background:
+    linear-gradient(90deg,rgba(62,109,114,.97) 0%,rgba(62,109,114,.90) 48%,rgba(62,109,114,.70) 100%),
+    url("https://staticmap.openstreetmap.de/staticmap.php?center=-38.62595,-68.29994&zoom=12&size=865x512&maptype=mapnik&markers=-38.62595,-68.29994,red-pushpin")
+    center right/cover no-repeat;
+}
+
+.route-banner:after{
+  content:"";
+  position:absolute;
+  right:3%;
+  top:50%;
+  width:min(480px,46vw);
+  height:255px;
+  transform:translateY(-50%) rotate(-1deg);
+  border:9px solid rgba(255,249,237,.82);
+  background:
+    linear-gradient(rgba(255,249,237,.05),rgba(255,249,237,.05)),
+    url("https://staticmap.openstreetmap.de/staticmap.php?center=-38.62595,-68.29994&zoom=12&size=865x512&maptype=mapnik&markers=-38.62595,-68.29994,red-pushpin")
+    center/cover no-repeat;
+  box-shadow:0 18px 50px rgba(31,41,36,.24),0 0 0 1px rgba(31,41,36,.16);
+  border-radius:3px;
+  opacity:.92;
+  pointer-events:none;
+}
+
+.route-banner:before{
+  content:"MAPA DE CHAÑAR  ·  REFERENCIA TERRITORIAL";
+  position:absolute;
+  right:4%;
+  top:calc(50% + 145px);
+  width:min(480px,46vw);
+  color:rgba(255,249,237,.72);
+  font:600 9px 'DM Sans',sans-serif;
+  letter-spacing:.12em;
+  text-align:center;
+  pointer-events:none;
+}
+
+.route-inner{
+  z-index:2;
+  max-width:1180px;
+}
+
+.route-inner:after{
+  content:"Saludá · llevate tu basura · respetá el paisaje · dejá el lugar como lo encontraste";
+  bottom:-48px;
+  color:rgba(255,249,237,.82);
+  font:italic 14px 'Fraunces',serif;
+}
+
+@media(max-width:760px){
+  .route-banner{
+    background:
+      linear-gradient(180deg,rgba(62,109,114,.96) 0%,rgba(62,109,114,.92) 100%),
+      url("https://staticmap.openstreetmap.de/staticmap.php?center=-38.62595,-68.29994&zoom=12&size=865x512&maptype=mapnik&markers=-38.62595,-68.29994,red-pushpin")
+      center/cover no-repeat;
+  }
+  .route-banner:after{
+    right:-80px;
+    top:31%;
+    width:340px;
+    height:195px;
+  }
+  .route-banner:before{
+    right:-55px;
+    top:calc(31% + 108px);
+    width:330px;
+    font-size:8px;
+  }
+  .route-inner:after{
+    position:static;
+    margin-top:16px;
+    max-width:92%;
+  }
+}
+
+/* Pequeñas “postales” tipográficas: la sensación de recomendación personal
+   crece sin agregar elementos funcionales nuevos. */
+.places-section .empty-card:nth-child(2) strong:after{
+  content:"  ·  si tenés tiempo, quedate";
+  display:block;
+  margin-top:7px;
+  font:italic 13px 'Fraunces',serif;
+  color:var(--green);
+  opacity:.68;
+}
+.places-section .empty-card:nth-child(3) strong:after{
+  content:"  ·  mirá antes de seguir";
+  display:block;
+  margin-top:7px;
+  font:italic 13px 'Fraunces',serif;
+  color:var(--green);
+  opacity:.68;
+}
+.places-section .empty-card:nth-child(14) strong:after{
+  content:"  ·  un lugar para encontrarse";
+  display:block;
+  margin-top:7px;
+  font:italic 13px 'Fraunces',serif;
+  color:var(--green);
+  opacity:.68;
+}
+
+@media(max-width:760px){
+  .places-section .empty-card:nth-child(2) strong:after,
+  .places-section .empty-card:nth-child(3) strong:after,
+  .places-section .empty-card:nth-child(14) strong:after{
+    margin-top:6px;
+  }
+}
