@@ -1,5 +1,8 @@
 # Esquema editorial
 
+**Versión de referencia: 1.4 · CAPA VISUAL CONSOLIDADA**  
+**Estado:** esquema editorial vigente.
+
 ## Estados
 DRAFT = contenido en preparación.
 REVIEW = contenido en revisión.
@@ -41,3 +44,8 @@ Toda imagen, video o documento debe poder registrar:
 
 ## Publicación
 Solo VERIFIED puede pasar a PUBLISHED cuando el contenido contiene una afirmación factual sobre el territorio.
+
+## Continuidad 1.4
+Este esquema forma parte del estado vigente de la Versión 1.4. La calidad y trazabilidad del contenido pueden seguir mejorándose sin alterar la estructura funcional congelada.
+
+Estado de referencia: `docs/VERSION-STATUS.md`.
