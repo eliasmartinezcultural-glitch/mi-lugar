@@ -1,5 +1,7 @@
 # Mi Lugar — San Patricio del Chañar
 
+**Versión actual: 1.4 · CAPA VISUAL CONSOLIDADA**
+
 Proyecto turístico, cultural y territorial independiente dedicado a descubrir San Patricio del Chañar desde una mirada cercana, visual y profundamente documentada.
 
 ## Principio rector
@@ -10,7 +12,9 @@ La persona visitante debe poder entender el sitio en segundos. La arquitectura i
 ## Dirección
 - Turismo de territorio, no portal de noticias.
 - Cercanía local, sin tono institucional obligatorio.
-- Fotografía real + ilustración editorial + color.
+- Fotografía real + mapa territorial + ilustración editorial + color.
+- Mirada local: pequeños consejos y recomendaciones editoriales desde el cuidado del lugar.
+- La experiencia visual prioriza territorio, paisaje y memoria antes que consumo.
 - No videojuego.
 - No estética bancaria/corporativa.
 - Mobile first.
