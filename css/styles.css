@@ -1211,3 +1211,173 @@ body:before{opacity:.075}
   html{scroll-behavior:auto}
   .explore-card,.empty-card,.hero .primary-button{transition:none}
 }
+
+
+/* Mi Lugar · 1.4 · SALTO DE PROFUNDIDAD II
+   Norte editorial: quien llega aprende Chañar sin sentir que entró a una tienda.
+   Solo CSS. Estructura, HTML, JS, navegación y funcionalidad siguen congelados.
+
+   Principio visual:
+   TERRITORIO → MEMORIA → COMUNIDAD → ACTIVIDAD.
+   La pantalla visible sigue siendo simple; la profundidad está en la composición.
+*/
+
+:root{
+  --field-line:rgba(40,53,46,.10);
+  --field-white:rgba(255,250,240,.94);
+  --field-shadow:0 30px 80px rgba(55,51,39,.14);
+}
+
+/* El sitio se lee como un cuaderno de viaje continuo, no como módulos aislados. */
+.hero + .welcome{
+  border-top:1px solid rgba(40,53,46,.055);
+}
+.welcome h2{
+  max-width:760px;
+}
+.welcome>p:last-child::first-letter{
+  font-family:'Fraunces',serif;
+  font-size:1.28em;
+}
+
+/* Cada sección tiene una pequeña marca de orientación. No agrega interacción. */
+.explore .section-heading::before,
+.places-section .section-heading::before,
+.stories-section .section-heading::before{
+  content:"";
+  display:block;
+  position:absolute;
+  width:34px;
+  height:1px;
+  background:currentColor;
+  opacity:.18;
+  transform:translateY(-14px) rotate(-2deg);
+}
+.explore .section-heading,
+.places-section .section-heading,
+.stories-section .section-heading{position:relative}
+
+/* Las cuatro puertas visuales funcionan como orientación para alguien que llega por primera vez. */
+.explore-card{
+  isolation:isolate;
+  border-color:rgba(40,53,46,.13);
+}
+.explore-card::before{
+  z-index:-1;
+}
+.explore-card::after{
+  box-shadow:inset 0 0 0 1px rgba(255,249,237,.14);
+}
+.explore-card small{
+  display:block;
+  line-height:1.45;
+}
+
+/* El territorio se convierte en álbum: las primeras piezas pesan visualmente más. */
+.places-section .empty-card:nth-child(1),
+.places-section .empty-card:nth-child(2),
+.places-section .empty-card:nth-child(3){
+  min-height:335px;
+  box-shadow:var(--field-shadow),0 0 0 1px rgba(40,53,46,.09);
+}
+.places-section .empty-card:nth-child(4),
+.places-section .empty-card:nth-child(5){
+  min-height:290px;
+}
+.places-section .empty-card:nth-child(-n+5){
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-blend-mode:normal;
+}
+.places-section .empty-card:nth-child(-n+5)::after{
+  width:190px;
+  height:120px;
+  opacity:.7;
+}
+.places-section .empty-card:nth-child(-n+5) span{
+  max-width:650px;
+  font-size:15.5px;
+}
+
+/* El bloque de lugares secundarios no desaparece: cambia de voz y se vuelve atlas. */
+.places-section .empty-card:nth-child(n+6){
+  border-radius:18px 24px 20px 22px;
+}
+.places-section .empty-card:nth-child(n+6) strong{
+  letter-spacing:-.025em;
+}
+.places-section .empty-card:nth-child(n+9)::after{
+  width:105px;
+  height:70px;
+  opacity:.45;
+}
+
+/* Historias: menos tarjeta de contenido, más documento encontrado. */
+.stories-section .empty-card{
+  border-left-color:rgba(152,99,76,.18);
+  background-image:linear-gradient(105deg,rgba(255,250,240,.35),transparent 55%);
+}
+.stories-section .empty-card strong{
+  text-wrap:balance;
+}
+.stories-section .empty-card span{
+  max-width:620px;
+}
+.stories-section .empty-card:nth-child(4n+1){
+  transform:rotate(-.35deg);
+}
+.stories-section .empty-card:nth-child(4n+2){
+  transform:rotate(.25deg);
+}
+.stories-section .empty-card:nth-child(4n+3){
+  transform:rotate(-.15deg);
+}
+.stories-section .empty-card:nth-child(4n){
+  transform:rotate(.35deg);
+}
+.stories-section .empty-card:hover{transform:translateY(-4px) rotate(0)}
+
+/* El mapa cierra la secuencia con sensación de destino, no de herramienta. */
+.route-banner{
+  background:
+    radial-gradient(circle at 16% 18%,rgba(239,189,97,.14),transparent 22%),
+    radial-gradient(circle at 82% 78%,rgba(255,250,240,.08),transparent 24%),
+    var(--river-deep);
+}
+.route-inner::before{
+  content:"RECORRER · MIRAR · ENTENDER";
+  position:absolute;
+  left:0;
+  top:-18px;
+  font:600 9px 'DM Sans',sans-serif;
+  letter-spacing:.19em;
+  opacity:.48;
+}
+
+/* El cierre devuelve al visitante al tono de vecino que acompaña. */
+.site-footer small{max-width:510px}
+.site-footer>div:first-child p{max-width:430px}
+
+/* Móvil: nunca más de una idea visual dominante a la vez. */
+@media(max-width:760px){
+  .welcome h2{max-width:100%}
+  .explore .section-heading::before,
+  .places-section .section-heading::before,
+  .stories-section .section-heading::before{display:none}
+  .places-section .empty-card:nth-child(1),
+  .places-section .empty-card:nth-child(2),
+  .places-section .empty-card:nth-child(3){min-height:255px}
+  .places-section .empty-card:nth-child(4),
+  .places-section .empty-card:nth-child(5){min-height:235px}
+  .places-section .empty-card:nth-child(-n+5) span{font-size:14.5px}
+  .stories-section .empty-card:nth-child(n){transform:none}
+  .route-inner::before{position:static;display:block;margin-bottom:12px}
+}
+
+@media(max-width:390px){
+  .places-section .empty-card:nth-child(1),
+  .places-section .empty-card:nth-child(2),
+  .places-section .empty-card:nth-child(3){min-height:230px}
+  .places-section .empty-card:nth-child(4),
+  .places-section .empty-card:nth-child(5){min-height:215px}
+}
