@@ -380,3 +380,159 @@ body{background-color:var(--paper);background-image:
     max-width:100%;
   }
 }
+
+
+/* Mi Lugar · V2.6 · atlas del vecino
+   Solo CSS. No cambia HTML, JS, navegación ni comportamiento.
+   Profundiza fotografía, cartografía editorial y recomendaciones locales. */
+
+/* El recorrido se transforma en un verdadero “mapa de papel” visual.
+   Es un croquis editorial, no una representación GPS: evita prometer precisión que
+   esta versión congelada no puede garantizar. */
+.route-banner{
+  background:
+    radial-gradient(circle at 18% 30%,rgba(255,249,237,.08) 0 2px,transparent 3px),
+    radial-gradient(circle at 72% 62%,rgba(255,249,237,.07) 0 2px,transparent 3px),
+    linear-gradient(155deg,#47777b,#3e6d72);
+}
+.route-banner:after{
+  content:"";
+  position:absolute;
+  right:5%;
+  top:50%;
+  width:min(430px,42vw);
+  height:230px;
+  border:1px solid rgba(255,249,237,.30);
+  border-radius:47% 53% 44% 56%;
+  transform:translateY(-50%) rotate(-8deg);
+  background:
+    linear-gradient(17deg,transparent 47%,rgba(255,249,237,.34) 48%,rgba(255,249,237,.34) 49%,transparent 50%),
+    linear-gradient(105deg,transparent 49%,rgba(255,249,237,.22) 50%,transparent 51%);
+  box-shadow:
+    inset 0 0 0 16px rgba(255,249,237,.025),
+    0 0 0 1px rgba(31,41,36,.08);
+}
+.route-banner:before{
+  content:"RUTA 7       RUTA 8";
+  position:absolute;
+  right:8%;
+  top:50%;
+  z-index:1;
+  width:min(390px,38vw);
+  height:180px;
+  transform:translateY(-50%) rotate(-8deg);
+  border-top:1px dashed rgba(255,249,237,.28);
+  border-bottom:1px dashed rgba(255,249,237,.18);
+  color:rgba(255,249,237,.65);
+  font:700 9px 'DM Sans',sans-serif;
+  letter-spacing:.15em;
+  padding-top:12px;
+  text-align:right;
+  pointer-events:none;
+}
+
+/* Puntos de “te lo mostraría yo”: pequeñas señales de local dentro de las
+   tarjetas existentes, sin crear componentes nuevos. */
+.places-section .empty-card:nth-child(1) .empty-card{}
+.places-section .empty-card:nth-child(1):after{
+  content:"★  te lo mostraría al atardecer";
+  width:auto;height:auto;right:16px;top:16px;
+  padding:7px 10px;
+  border:1px solid rgba(255,249,237,.42);
+  border-radius:999px;
+  background:rgba(31,41,36,.34);
+  color:var(--cream);
+  font:italic 11px 'Fraunces',serif;
+  transform:rotate(-2deg);
+}
+.places-section .empty-card:nth-child(2):after{
+  content:"↗  mirá el paisaje completo";
+  width:auto;height:auto;right:16px;top:16px;
+  padding:7px 10px;
+  border:1px solid rgba(65,92,73,.20);
+  border-radius:999px;
+  background:rgba(255,249,237,.55);
+  color:var(--green);
+  font:italic 11px 'Fraunces',serif;
+  transform:rotate(1deg);
+}
+.places-section .empty-card:nth-child(3):after{
+  content:"◎  un rincón para mirar";
+  width:auto;height:auto;right:16px;top:16px;
+  padding:7px 10px;
+  border:1px solid rgba(65,92,73,.20);
+  border-radius:999px;
+  background:rgba(255,249,237,.55);
+  color:var(--green);
+  font:italic 11px 'Fraunces',serif;
+  transform:rotate(-1deg);
+}
+
+/* Marcos fotográficos: la imagen es tratada como recuerdo del lugar, no como
+   banner publicitario. Las clases quedan preparadas para futuras fotos locales. */
+.places-section .empty-card:nth-child(1),
+.places-section .empty-card:nth-child(4),
+.places-section .empty-card:nth-child(5){
+  position:relative;
+  isolation:isolate;
+}
+.places-section .empty-card:nth-child(1)::selection,
+.places-section .empty-card:nth-child(4)::selection,
+.places-section .empty-card:nth-child(5)::selection{
+  background:var(--sun);
+}
+
+/* La capa visual de “vida local” se mantiene pequeña frente al paisaje. */
+.places-section .empty-card:nth-child(n+9) .empty-card{}
+.places-section .empty-card:nth-child(9),
+.places-section .empty-card:nth-child(10),
+.places-section .empty-card:nth-child(11),
+.places-section .empty-card:nth-child(12),
+.places-section .empty-card:nth-child(15),
+.places-section .empty-card:nth-child(16){
+  border-top:2px solid rgba(182,108,78,.25);
+}
+.places-section .empty-card:nth-child(17),
+.places-section .empty-card:nth-child(18),
+.places-section .empty-card:nth-child(19){
+  border-top:2px solid rgba(182,108,78,.18);
+}
+
+/* “Reglas de la casa” integradas al paisaje, no como reglamento. */
+.route-inner h2{
+  position:relative;
+}
+.route-inner h2:before{
+  content:"como hacemos acá";
+  display:block;
+  margin-bottom:14px;
+  font:italic 15px 'Fraunces',serif;
+  letter-spacing:.02em;
+  color:rgba(255,249,237,.70);
+  transform:rotate(-2deg);
+}
+.route-inner:after{
+  content:"Saludá. Mirá. No dejes residuos. Respetá a quien vive acá. Si encontrás un lugar lindo, cuidalo.";
+  bottom:-48px;
+  font-size:13px;
+  letter-spacing:.015em;
+}
+
+@media(max-width:760px){
+  .route-banner:after{
+    width:300px;
+    height:165px;
+    right:-100px;
+    top:28%;
+  }
+  .route-banner:before{
+    width:270px;
+    right:-75px;
+    top:28%;
+  }
+  .route-inner h2:before{margin-bottom:10px}
+  .route-inner:after{
+    bottom:auto;
+    margin-top:8px;
+  }
+}
