@@ -1,5 +1,8 @@
 # Constitución del proyecto — Mi Lugar
 
+**Aplicación vigente: Versión 1.4 · CAPA VISUAL CONSOLIDADA**  
+**Estado:** estructura y funcionalidad congeladas.
+
 ## 1. Propósito
 Crear una experiencia digital turística de San Patricio del Chañar que haga que visitantes y habitantes puedan descubrir lugares, historias, personas, paisajes, cultura y posibilidades de recorrido con una interfaz extremadamente sencilla y una arquitectura interna preparada para crecer.
 
@@ -90,3 +93,6 @@ No se agregan caminos paralelos de Vercel.
 
 ## 12. Regla de oro
 > Que se note que fue hecho por gente que ama Chañar, sin convertir el sitio en propaganda de Chañar.
+
+## 13. Aplicación de versión
+Esta constitución sigue vigente en la Versión 1.4. Cualquier cambio futuro debe respetar la fuente única de estado definida en `docs/VERSION-STATUS.md`.
