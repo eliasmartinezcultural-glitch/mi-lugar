@@ -30,7 +30,7 @@ La versión 1.4 profundiza la identidad visual de Mi Lugar sin modificar la arqu
   - Saludá.
   - Llevate tu basura.
   - Respetá el paisaje.
-  - Dej á el lugar como lo encontraste.
+  - Dejá el lugar como lo encontraste.
 - Texturas, papel, marcos, trazos y composición editorial.
 - Adaptación responsive para preservar la experiencia en celular.
 
