@@ -117,3 +117,10 @@ Desde este punto, la evolución de Mi Lugar 1.4 queda dividida en dos capas:
 El objetivo es profundizar radicalmente la experiencia sin reconstruir la aplicación. Una mejora visual que requiera modificar index.html o js/app.js queda fuera de 1.4 y no debe aplicarse de forma implícita.
 
 **Regla operativa:** primero se conserva el núcleo; después se mejora la experiencia.
+
+
+## 11. Base congelada — 2026-09-24
+
+La base consolidada queda formalmente congelada como referencia estable. El siguiente trabajo se realizará exclusivamente sobre la capa de experiencia definida en `docs/BLOQUEO-BASE-1.4.md`.
+
+**No se toca el núcleo para mejorar la experiencia.**
