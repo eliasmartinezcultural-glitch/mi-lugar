@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "items": [
     {
       "id": "lugar-balneario-municipal",
@@ -339,6 +339,25 @@
         "checkedAt": "2026-09-24",
         "source": "Municipalidad de San Patricio del Chañar — Espacios Gastronómicos",
         "notes": "La Municipalidad publica su ubicación en Rutas 7 y 8, Picada 11 Sur."
+      }
+    },
+    {
+      "id": "lugar-cerveceria-haw",
+      "title": "Cervecería Artesanal Haw",
+      "slug": "cerveceria-artesanal-haw",
+      "summary": "Un proyecto familiar que suma cerveza artesanal a la vida productiva y gastronómica del Chañar.",
+      "category": "sabores y proyectos",
+      "tags": [
+        "cerveza",
+        "familia",
+        "gastronomía",
+        "producción"
+      ],
+      "verification": {
+        "status": "VERIFIED",
+        "checkedAt": "2026-09-24",
+        "source": "Municipalidad de San Patricio del Chañar — Qué hacer",
+        "notes": "La fuente municipal informa que el proyecto comenzó en 2018 y produce estilos artesanales."
       }
     }
   ]
