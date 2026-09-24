@@ -176,3 +176,29 @@ La capa humana conservará el lenguaje visual 1.4:
 La persona no será presentada como una tarjeta corporativa ni como una celebridad. Será tratada como **parte del territorio**.
 
 > **Chañar no solamente tiene lugares. Chañar tiene gente que hizo esos lugares.**
+
+
+## Motor editorial preparado — 2026-09-24
+
+La siguiente capa queda preparada sin alterar la arquitectura pública.
+
+Orden visual y narrativo:
+1. **Territorio** — río, bardas, chacras, caminos y paisaje.
+2. **Memoria** — cómo se transformó el lugar.
+3. **Personas** — pioneros, primeros pobladores, productores, trabajadores, instituciones y vecinos.
+4. **Vida cotidiana** — lugares que hoy tienen uso y significado.
+5. **Experiencia** — el visitante entiende qué está mirando y por qué importa.
+
+La capa humana no debe resolverse con una galería genérica de retratos. Cada fotografía futura debe responder una pregunta: **¿qué persona, trabajo o memoria explica este lugar?**
+
+Fuentes históricas consultadas y contrastadas:
+- Municipalidad de San Patricio del Chañar, “Nuestra Identidad”.
+- Neuquén Informa, reseñas institucionales de aniversarios y primeros pobladores.
+
+La documentación municipal registra que los primeros propietarios particulares fueron obreros vinculados a la construcción del Dique Ballester y que la transformación productiva posterior estuvo asociada al proyecto de la familia Gasparri y otras familias y trabajadores. También documenta el papel de Roberto Gasparri en la historia local. citeturn0search0
+
+Fuentes provinciales reconocen como primeros pobladores a Erika Barion viuda de Werro, Michico Matsui, Juan Bautista Jara y Delia Richetti de Ferraresso, y señalan a Tulio Ferraresso como actor destacado de la historia local. citeturn0search2
+
+Para la primera Comisión de Fomento, una reseña provincial menciona a Tulio Ferraresso, Alfredo Rodríguez, Alberto Pampigliani y Mario Roa. citeturn0search4
+
+**Regla para futuras fotografías humanas:** nunca utilizar una imagen genérica para representar a una persona real; nunca inventar rostro, cita, parentesco o escena; y separar siempre fotografía documental, archivo, ilustración editorial y recreación artística.
