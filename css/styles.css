@@ -1713,3 +1713,193 @@ body:before{opacity:.075}
 @media (max-width:390px){
   .places-grid .empty-card::before{background-position:center;}
 }
+
+
+/* ============================================================
+   MI LUGAR 1.4 · CAPA HUMANA · CHAÑAR TIENE GENTE
+   Solo visual. NO cambia HTML, JS, navegación ni funcionalidad.
+   Territorio → memoria → personas → presente.
+   ============================================================ */
+
+/* La experiencia deja de mostrar solamente paisajes:
+   las historias adquieren tratamiento de álbum familiar y archivo local. */
+.stories-section{
+  background:
+    radial-gradient(circle at 8% 18%,rgba(182,108,78,.10),transparent 18%),
+    radial-gradient(circle at 88% 76%,rgba(82,103,76,.10),transparent 20%),
+    #e9dac4;
+}
+
+.stories-section .empty-card{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  min-height:290px;
+  padding-top:44px;
+  border-top-width:4px;
+  background:
+    linear-gradient(135deg,rgba(255,250,240,.96),rgba(239,228,214,.88));
+}
+
+/* Marco de retrato/archivo dibujado detrás del texto. */
+.stories-section .empty-card::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  right:-28px;
+  top:-20px;
+  width:190px;
+  height:220px;
+  border:1px solid rgba(65,92,73,.16);
+  background:
+    radial-gradient(ellipse at 50% 32%,rgba(82,103,76,.16) 0 22%,transparent 23%),
+    radial-gradient(ellipse at 50% 72%,rgba(82,103,76,.12) 0 35%,transparent 36%),
+    linear-gradient(145deg,transparent 0 44%,rgba(182,108,78,.10) 45% 46%,transparent 47%);
+  box-shadow:0 0 0 9px rgba(255,250,240,.38);
+  transform:rotate(4deg);
+  opacity:.8;
+}
+
+/* Algunas fichas se sienten como fotografías guardadas en una caja. */
+.stories-section .empty-card:nth-child(1),
+.stories-section .empty-card:nth-child(4),
+.stories-section .empty-card:nth-child(7),
+.stories-section .empty-card:nth-child(10){
+  background:
+    linear-gradient(90deg,rgba(255,250,240,.96) 0 62%,rgba(226,211,188,.68) 100%);
+}
+
+.stories-section .empty-card:nth-child(1)::before,
+.stories-section .empty-card:nth-child(4)::before,
+.stories-section .empty-card:nth-child(7)::before,
+.stories-section .empty-card:nth-child(10)::before{
+  width:7px;
+  background:var(--green);
+  opacity:.75;
+}
+
+/* Señales discretas de archivo humano, sin crear nuevos componentes. */
+.stories-section .empty-card:nth-child(1)::after{
+  content:"ARCHIVO · PIONERO";
+}
+.stories-section .empty-card:nth-child(4)::after{
+  content:"MEMORIA · COMUNIDAD";
+}
+.stories-section .empty-card:nth-child(7)::after{
+  content:"FUNDACIÓN · VECINOS";
+}
+.stories-section .empty-card:nth-child(10)::after{
+  content:"MEMORIA VIVA";
+}
+
+.stories-section .empty-card:nth-child(1)::after,
+.stories-section .empty-card:nth-child(4)::after,
+.stories-section .empty-card:nth-child(7)::after,
+.stories-section .empty-card:nth-child(10)::after{
+  font:700 8px 'DM Sans',sans-serif;
+  letter-spacing:.16em;
+  color:var(--green);
+  text-align:center;
+  padding-top:8px;
+  background:
+    radial-gradient(ellipse at 50% 32%,rgba(82,103,76,.12) 0 20%,transparent 21%),
+    radial-gradient(ellipse at 50% 72%,rgba(82,103,76,.09) 0 34%,transparent 35%),
+    rgba(255,250,240,.58);
+}
+
+/* Los nombres propios pesan como memoria, no como perfil corporativo. */
+.stories-section .empty-card strong{
+  position:relative;
+  z-index:2;
+  max-width:78%;
+  letter-spacing:-.035em;
+}
+.stories-section .empty-card span{
+  position:relative;
+  z-index:2;
+  max-width:74%;
+}
+
+/* Dibujo territorial de fondo: cerro + árbol + agua, muy tenue. */
+.hero-drawing::after{
+  content:"";
+  position:absolute;
+  left:5%;
+  bottom:8%;
+  width:250px;
+  height:120px;
+  opacity:.18;
+  background:
+    radial-gradient(ellipse at 24% 72%,var(--green) 0 28%,transparent 29%),
+    radial-gradient(ellipse at 55% 65%,var(--green2) 0 33%,transparent 34%),
+    linear-gradient(12deg,transparent 0 46%,var(--river) 47% 49%,transparent 50%);
+  filter:blur(.1px);
+  transform:rotate(-3deg);
+}
+
+/* La portada incorpora una pequeña “fotografía de pueblo” dibujada:
+   no pretende representar a una persona real; es lenguaje editorial. */
+.hero-copy::after{
+  content:"un pueblo se reconoce por sus lugares · y por su gente";
+  max-width:360px;
+  line-height:1.35;
+}
+
+/* El sistema de tarjetas de lugares recibe pequeños signos humanos:
+   manos/trabajo/casa representados como trazos, no como rostros inventados. */
+.places-section .empty-card:nth-child(4)::after{
+  content:"✦  tierra trabajada";
+}
+.places-section .empty-card:nth-child(6)::after{
+  content:"✦  gente que hace comunidad";
+}
+.places-section .empty-card:nth-child(8)::after{
+  content:"✦  historias que se juegan";
+}
+.places-section .empty-card:nth-child(4)::after,
+.places-section .empty-card:nth-child(6)::after,
+.places-section .empty-card:nth-child(8)::after{
+  width:auto;
+  height:auto;
+  right:16px;
+  top:16px;
+  padding:7px 10px;
+  border:1px solid rgba(255,249,237,.42);
+  border-radius:999px;
+  background:rgba(31,41,36,.30);
+  color:var(--cream);
+  font:italic 11px 'Fraunces',serif;
+  z-index:4;
+}
+
+/* La secuencia de lectura termina mirando a las personas que sostienen el lugar. */
+.route-banner .route-drawing::before{
+  content:"agua · caminos · chacras · casas · personas";
+  display:block;
+  max-width:190px;
+  margin:0 auto 14px;
+  font:italic 13px 'Fraunces',serif;
+  line-height:1.35;
+  color:rgba(255,249,237,.72);
+}
+
+@media(max-width:760px){
+  .stories-section .empty-card{
+    min-height:245px;
+    padding-top:34px;
+  }
+  .stories-section .empty-card::after{
+    width:145px;
+    height:175px;
+    right:-42px;
+    opacity:.65;
+  }
+  .stories-section .empty-card strong{max-width:88%}
+  .stories-section .empty-card span{max-width:86%}
+  .hero-drawing::after{
+    left:-30px;
+    bottom:8%;
+    transform:scale(.72) rotate(-3deg);
+    transform-origin:left bottom;
+  }
+}
