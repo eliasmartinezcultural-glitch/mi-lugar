@@ -79,3 +79,14 @@ Una futura versión solo existe cuando sea creada y documentada explícitamente.
 ## 7. Manifiesto técnico
 
 El cierre técnico detallado de esta versión está registrado en `docs/VERSION-1.4-MANIFEST.md`.
+
+## 8. Bloqueo reforzado — 2026-09-24
+
+Desde este punto, la evolución de Mi Lugar 1.4 queda dividida en dos capas:
+
+- **Capa protegida:** estructura, HTML, JavaScript, navegación, flujo y funcionalidad pública.
+- **Capa de experiencia:** fotografía, tratamiento de imágenes, color, tipografía, escala, composición, textura, ilustración, responsive y curaduría editorial.
+
+El objetivo es profundizar radicalmente la experiencia sin reconstruir la aplicación. Una mejora visual que requiera modificar index.html o js/app.js queda fuera de 1.4 y no debe aplicarse de forma implícita.
+
+**Regla operativa:** primero se conserva el núcleo; después se mejora la experiencia.
