@@ -927,3 +927,24 @@ button{font:inherit}
   color:rgba(255,249,237,.94);
   text-shadow:0 1px 14px rgba(0,0,0,.42);
 }
+
+
+/* FOTOS ESPECÍFICAS VERIFICADAS · PRIMERA RONDA
+   Se reemplaza el respaldo territorial por imágenes identificadas
+   específicamente para el establecimiento correspondiente.
+   Fuentes visuales: Turismo Neuquén.
+*/
+.places-section .empty-card:nth-child(10){
+  background-image:
+    linear-gradient(180deg,rgba(31,41,36,.08),rgba(31,41,36,.84)),
+    url("https://turismo.neuquen.gob.ar/wp-content/uploads/2025/06/shoeder-4-1-edited-300x300.jpg");
+  background-position:center;
+  background-size:cover;
+}
+.places-section .empty-card:nth-child(12){
+  background-image:
+    linear-gradient(180deg,rgba(31,41,36,.08),rgba(31,41,36,.84)),
+    url("https://turismo.neuquen.gob.ar/wp-content/uploads/2025/06/bodega-fin-del-mundo-1-edited-300x300.webp");
+  background-position:center;
+  background-size:cover;
+}
