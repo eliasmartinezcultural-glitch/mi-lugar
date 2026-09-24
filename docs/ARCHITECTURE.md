@@ -1,5 +1,8 @@
 # Arquitectura
 
+**Versión de referencia: 1.4 · CAPA VISUAL CONSOLIDADA**  
+**Estado:** arquitectura protegida; no se modifica la estructura pública ni la funcionalidad congelada.
+
 ## Capas
 ### Presentación
 HTML semántico + CSS visual + componentes reutilizables.
@@ -61,3 +64,8 @@ route
 6. Un error de un contenido no debe inutilizar todo el sitio.
 7. La ausencia de contenido se trata semánticamente, no con bloques rotos.
 8. Todo cambio estructural importante se documenta antes de ejecutarse.
+
+## Protección 1.4
+La arquitectura descrita aquí es la base protegida sobre la que se consolidó la Versión 1.4. Los avances de esta versión se realizan sin alterar el núcleo público congelado.
+
+Estado de referencia y versión vigente: `docs/VERSION-STATUS.md`.
