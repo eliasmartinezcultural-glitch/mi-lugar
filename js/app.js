@@ -5,7 +5,7 @@ const saveKey='mi-lugar-state-v3';
 const initial={water:false,feed:false,mate:false,seed:false,visited:0,ambience:false,time:'day'};
 let state={...initial};
 try{state={...initial,...JSON.parse(localStorage.getItem(saveKey)||'{}')}}catch(e){}
-let room='house',audioCtx=null,ambienceTimer=null,mediaMode='cinema',mateStep=0,oscillators=[];
+let room='house',audioCtx=null,ambienceTimer=null,mediaMode='cinema',mateStep=0,oscillators=[];\nlet dayTimer=null;
 const scene=$('#scene');
 function persist(){try{localStorage.setItem(saveKey,JSON.stringify(state))}catch(e){}}
 function say(icon,title,text){const tip=$('#sceneTip');if(tip)tip.textContent=icon+' '+title+' · '+text}
@@ -32,7 +32,7 @@ function setMediaMode(mode){
  $$('[data-media-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mediaMode===mode));
  $('#mediaChoices').innerHTML=cinema
  ?'<button class="media-choice" data-search="películas argentinas completas canal oficial YouTube">🎞️ Cine argentino en YouTube</button><button class="media-choice" data-search="documentales argentinos canal oficial YouTube">🌄 Documentales argentinos</button><button class="media-choice" data-search="cortometrajes argentinos canal oficial YouTube">🎬 Cortometrajes</button><button class="media-choice provider" id="cinearInside">🇦🇷 CINE.AR Play oficial ↗</button>'
- :'<button class="media-choice" data-search="rock argentino videos oficiales">🎸 Rock argentino</button><button class="media-choice" data-search="folklore argentino música canal oficial">🪕 Folklore argentino</button><button class="media-choice" data-search="música instrumental tranquila campo">🌾 Música tranquila</button><button class="media-choice" data-search="Banda Registrada canal oficial">🎹 Música tropical</button>';
+ :'<button class="media-choice" data-search="rock argentino videos oficiales">🎸 Rock argentino</button><button class="media-choice" data-search="folklore argentino música canal oficial">🪕 Folklore argentino</button><button class="media-choice" data-search="música instrumental tranquila campo">🌾 Música tranquila</button><button class="media-choice" data-search="Banda Registrada canal oficial">🎹 Música tropical</button><button class="media-choice provider" id="inamuInside">🇦🇷 INAMU Discos · música argentina ↗</button>';
  $('#mediaPlayer').classList.remove('visible');$('#mediaFrame').src='';
 }
 function parseYoutube(raw){
@@ -100,7 +100,7 @@ $('#closeMedia').addEventListener('click',closeMedia);
 $$('[data-media-mode]').forEach(b=>b.addEventListener('click',()=>setMediaMode(b.dataset.mediaMode)));
 $('#mediaForm').addEventListener('submit',e=>{e.preventDefault();loadVideo()});
 $('#mediaFull').addEventListener('click',fullscreenMedia);
-$('#mediaChoices').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.search){window.open('https://www.youtube.com/results?search_query='+encodeURIComponent(b.dataset.search),'_blank','noopener');$('#mediaStatus').textContent='La búsqueda de YouTube se abrió en otra pestaña. Elegí un video que permita inserción y pegá el enlace aquí.'}else if(b.id==='cinearInside'){window.open('https://play.cine.ar/','_blank','noopener');$('#mediaStatus').textContent='CINE.AR Play se abrió en su plataforma oficial, que controla su propia reproducción.'}});
+$('#mediaChoices').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.search){window.open('https://www.youtube.com/results?search_query='+encodeURIComponent(b.dataset.search),'_blank','noopener');$('#mediaStatus').textContent='La búsqueda de YouTube se abrió en otra pestaña. Elegí un video que permita inserción y pegá el enlace aquí.'}else if(b.id==='cinearInside'){window.open('https://play.cine.ar/','_blank','noopener');$('#mediaStatus').textContent='CINE.AR Play se abrió en su plataforma oficial, que controla su propia reproducción.'}else if(b.id==='inamuInside'){window.open('https://www.inamu.musica.ar/youtube-inamudiscos','_blank','noopener');$('#mediaStatus').textContent='Se abrió la fuente oficial de INAMU Discos. Si elegís un video de YouTube que permita inserción, podés traerlo al reproductor de Mi Lugar.'}});
 $('#closeMate').addEventListener('click',closeMate);$('#mateNext').addEventListener('click',nextMate);$('#mateBack').addEventListener('click',previousMate);
 $('#mateRitual').addEventListener('click',e=>{if(e.target===$('#mateRitual'))closeMate()});
 $('#ambienceBtn').addEventListener('click',toggleAmbience);$('#timeBtn').addEventListener('click',cycleTime);
