@@ -41,8 +41,8 @@ function setMediaMode(mode){
 function parseYoutube(raw){
  try{const u=new URL(raw);if(!['youtube.com','www.youtube.com','m.youtube.com','youtu.be','www.youtu.be','youtube-nocookie.com','www.youtube-nocookie.com'].includes(u.hostname))return null;
  let id='';if(u.hostname.includes('youtu.be'))id=u.pathname.slice(1).split('/')[0];else if(u.pathname==='/watch')id=u.searchParams.get('v')||'';else if(/^\/(embed|shorts)\//.test(u.pathname))id=u.pathname.split('/')[2]||'';
+ const list=u.searchParams.get('list');if(list&&/^[A-Za-z0-9_-]+$/.test(list))return {type:'list',id:list,firstVideo:/^[A-Za-z0-9_-]{11}$/.test(id)?id:''};
  if(/^[A-Za-z0-9_-]{11}$/.test(id))return {type:'video',id};
- const list=u.searchParams.get('list');if(list&&/^[A-Za-z0-9_-]+$/.test(list))return {type:'list',id:list};
  }catch(e){}return null;
 }
 function loadVideo(){
