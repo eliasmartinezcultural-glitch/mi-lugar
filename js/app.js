@@ -137,7 +137,7 @@ $('#mediaChoices').addEventListener('click',e=>{
  const b=e.target.closest('button');if(!b)return;
  if(b.dataset.track){startMusic(b.dataset.track);return}
  if(b.hasAttribute('data-stop-music')){stopMusic(true);$('#mediaFrame').src='';$('#mediaPlayer').classList.remove('visible');return}
- if(b.dataset.playId){stopMusic(false);const id=b.dataset.playId;$('#mediaFrame').src='https://www.youtube-nocookie.com/embed/'+id+'?rel=0&playsinline=1';$('#mediaPlayer').classList.add('visible');$('#mediaStatus').textContent='La pantalla de Mi Lugar está reproduciendo: '+(b.dataset.playTitle||'contenido seleccionado')+'. Si el titular bloquea la inserción, esta pieza no estará disponible en el reproductor.';return}
+ if(b.dataset.playId){stopMusic(false);if(mediaLoadTimer)clearTimeout(mediaLoadTimer);const id=b.dataset.playId;$('#mediaFrame').src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1';$('#mediaPlayer').classList.add('visible');$('#mediaStatus').textContent='Cargando en el televisor: '+(b.dataset.playTitle||'contenido seleccionado')+'.';mediaLoadTimer=setTimeout(()=>{if($('#mediaPlayer').classList.contains('visible'))$('#mediaStatus').textContent='Si no se ve la película, puede estar bloqueada para inserción o faltar conexión. Probá otro título; no saldremos de Mi Lugar.'},10000);return}
  if(b.dataset.kind){
   const descriptions={film:'Película o cine argentino',doc:'Documental y naturaleza',short:'Cortometrajes',family:'Cine familiar'};
   $('#mediaStatus').textContent='Elegiste: '+descriptions[b.dataset.kind]+'. Para mantenerlo dentro de Mi Lugar, pegá el enlace de un video que permita inserción en el campo de abajo. No abriremos YouTube ni otra pestaña.';
