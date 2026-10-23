@@ -5,7 +5,8 @@ const saveKey='mi-lugar-state-v3';
 const initial={water:false,feed:false,mate:false,seed:false,visited:0,ambience:false,time:'day'};
 let state={...initial};
 try{state={...initial,...JSON.parse(localStorage.getItem(saveKey)||'{}')}}catch(e){}
-let room='house',audioCtx=null,ambienceTimer=null,mediaMode='cinema',mateStep=0,oscillators=[];\nlet dayTimer=null;
+let room='house',audioCtx=null,ambienceTimer=null,mediaMode='cinema',mateStep=0,oscillators=[];
+let dayTimer=null;
 const scene=$('#scene');
 function persist(){try{localStorage.setItem(saveKey,JSON.stringify(state))}catch(e){}}
 function say(icon,title,text){const tip=$('#sceneTip');if(tip)tip.textContent=icon+' '+title+' · '+text}
