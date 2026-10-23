@@ -30,7 +30,7 @@ function setMediaMode(mode){
  $('#mediaTitle').textContent=cinema?'El televisor del living':'El equipo de música';
  $('#mediaCopy').textContent=cinema?'El cine se queda en casa. Elegí una categoría y cargá un enlace que permita reproducción integrada. No se abrirán búsquedas ni pestañas externas.':'Poné música sin salir del living. Podés escuchar las melodías instrumentales de Mi Lugar o cargar un video/lista que permita reproducción integrada.';
  $('#mediaLabel').textContent=cinema?'Enlace de video o lista para reproducir en el televisor':'Enlace de canción o lista para reproducir en el living';
- $('#mediaUrl').placeholder=cinema?'Pegá aquí el enlace del video o lista':'Pegá aquí el enlace musical si querés usar un video';
+ $('#mediaUrl').placeholder=cinema?'Pegá el enlace de una película o lista de cine':'Pegá el enlace de una canción o lista musical';
  $('#mediaStatus').textContent=cinema?'La selección y el reproductor permanecen dentro de esta escena.':'Elegí una melodía propia de Mi Lugar o reproducí una fuente compatible.';
  $('[data-media-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mediaMode===mode));
  $('#mediaChoices').innerHTML=cinema
@@ -48,7 +48,7 @@ function parseYoutube(raw){
 function loadVideo(){
  const parsed=parseYoutube($('#mediaUrl').value.trim());if(!parsed){$('#mediaStatus').textContent='Ese enlace no parece ser de YouTube. Pegá la dirección de un video o una lista compatible; no abriremos otras páginas.';$('#mediaUrl').focus();return}
  stopMusic(false);if(mediaLoadTimer)clearTimeout(mediaLoadTimer);
- const src=parsed.type==='video'?'https://www.youtube-nocookie.com/embed/'+parsed.id+'?autoplay=1&rel=0&playsinline=1':'https://www.youtube-nocookie.com/embed/videoseries?list='+parsed.id+'&autoplay=1&rel=0&playsinline=1';
+ const src=parsed.type==='video'?'https://www.youtube-nocookie.com/embed/'+parsed.id+'?autoplay=1&rel=0&playsinline=1':parsed.firstVideo?'https://www.youtube-nocookie.com/embed/'+parsed.firstVideo+'?list='+parsed.id+'&autoplay=1&rel=0&playsinline=1':'https://www.youtube-nocookie.com/embed/videoseries?list='+parsed.id+'&autoplay=1&rel=0&playsinline=1';
  $('#mediaFrame').src=src;$('#mediaPlayer').classList.add('visible');$('#mediaStatus').textContent='Cargando en la pantalla del living… Si queda negra, el video puede tener bloqueada la reproducción integrada.';
  mediaLoadTimer=setTimeout(()=>{if($('#mediaPlayer').classList.contains('visible'))$('#mediaStatus').textContent='¿No arrancó? Revisá la conexión y probá otra pieza. Algunos videos no admiten reproducción incrustada; Mi Lugar no abrirá otra pestaña.'},10000);
 }
