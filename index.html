@@ -8,7 +8,7 @@
 </head>
 <body><div class="app">
 <header><div class="brand"><div class="brand-icon" aria-hidden="true">⌂</div><div><h1>Mi Lugar</h1><p>UNA CASA RURAL PARA ESTAR</p></div></div><div class="quiet-pill">✦ Sin apuro · A tu ritmo</div></header>
-<section class="intro"><h2 id="heading">La casa está tranquila</h2><p id="subheading">La luz de la tarde cae sobre los muebles. El televisor, la música, la biblioteca y la mesa matera están acá, dentro de tu refugio.</p></section>
+<section class="intro"><h2 id="heading">La casa está tranquila</h2><p id="subheading">La luz de la tarde cae sobre los muebles. Tocá el televisor o la música para abrirlos dentro de este mundo.</p></section>
 <main class="world">
 <div class="scene" id="scene" aria-label="Mundo rural ilustrado e interactivo">
 <section class="room active" id="house" aria-label="Interior de la casa">
@@ -46,6 +46,23 @@
 </svg>
 <div class="scene-label">☼ Patio · huerta y animales</div><button class="hotspot water" data-action="water">♧ Regar plantas</button><button class="hotspot feed" data-action="feed">♡ Atender gallinas</button><button class="hotspot return" data-go="house">↶ Volver a la casa</button>
 </section>
+<div class="immersive-media" id="mediaRoom" aria-hidden="true">
+  <div class="media-shell">
+    <div class="media-top"><div><span class="media-kicker">MI LUGAR · TU CASA</span><h3 id="mediaTitle">El televisor del living</h3></div><button class="media-close" id="closeMedia" aria-label="Cerrar reproductor">✕</button></div>
+    <div class="media-tabs"><button class="media-tab active" data-media-mode="cinema">📺 Cine argentino</button><button class="media-tab" data-media-mode="music">🎵 Música</button></div>
+    <div class="media-copy" id="mediaCopy">Elegí una película o documental. La pantalla aparece acá, sin salir del mundo.</div>
+    <div class="media-choices" id="mediaChoices">
+      <button class="media-choice" data-search="películas argentinas completas canal oficial YouTube">🎞️ Películas argentinas</button>
+      <button class="media-choice" data-search="documentales argentinos completos canal oficial YouTube">🌄 Documentales</button>
+      <button class="media-choice" data-search="cortometrajes argentinos canal oficial YouTube">🎬 Cortometrajes</button>
+      <button class="media-choice provider" id="cinearInside">🇦🇷 CINE.AR Play oficial ↗</button>
+    </div>
+    <form class="media-load" id="mediaForm"><label id="mediaLabel" for="mediaUrl">O pegá un enlace de YouTube autorizado</label><div class="media-input-row"><input id="mediaUrl" type="url" placeholder="https://www.youtube.com/watch?v=..." autocomplete="url"><button class="media-play" type="submit">▶ Ver</button></div></form>
+    <div class="media-player" id="mediaPlayer"><iframe id="mediaFrame" title="Reproductor de Mi Lugar" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    <div class="media-bottom"><span id="mediaStatus">La casa es tuya. Elegí qué querés disfrutar.</span><button class="media-full" id="mediaFull" type="button">⛶ Pantalla completa</button></div>
+    <p class="media-note">Algunos videos no permiten reproducción incrustada. Los catálogos oficiales pueden abrirse en su propia plataforma; Mi Lugar no copia ni aloja las películas.</p>
+  </div>
+</div>
 <div class="scene-tip" id="sceneTip">Tocá los objetos de la casa para descubrir qué podés hacer.</div>
 </div>
 <nav class="nav" aria-label="Moverse por Mi Lugar"><button class="btn primary" data-go="house" aria-pressed="true">⌂ Entrar a la casa</button><button class="btn" data-go="yard" aria-pressed="false">♧ Salir al patio</button><button class="btn" data-action="mate">🧉 Preparar unos mates</button><button class="btn" data-action="quiet">🍃 Quedarme un rato</button><button class="btn" id="ambienceBtn">🌾 Escuchar sonidos de campo</button></nav>
@@ -59,14 +76,10 @@
 <article class="card"><div class="big">🐓</div><h4>Los animales</h4><p>Visitá el gallinero, llená el bebedero y dejá alimento. Estas son actividades simuladas del mundo digital.</p><div class="meter"><span id="feedBar2"></span></div><button class="btn" id="feedBtn">🌾 Dar agua y alimento</button></article>
 <article class="card"><div class="big">🧉</div><h4>La mesa matera</h4><p>Prepará el mate, acomodá el termo y quedate mirando por la ventana. No hay una tarea que terminar.</p><div class="meter"><span id="mateBar2"></span></div><button class="btn" id="mateBtn">🧉 Preparar unos mates</button></article>
 </div>
-<div class="section-head"><div><h3>El televisor del living</h3><p>Elegí contenido autorizado y miralo dentro de la casa.</p></div></div>
-<div class="card"><div class="big">📺</div><h4>Cine argentino en la pantalla de casa</h4><p>Podés cargar un video o una lista de YouTube que permita inserción. Para un catálogo nacional, CINE.AR Play es una opción oficial y gratuita; se abre en su plataforma cuando la reproducción integrada no esté disponible. No todos los videos de YouTube permiten verse incrustados.</p><div class="player-controls"><button class="btn primary" id="cinearLink">Abrir CINE.AR Play oficial ↗</button><button class="btn" id="officialChannel">Buscar canal oficial en YouTube ↗</button><button class="btn" id="filmSearch">Buscar películas argentinas ↗</button></div><div class="player-panel open" id="cinemaPanel"><h4>La pantalla del living</h4><p>Pegá un enlace de YouTube a una película o lista publicada por una fuente autorizada. El reproductor aparecerá acá, dentro de Mi Lugar.</p><div class="field"><label class="sr-only" for="filmUrl">Enlace de YouTube para el cine</label><input id="filmUrl" type="url" placeholder="https://www.youtube.com/watch?v=..." autocomplete="url"><button class="btn primary" id="playFilm">Reproducir</button></div><div class="video-wrap" id="filmVideo"><iframe id="filmFrame" title="Televisor del living: reproductor de cine" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><div class="player-controls"><button class="btn" id="fullFilm">⛶ Pantalla completa</button></div></div></div>
-<div class="section-head"><div><h3>La habitación de música</h3><p>Rock, música tropical y tus artistas favoritos, sin salir del refugio.</p></div></div>
-<div class="card"><div class="big">🎶</div><h4>Un reproductor dentro de Mi Lugar</h4><p>Pegá un enlace de una canción o lista de YouTube. Rammstein, Banda Registrada y otros artistas se pueden organizar en favoritos; la reproducción comienza solo cuando vos la iniciás.</p><div class="player-controls"><button class="btn" id="musicChannel">Buscar música oficial en YouTube ↗</button></div><div class="player-panel open" id="musicPanel"><h4>El reproductor musical</h4><div class="field"><label class="sr-only" for="musicUrl">Enlace de YouTube para música</label><input id="musicUrl" type="url" placeholder="Pegá el enlace de una canción o lista..." autocomplete="url"><button class="btn primary" id="playMusic">Reproducir</button></div><div class="video-wrap" id="musicVideo"><iframe id="musicFrame" title="Reproductor musical de Mi Lugar" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><div class="player-controls"><button class="btn" id="fullMusic">⛶ Pantalla completa</button></div></div></div>
 <div class="section-head"><div><h3>Un rincón para aprender</h3><p>Lecturas cortas, curiosidades y pequeñas pausas para la mente.</p></div></div>
 <div class="reading" id="reading"><h4>📖 La biblioteca de la casa</h4><p>Esta habitación crecerá con textos que puedas leer sin apuro, cuentos, curiosidades sobre la Patagonia, cultura, naturaleza y música. La idea es que cada lectura abra una puerta, no que te apure a pasar a la siguiente.</p><div class="mini-list"><span class="chip">Naturaleza</span><span class="chip">Cine argentino</span><span class="chip">Música</span><span class="chip">Historias</span><span class="chip">Aprender algo nuevo</span></div></div>
 <div class="section-head"><div><h3>El sonido del campo</h3><p>Un primer sonido experimental, generado localmente en tu navegador.</p></div></div>
 <div class="card"><p>Activá una ambientación breve desde el botón de arriba. Por ahora son tonos suaves generados en el navegador, no grabaciones auténticas de aves o viento. Más adelante podemos sumar grabaciones propias o con licencia compatible.</p><button class="btn" id="resetVisit">↻ Reiniciar tareas de esta visita</button></div>
 </section>
-<footer class="footer"><span>Mi Lugar · Un refugio digital, hecho despacio.</span><span>Primera etapa ampliada · Casa, patio, cine y música</span><span>Las tareas rurales son simulaciones digitales.</span></footer>
+<footer class="footer"><span>Mi Lugar · Un refugio digital, hecho despacio.</span><span>Casa, patio y experiencias dentro del mundo</span><span>Las tareas rurales son simulaciones digitales.</span></footer>
 </div><script src="js/app.js" defer></script></body></html>
