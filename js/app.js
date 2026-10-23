@@ -6,7 +6,7 @@ const initial={water:false,feed:false,mate:false,seed:false,visited:0,ambience:f
 let state={...initial};
 try{state={...initial,...JSON.parse(localStorage.getItem(saveKey)||'{}')}}catch(e){}
 let room='house',audioCtx=null,ambienceTimer=null,mediaMode='cinema',mateStep=0,oscillators=[],musicTimer=null,musicTrack='mate',musicNote=0;
-let dayTimer=null;
+let dayTimer=null,mediaLoadTimer=null;
 const scene=$('#scene');
 function persist(){try{localStorage.setItem(saveKey,JSON.stringify(state))}catch(e){}}
 function say(icon,title,text){const tip=$('#sceneTip');if(tip)tip.textContent=icon+' '+title+' · '+text}
@@ -22,32 +22,35 @@ function openMedia(mode){
  root.classList.add('open');root.setAttribute('aria-hidden','false');setMediaMode(mode);
  say(mode==='cinema'?'📺':'🎵',mode==='cinema'?'El televisor se encendió':'El equipo de música está listo',mode==='cinema'?'Elegí cine para verlo aquí cuando el video permita inserción.':'Elegí música para llenar la casa.');
 }
-function closeMedia(){const root=$('#mediaRoom');root.classList.remove('open');root.setAttribute('aria-hidden','true');$('#mediaFrame').src='';$('#mediaPlayer').classList.remove('visible')}
+function closeMedia(){const root=$('#mediaRoom');if(mediaLoadTimer){clearTimeout(mediaLoadTimer);mediaLoadTimer=null}stopMusic(false);root.classList.remove('open');root.setAttribute('aria-hidden','true');$('#mediaFrame').src='';$('#mediaPlayer').classList.remove('visible')}
 function setMediaMode(mode){
+ if(mediaLoadTimer){clearTimeout(mediaLoadTimer);mediaLoadTimer=null}
  stopMusic(false);
  mediaMode=mode;const cinema=mode==='cinema';
  $('#mediaTitle').textContent=cinema?'El televisor del living':'El equipo de música';
  $('#mediaCopy').textContent=cinema?'El cine se queda en casa. Elegí una categoría y cargá un enlace que permita reproducción integrada. No se abrirán búsquedas ni pestañas externas.':'Poné música sin salir del living. Podés escuchar las melodías instrumentales de Mi Lugar o cargar un video/lista que permita reproducción integrada.';
  $('#mediaLabel').textContent=cinema?'Enlace de video o lista para reproducir en el televisor':'Enlace de canción o lista para reproducir en el living';
- $('#mediaUrl').placeholder=cinema?'Pegá aquí el enlace del video o lista':'Pegá aquí el enlace musical si querés usar un video';
+ $('#mediaUrl').placeholder=cinema?'Pegá el enlace de una película o lista de cine':'Pegá el enlace de una canción o lista musical';
  $('#mediaStatus').textContent=cinema?'La selección y el reproductor permanecen dentro de esta escena.':'Elegí una melodía propia de Mi Lugar o reproducí una fuente compatible.';
  $('[data-media-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mediaMode===mode));
  $('#mediaChoices').innerHTML=cinema
- ?'<button class="media-choice" data-kind="film">🎞️ Cine argentino</button><button class="media-choice" data-kind="doc">🌄 Documentales</button><button class="media-choice" data-kind="short">🎬 Cortometrajes argentinos</button><button class="media-choice" data-kind="family">🌻 Cine familiar</button><div class="media-section-title">CINE LIBRE · PARA PROBAR EL TELEVISOR</div><button class="media-choice film-card" data-play-id="YE7VzlLtp-4" data-play-title="Big Buck Bunny · corto animado libre">🐇 Big Buck Bunny <small>Corto animado libre · 10 min</small></button><button class="media-choice film-card" data-play-id="eRsGyueVLvQ" data-play-title="Sintel · película animada libre">🐉 Sintel <small>Película animada libre · 15 min</small></button><button class="media-choice film-card" data-play-id="4eJVGqJhp40" data-play-title="Elephants Dream · película animada libre">🐘 Elephants Dream <small>Película animada libre</small></button><button class="media-choice film-card" data-play-id="R6MlUcmOul8" data-play-title="Tears of Steel · cortometraje de ciencia ficción libre">🤖 Tears of Steel <small>Ciencia ficción · corto libre</small></button>'
+ ?'<button class="media-choice" data-kind="film">🎞️ Cine argentino</button><button class="media-choice" data-kind="doc">🌄 Documentales</button><button class="media-choice" data-kind="short">🎬 Cortometrajes argentinos</button><button class="media-choice" data-kind="family">🌻 Cine familiar</button><div class="media-section-title">CINE LIBRE · PARA PROBAR EL TELEVISOR</div><button class="media-choice film-card" data-play-id="YE7VzlLtp-4" data-play-title="Big Buck Bunny · corto animado libre">🐇 Big Buck Bunny <small>Corto animado libre · 10 min</small></button><button class="media-choice film-card" data-play-id="eRsGyueVLvQ" data-play-title="Sintel · película animada libre">🐉 Sintel <small>Película animada libre · 15 min</small></button><button class="media-choice film-card" data-play-id="4eJVGqJhp40" data-play-title="Elephants Dream · película animada libre">🐘 Elephants Dream <small>Película animada libre</small></button><button class="media-choice film-card" data-play-id="R6MlUcmOul8" data-play-title="Tears of Steel · cortometraje de ciencia ficción libre">🤖 Tears of Steel <small>Ciencia ficción · corto libre</small></button><button class="media-choice film-card" data-play-list="PLj9stbUOTbCuRN8CqKn_t93L5MvhPf98U" data-play-title="Tu colección de películas">🎞️ Tu colección de películas <small>Lista seleccionada · se reproduce aquí dentro</small></button>'
  :'<button class="media-choice music-track" data-track="mate">🧉 Melodía matera <small>suave, cálida y lenta</small></button><button class="media-choice music-track" data-track="patio">🌾 Viento en el patio <small>melodía de campo</small></button><button class="media-choice music-track" data-track="fogón">🔥 Música junto al fogón <small>notas tranquilas</small></button><button class="media-choice music-track" data-track="noche">🌙 Noche patagónica <small>serena y profunda</small></button><div class="media-section-title">RADIO MUSICAL INTEGRADA</div><button class="media-choice film-card" data-play-id="jfKfPfyJRdk" data-play-title="Radio instrumental en vivo">📻 Radio instrumental en vivo <small>Reproductor integrado · conexión necesaria</small></button><button class="media-choice music-stop" data-stop-music>■ Detener la música local</button>';
  $('#mediaPlayer').classList.remove('visible');$('#mediaFrame').src='';
 }
 function parseYoutube(raw){
  try{const u=new URL(raw);if(!['youtube.com','www.youtube.com','m.youtube.com','youtu.be','www.youtu.be','youtube-nocookie.com','www.youtube-nocookie.com'].includes(u.hostname))return null;
  let id='';if(u.hostname.includes('youtu.be'))id=u.pathname.slice(1).split('/')[0];else if(u.pathname==='/watch')id=u.searchParams.get('v')||'';else if(/^\/(embed|shorts)\//.test(u.pathname))id=u.pathname.split('/')[2]||'';
+ const list=u.searchParams.get('list');if(list&&/^[A-Za-z0-9_-]+$/.test(list))return {type:'list',id:list,firstVideo:/^[A-Za-z0-9_-]{11}$/.test(id)?id:''};
  if(/^[A-Za-z0-9_-]{11}$/.test(id))return {type:'video',id};
- const list=u.searchParams.get('list');if(list&&/^[A-Za-z0-9_-]+$/.test(list))return {type:'list',id:list};
  }catch(e){}return null;
 }
 function loadVideo(){
- const parsed=parseYoutube($('#mediaUrl').value.trim());if(!parsed){$('#mediaStatus').textContent='No reconocí el enlace. Pegá la dirección completa de un video o una lista de YouTube.';return}
- const src=parsed.type==='video'?'https://www.youtube-nocookie.com/embed/'+parsed.id+'?autoplay=1&rel=0&playsinline=1':'https://www.youtube-nocookie.com/embed/videoseries?list='+parsed.id+'&autoplay=1&rel=0&playsinline=1';
- $('#mediaFrame').src=src;$('#mediaPlayer').classList.add('visible');$('#mediaStatus').textContent='Intentando reproducir dentro de Mi Lugar. Algunos titulares bloquean la inserción; en ese caso elegí otro video o la plataforma oficial.';
+ const parsed=parseYoutube($('#mediaUrl').value.trim());if(!parsed){$('#mediaStatus').textContent='Ese enlace no parece ser de YouTube. Pegá la dirección de un video o una lista compatible; no abriremos otras páginas.';$('#mediaUrl').focus();return}
+ stopMusic(false);if(mediaLoadTimer)clearTimeout(mediaLoadTimer);
+ const src=parsed.type==='video'?'https://www.youtube-nocookie.com/embed/'+parsed.id+'?autoplay=1&rel=0&playsinline=1':parsed.firstVideo?'https://www.youtube-nocookie.com/embed/'+parsed.firstVideo+'?list='+parsed.id+'&autoplay=1&rel=0&playsinline=1':'https://www.youtube-nocookie.com/embed/videoseries?list='+parsed.id+'&autoplay=1&rel=0&playsinline=1';
+ $('#mediaFrame').src=src;$('#mediaPlayer').classList.add('visible');$('#mediaStatus').textContent='Cargando en la pantalla del living… Si queda negra, el video puede tener bloqueada la reproducción integrada.';
+ mediaLoadTimer=setTimeout(()=>{if($('#mediaPlayer').classList.contains('visible'))$('#mediaStatus').textContent='¿No arrancó? Revisá la conexión y probá otra pieza. Algunos videos no admiten reproducción incrustada; Mi Lugar no abrirá otra pestaña.'},10000);
 }
 function startMusic(track){
  const ctx=getAudio();if(!ctx){$('#mediaStatus').textContent='Este navegador no permite reproducir la melodía local.';return}
@@ -135,7 +138,8 @@ $('#mediaChoices').addEventListener('click',e=>{
  const b=e.target.closest('button');if(!b)return;
  if(b.dataset.track){startMusic(b.dataset.track);return}
  if(b.hasAttribute('data-stop-music')){stopMusic(true);$('#mediaFrame').src='';$('#mediaPlayer').classList.remove('visible');return}
- if(b.dataset.playId){stopMusic(false);const id=b.dataset.playId;$('#mediaFrame').src='https://www.youtube-nocookie.com/embed/'+id+'?rel=0&playsinline=1';$('#mediaPlayer').classList.add('visible');$('#mediaStatus').textContent='La pantalla de Mi Lugar está reproduciendo: '+(b.dataset.playTitle||'contenido seleccionado')+'. Si el titular bloquea la inserción, esta pieza no estará disponible en el reproductor.';return}
+ if(b.dataset.playId){stopMusic(false);if(mediaLoadTimer)clearTimeout(mediaLoadTimer);const id=b.dataset.playId;$('#mediaFrame').src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1';$('#mediaPlayer').classList.add('visible');$('#mediaStatus').textContent='Cargando en el televisor: '+(b.dataset.playTitle||'contenido seleccionado')+'.';mediaLoadTimer=setTimeout(()=>{if($('#mediaPlayer').classList.contains('visible'))$('#mediaStatus').textContent='Si no se ve la película, puede estar bloqueada para inserción o faltar conexión. Probá otro título; no saldremos de Mi Lugar.'},10000);return}
+ if(b.dataset.playList){stopMusic(false);if(mediaLoadTimer)clearTimeout(mediaLoadTimer);const id=b.dataset.playList;$('#mediaFrame').src='https://www.youtube-nocookie.com/embed/videoseries?list='+id+'&rel=0&playsinline=1';$('#mediaPlayer').classList.add('visible');$('#mediaStatus').textContent='Cargando tu colección completa dentro del televisor. Si algunos títulos no aparecen, puede que no permitan inserción.';mediaLoadTimer=setTimeout(()=>{if($('#mediaPlayer').classList.contains('visible'))$('#mediaStatus').textContent='La lista puede tardar o contener videos que no permiten inserción. Revisá la conexión o probá otra selección; seguiremos dentro de Mi Lugar.'},10000);return}
  if(b.dataset.kind){
   const descriptions={film:'Película o cine argentino',doc:'Documental y naturaleza',short:'Cortometrajes',family:'Cine familiar'};
   $('#mediaStatus').textContent='Elegiste: '+descriptions[b.dataset.kind]+'. Para mantenerlo dentro de Mi Lugar, pegá el enlace de un video que permita inserción en el campo de abajo. No abriremos YouTube ni otra pestaña.';
