@@ -91,3 +91,27 @@ body{background:#493d31}
 #yard svg .flowers{transform-box:fill-box;transform-origin:bottom center;animation:cropSway 3.7s ease-in-out infinite alternate-reverse}
 @keyframes cropSway{from{rotate:-1deg}to{rotate:1.4deg}}
 @media(prefers-reduced-motion:reduce){#house svg .sun,#yard svg .sun,#yard svg .chicken,#yard svg .crop-row,#yard svg .flowers{animation:none!important}}
+
+
+/* MI LUGAR 004 — medios interiores, respuestas del patio y atmósfera */
+.media-choice small{display:block;margin-top:5px;color:#8a765f;font:11px/1.35 system-ui,sans-serif}
+.media-choice.music-track{min-height:66px;background:linear-gradient(135deg,#fff9ef,#e5eadb);border-color:#d5c6a8;box-shadow:0 3px 0 #d5c6a8;transition:transform .18s,box-shadow .18s,background .18s}
+.media-choice.music-track:hover{transform:translateY(-2px);box-shadow:0 5px 0 #c5d5b9;background:#f3f3df}
+.media-choice.music-stop{grid-column:1/-1;text-align:center;background:#ead9c6}
+.media-player{box-shadow:0 10px 28px #21180f55}
+#mediaRoom.open .media-shell{animation:houseGlow .7s ease both}
+@keyframes houseGlow{from{transform:translateY(9px) scale(.99);opacity:.65}to{transform:translateY(0) scale(1);opacity:1}}
+.scene .hotspot{box-shadow:0 3px 12px #2c211b22;animation:hotspotBreath 5s ease-in-out infinite alternate}
+.scene .hotspot:nth-of-type(2n){animation-delay:-2.5s}
+@keyframes hotspotBreath{from{box-shadow:0 2px 10px #2c211b1c}to{box-shadow:0 5px 17px #2c211b45}}
+.scene::before{content:"";position:absolute;inset:-10%;z-index:2;pointer-events:none;opacity:.2;background:radial-gradient(ellipse at 16% 20%,#fff4c7 0,transparent 34%),radial-gradient(ellipse at 82% 80%,#e6c49a 0,transparent 38%);animation:airMove 16s ease-in-out infinite alternate}
+@keyframes airMove{from{transform:translate(-1%,0) scale(1)}to{transform:translate(1.2%,-.6%) scale(1.03)}}
+.scene.garden-watered #yard svg .crop-row{filter:drop-shadow(0 0 5px #d8e7a8);animation-duration:2.2s}
+.scene.garden-watered #yard svg .flowers{filter:drop-shadow(0 0 4px #f2d8be);transform:scale(1.035);transform-origin:bottom center}
+.scene.chickens-fed #yard svg .chicken{animation-duration:1.4s;filter:drop-shadow(0 0 3px #fff2cf)}
+.scene.garden-watered #yard svg::after{content:"";position:absolute}
+.scene[data-time="dawn"]::before{background:radial-gradient(ellipse at 50% 5%,#ffd6a3 0,transparent 54%)}
+.scene[data-time="sunset"]::before{background:radial-gradient(ellipse at 75% 10%,#eaa47e55 0,transparent 58%)}
+.scene[data-time="night"]::before{opacity:.34;background:radial-gradient(ellipse at 20% 15%,#8ea5e255 0,transparent 45%)}
+@media(max-width:600px){.media-choice.music-track{min-height:58px}.media-choice small{font-size:10px}.media-choice.music-stop{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){.scene::before,.scene .hotspot,#mediaRoom.open .media-shell{animation:none!important}}
