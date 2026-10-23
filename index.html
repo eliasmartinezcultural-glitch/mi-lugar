@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#d8c6a8">
+<title>Mi Lugar — una casa para estar</title>
+<style>
+:root{--ink:#493d32;--cream:#f5eddd;--sage:#aebd9b;--moss:#64795c;--clay:#bd8063;--wood:#8c6044;--sky:#c8dce0}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:#e6ddca}body{padding:0}
+button{font:inherit;color:inherit;cursor:pointer}
+.shell{max-width:1180px;margin:auto;min-height:100vh;background:#f3ead9;box-shadow:0 0 50px #4b3b2b18}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px clamp(16px,4vw,38px);border-bottom:1px solid #d8c8ae;background:#f8f0e1}
+.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#d8dfcc;font-size:24px}.brand h1{font-size:clamp(20px,3vw,27px);font-weight:normal;margin:0}.brand p{font:12px/1.4 system-ui,sans-serif;margin:2px 0 0;color:#80715f;letter-spacing:.08em}
+.status{font:12px system-ui,sans-serif;background:#e4e8d9;border-radius:30px;padding:8px 12px;white-space:nowrap}
+main{padding:clamp(14px,3vw,30px)}.intro{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:0 0 16px}.intro h2{font-size:clamp(23px,4vw,34px);font-weight:normal;margin:0 0 5px}.intro p{font:14px/1.55 system-ui,sans-serif;color:#766a5b;margin:0;max-width:610px}.time-note{font:italic 13px Georgia,serif;color:#8c725d;white-space:nowrap}
+.scene{position:relative;overflow:hidden;border:5px solid #e0d0b7;border-radius:18px;background:#d8e4dd;min-height:360px;aspect-ratio:16/8.6;box-shadow:0 12px 28px #604a3015;isolation:isolate}
+.art{width:100%;height:100%;position:absolute;inset:0;display:block}.view{display:none;position:absolute;inset:0}.view.active{display:block;animation:arrive .6s ease both}
+@keyframes arrive{from{opacity:.3;transform:scale(1.015)}to{opacity:1;transform:scale(1)}}
+.sun{animation:glow 5s ease-in-out infinite alternate;transform-origin:center}@keyframes glow{to{opacity:.7;transform:scale(1.06)}}
+.wind{animation:sway 4s ease-in-out infinite alternate;transform-origin:bottom center}@keyframes sway{to{transform:rotate(2deg)}}
+.smoke{animation:rise 5s ease-out infinite;opacity:.48}@keyframes rise{0%{transform:translateY(10px);opacity:0}40%{opacity:.35}100%{transform:translateY(-25px);opacity:0}}
+.scene-label{position:absolute;left:16px;top:15px;background:#fff8e8df;border:1px solid #fff8;border-radius:30px;padding:8px 12px;font:12px system-ui,sans-serif;backdrop-filter:blur(6px)}
+.hint{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);background:#443b30d9;color:#fff5e6;border-radius:30px;padding:9px 15px;font:12px system-ui,sans-serif;text-align:center;width:max-content;max-width:90%}
+.hotspot{position:absolute;border:1px solid #fff9;background:#fff2;border-radius:12px;color:#fff;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 12px;text-shadow:0 1px 3px #333;box-shadow:0 2px 10px #34261920;transition:background .2s,transform .2s;font:13px system-ui,sans-serif;backdrop-filter:blur(2px)}
+.hotspot:hover,.hotspot:focus-visible{background:#fff6;transform:translateY(-2px);outline:2px solid #fff}
+#inside .window-btn{left:14%;top:27%}#inside .fire-btn{right:10%;top:47%}#inside .table-btn{left:43%;bottom:20%}#garden .plant-btn{left:17%;bottom:25%}#garden .animal-btn{right:16%;bottom:25%}#garden .door-btn{left:46%;top:16%}
+.controls{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0 0;align-items:center}.control{border:1px solid #cbb99d;border-radius:30px;background:#fff9ed;padding:11px 16px;font:13px system-ui,sans-serif;transition:all .2s}.control:hover{background:#e1e7d5;border-color:#a8b59a}.control.primary{background:#63785a;color:#fff9eb;border-color:#63785a}.control[aria-pressed="true"]{box-shadow:inset 0 0 0 2px #8fa181}
+.message{min-height:65px;margin-top:15px;padding:15px 18px;border-radius:12px;background:#e9e8d9;display:flex;align-items:center;gap:13px}.message .emoji{font-size:25px}.message strong{font-weight:normal;font-size:17px}.message p{font:13px/1.5 system-ui,sans-serif;color:#746b5b;margin:3px 0 0}
+.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:15px clamp(16px,4vw,38px);border-top:1px solid #d8c8ae;font:11px/1.5 system-ui,sans-serif;color:#8b7b67}
+@media(max-width:640px){header{align-items:flex-start}.status{font-size:10px;padding:7px 9px}.intro{display:block}.time-note{display:block;margin-top:8px}.scene{aspect-ratio:4/5;min-height:430px;max-height:580px}.art{width:170%;max-width:none;left:-35%}.hotspot{font-size:11px;padding:8px 10px}.scene-label{font-size:11px}.hint{font-size:11px;line-height:1.4}.controls .control{flex:1 1 42%;padding:12px 8px}.message{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header><div class="brand"><div class="brand-mark" aria-hidden="true">⌂</div><div><h1>Mi Lugar</h1><p>UNA CASA PARA ESTAR</p></div></div><div class="status">✦ Sin apuro · A tu ritmo</div></header>
+<main>
+<section class="intro"><div><h2 id="heading">La casa está tranquila</h2><p id="subheading">Entraste. Afuera sopla una brisa suave y la luz de la tarde se acomoda sobre los muebles. No hay nada que tengas que hacer.</p></div><div class="time-note">Un pequeño refugio patagónico</div></section>
+<div class="scene" id="scene" aria-label="Escena ilustrada interactiva de una casa rural">
+<div class="view active" id="inside">
+<svg class="art" viewBox="0 0 1200 650" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Interior cálido de una casa rural con ventana, sillón, estufa a leña, mesa matera y plantas">
+<defs>
+<linearGradient id="wall" x2="0" y2="1"><stop stop-color="#f2e4c9"/><stop offset="1" stop-color="#d9c4a3"/></linearGradient>
+<linearGradient id="floor" x2="0" y2="1"><stop stop-color="#b88c64"/><stop offset="1" stop-color="#7f573d"/></linearGradient>
+<linearGradient id="outside" x2="0" y2="1"><stop stop-color="#b9d4d5"/><stop offset="1" stop-color="#e9d7ad"/></linearGradient>
+<linearGradient id="windowLight" x2="1" y2="1"><stop stop-color="#fff5c6" stop-opacity=".7"/><stop offset="1" stop-color="#fff5c6" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="1200" height="650" fill="url(#wall)"/>
+<path d="M0 0H1200V60Q800 35 0 80Z" fill="#c6a982" opacity=".5"/>
+<!-- beams -->
+<path d="M0 70L1200 18M0 90L1200 38" stroke="#a98058" stroke-width="15" opacity=".7"/>
+<!-- window -->
+<rect x="110" y="105" width="430" height="330" rx="4" fill="#79573e" stroke="#a77c56" stroke-width="13"/>
+<rect x="128" y="123" width="394" height="294" fill="url(#outside)"/>
+<circle class="sun" cx="420" cy="180" r="37" fill="#f7df9b"/>
+<path d="M128 315Q210 240 285 310T522 280V417H128Z" fill="#9daf91"/>
+<path d="M128 348Q235 285 320 345T522 330V417H128Z" fill="#718b6a"/>
+<path d="M128 388Q245 350 340 380T522 372V417H128Z" fill="#b9aa7c"/>
+<path d="M320 417L330 280L350 280L365 417" fill="#6d7657"/>
+<path d="M340 305Q280 290 286 250Q325 260 340 305M347 325Q390 280 420 292Q403 329 347 325" fill="#879d75"/>
+<path d="M323 123V417M128 270H522" stroke="#79573e" stroke-width="12"/>
+<path d="M145 135L490 135L490 400Z" fill="url(#windowLight)"/>
+<!-- curtain -->
+<path d="M85 90Q120 135 105 260T125 445L157 440Q145 300 161 90Z" fill="#d8a889"/>
+<path d="M530 90Q495 140 510 265T488 445L457 440Q473 280 455 90Z" fill="#d8a889"/>
+<path d="M93 104Q118 130 126 153M520 104Q495 130 486 153" fill="none" stroke="#bd8b6e" stroke-width="7"/>
+<!-- wall shelves -->
+<path d="M680 175H1070L1057 193H690Z" fill="#8d6548"/>
+<path d="M720 176V145H755V176M785 176V133H823V176M855 176V153H892V176" fill="#b47d52"/>
+<rect x="718" y="125" width="42" height="48" rx="3" fill="#6f8060"/><rect x="785" y="113" width="38" height="60" rx="3" fill="#c58d6b"/><rect x="855" y="134" width="38" height="39" rx="3" fill="#e5d4b4"/>
+<path d="M720 137L757 137M788 126L820 126M858 146L890 146" stroke="#f1dfc0" stroke-width="4"/>
+<!-- framed countryside -->
+<rect x="920" y="100" width="150" height="125" rx="3" fill="#8e6848"/><rect x="931" y="111" width="128" height="103" fill="#d1e0d7"/>
+<circle cx="1023" cy="134" r="15" fill="#f3d89b"/><path d="M931 181L967 145L991 171L1012 150L1059 188V214H931Z" fill="#7d977b"/>
+<!-- floor -->
+<path d="M0 450L1200 430V650H0Z" fill="url(#floor)"/>
+<path d="M0 500L1200 477M0 560L1200 548M0 615L1200 615" stroke="#d0a17a" stroke-width="4" opacity=".7"/>
+<path d="M180 450L110 650M390 445L355 650M620 442L620 650M850 438L900 650M1040 435L1120 650" stroke="#68462f" stroke-width="3" opacity=".45"/>
+<!-- rug -->
+<path d="M280 510Q580 480 850 520L920 620Q600 650 250 620Z" fill="#c9a58a"/><path d="M300 520Q580 495 830 530L885 605Q590 632 285 607Z" fill="none" stroke="#ead8bd" stroke-width="7"/><path d="M340 550L810 565M330 590L850 590" stroke="#a36e57" stroke-width="4" opacity=".65"/>
+<!-- sofa -->
+<path d="M115 388Q115 350 155 350H330Q370 350 370 390V488H115Z" fill="#78856b"/><rect x="105" y="425" width="280" height="70" rx="15" fill="#65775c"/><rect x="135" y="367" width="98" height="78" rx="13" fill="#b8b59a"/><rect x="242" y="367" width="100" height="78" rx="13" fill="#d3b48f"/><path d="M130 490V510M360 490V510" stroke="#694b35" stroke-width="12"/>
+<!-- cushion blanket -->
+<path d="M250 420Q280 430 315 410L344 485H245Z" fill="#c68d70"/><path d="M252 436L329 460M260 454L335 477" stroke="#e3b49a" stroke-width="4"/>
+<!-- stove -->
+<path d="M900 300H1035L1020 425H915Z" fill="#5d5146"/><rect x="913" y="318" width="110" height="92" rx="8" fill="#393a35"/><rect x="929" y="333" width="78" height="63" rx="5" fill="#e7a05d"/><path d="M944 393Q925 365 955 346Q949 370 973 379Q985 353 994 366Q1005 389 978 396Z" fill="#f4d38a"/><rect x="936" y="286" width="64" height="20" rx="3" fill="#5d5146"/><path d="M949 286V205H987V286" fill="#66584a"/><path d="M957 230Q936 208 956 188M976 223Q1000 199 978 180" fill="none" stroke="#fff5e2" stroke-width="9" stroke-linecap="round" class="smoke"/>
+<path d="M925 425L914 450M1015 425L1025 450" stroke="#514237" stroke-width="10"/>
+<!-- chair -->
+<path d="M790 382Q790 350 820 350H880Q908 350 908 382V457H790Z" fill="#b77f5f"/><rect x="782" y="420" width="135" height="54" rx="10" fill="#98674d"/><rect x="807" y="364" width="82" height="70" rx="12" fill="#d8a889"/><path d="M802 470L794 505M900 470L912 505" stroke="#674932" stroke-width="10"/>
+<!-- side table and book -->
+<path d="M690 435H785L773 452H700Z" fill="#9b6d4c"/><path d="M705 450L702 495M770 450L779 495" stroke="#80563b" stroke-width="9"/><rect x="711" y="417" width="52" height="16" rx="2" fill="#d5bd8f" transform="rotate(-5 711 417)"/><path d="M715 422L757 418" stroke="#8d7254" stroke-width="2"/>
+<!-- matera table -->
+<ellipse cx="590" cy="495" rx="140" ry="28" fill="#694831" opacity=".22"/><path d="M470 425Q590 400 710 425L685 458Q590 480 495 458Z" fill="#b47c51"/><ellipse cx="590" cy="425" rx="120" ry="27" fill="#d0a078"/><path d="M515 450L500 550M665 450L685 550" stroke="#855b3d" stroke-width="16"/>
+<!-- mate -->
+<path d="M555 383Q553 354 580 357Q605 355 607 383L600 410Q579 420 562 407Z" fill="#78906b"/><ellipse cx="580" cy="359" rx="26" ry="8" fill="#4b5e43"/><path d="M575 359L606 329" stroke="#c3c7bd" stroke-width="7" stroke-linecap="round"/><path d="M576 359L605 330" stroke="#6e766d" stroke-width="2"/>
+<!-- thermos -->
+<rect x="626" y="354" width="28" height="66" rx="8" fill="#d8d2bd"/><rect x="631" y="343" width="18" height="16" rx="4" fill="#6d7b5d"/><path d="M628 380H652" stroke="#8f9c7d" stroke-width="4"/>
+<!-- plant by sill -->
+<path d="M65 420H130L122 480H74Z" fill="#b77c5c"/><path d="M98 420Q50 376 70 355Q105 371 98 420M98 415Q130 365 153 384Q144 414 98 415M98 400Q89 354 112 340Q130 372 98 400" fill="#6f8d62"/><path d="M98 421V365" stroke="#4f6f4c" stroke-width="4"/>
+<!-- warm light -->
+<path d="M540 0L790 0L1040 650H800Z" fill="#f8dba1" opacity=".09"/>
+</svg>
+<div class="scene-label">⌂ Interior · la casa</div>
+<button class="hotspot window-btn" data-action="window">☼ Mirar afuera</button><button class="hotspot fire-btn" data-action="fire">♨ Acercarme a la estufa</button><button class="hotspot table-btn" data-action="mate">☕ La mesa matera</button>
+</div>
+<div class="view" id="garden">
+<svg class="art" viewBox="0 0 1200 650" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Patio patagónico ilustrado con casa, huerta, árboles, plantas y animales">
+<defs><linearGradient id="sky2" x2="0" y2="1"><stop stop-color="#b9d7df"/><stop offset="1" stop-color="#f4dfb7"/></linearGradient><linearGradient id="earth" x2="0" y2="1"><stop stop-color="#a4ae7d"/><stop offset="1" stop-color="#697c59"/></linearGradient></defs>
+<rect width="1200" height="650" fill="url(#sky2)"/><circle class="sun" cx="1020" cy="105" r="54" fill="#f7df9b"/>
+<!-- distant hills -->
+<path d="M0 305L100 235L205 286L335 198L470 294L600 220L750 295L895 212L1030 285L1130 230L1200 270V470H0Z" fill="#b8c8a5"/>
+<path d="M0 355L140 300L270 345L410 282L570 360L720 305L900 355L1050 300L1200 350V500H0Z" fill="#8da47b"/>
+<rect y="405" width="1200" height="245" fill="url(#earth)"/>
+<!-- path -->
+<path d="M470 650Q520 550 560 460L650 460Q660 550 790 650Z" fill="#d9bd91"/><path d="M570 650L605 465" stroke="#c4a477" stroke-width="4" stroke-dasharray="12 13"/>
+<!-- house -->
+<path d="M670 260L900 125L1135 260V480H670Z" fill="#d9c5a5"/><path d="M635 265L900 105L1165 265L1144 284L900 139L655 284Z" fill="#936c4c"/><path d="M700 272L900 155L1107 272" fill="none" stroke="#c79b6d" stroke-width="10"/><rect x="850" y="300" width="105" height="180" rx="4" fill="#79573e"/><circle cx="934" cy="393" r="5" fill="#e3c88f"/><rect x="995" y="298" width="84" height="78" fill="#94b7bc" stroke="#8c6546" stroke-width="10"/><path d="M1037 300V373M997 338H1077" stroke="#f2e4c9" stroke-width="6"/>
+<!-- tree -->
+<g class="wind"><path d="M170 420L185 215L220 215L232 420Z" fill="#8b6545"/><circle cx="190" cy="190" r="88" fill="#6d8964"/><circle cx="130" cy="230" r="61" fill="#829b72"/><circle cx="243" cy="235" r="70" fill="#789269"/><circle cx="196" cy="140" r="62" fill="#8fa77a"/></g>
+<!-- garden beds -->
+<path d="M80 470L330 450L375 530L100 555Z" fill="#806044"/><path d="M100 477L324 461L350 517L115 540Z" fill="#6b4b35"/><path d="M120 490L332 475M130 511L342 497M140 530L350 516" stroke="#b58c60" stroke-width="4"/>
+<g fill="#73905c" stroke="#527249" stroke-width="4"><path d="M145 495q-25-40-8-47q30 17 8 47M150 495q7-42 28-34q5 24-28 34M207 490q-24-40-8-48q30 18 8 48M213 490q8-40 29-32q4 24-29 32M274 485q-25-40-8-47q30 18 8 47M280 485q8-40 28-32q4 24-28 32"/></g>
+<!-- watering can -->
+<path d="M365 460H420L410 500H375Z" fill="#c6d0b5"/><path d="M370 466Q345 450 355 438Q373 433 388 460" fill="none" stroke="#c6d0b5" stroke-width="8"/><path d="M418 468L449 453L453 460L420 480" fill="#c6d0b5"/><path d="M451 459l16 5m-14 1l12 7m-13-2l8 8" stroke="#dce9cf" stroke-width="3" stroke-linecap="round"/>
+<!-- small animal coop -->
+<path d="M910 470L1020 410L1125 470V535H910Z" fill="#b47f58"/><path d="M890 472L1020 390L1145 472" fill="none" stroke="#865b3e" stroke-width="17"/><rect x="975" y="478" width="92" height="57" fill="#604b38"/><path d="M990 480V532M1007 480V532M1024 480V532M1041 480V532M1058 480V532" stroke="#d1b18a" stroke-width="5"/>
+<!-- chickens -->
+<g><ellipse cx="855" cy="522" rx="24" ry="17" fill="#f3ead5"/><circle cx="870" cy="505" r="12" fill="#f3ead5"/><path d="M870 492l-7 6l8 2l6-6Z" fill="#bd8063"/><path d="M882 505l12 4l-12 4Z" fill="#d9a34e"/><path d="M847 536v10m17-10v10" stroke="#b87943" stroke-width="4"/><ellipse cx="1100" cy="544" rx="22" ry="15" fill="#e5d2b3"/><circle cx="1115" cy="530" r="11" fill="#e5d2b3"/><path d="M1114 519l-6 7l8 2l5-7Z" fill="#bd8063"/><path d="M1126 530l11 4l-11 4Z" fill="#d9a34e"/></g>
+<!-- flowers -->
+<g><path d="M505 530V585M530 540V590M475 548V590" stroke="#4e704b" stroke-width="4"/><g fill="#e9c7c2"><circle cx="505" cy="523" r="10"/><circle cx="495" cy="531" r="9"/><circle cx="515" cy="531" r="9"/></g><g fill="#e6d8a4"><circle cx="530" cy="534" r="10"/><circle cx="520" cy="542" r="8"/><circle cx="540" cy="542" r="8"/></g><g fill="#e4b6a0"><circle cx="475" cy="542" r="10"/><circle cx="465" cy="550" r="8"/><circle cx="485" cy="550" r="8"/></g></g>
+<!-- fence -->
+<path d="M0 435L560 470M0 475L555 510" stroke="#e0c6a1" stroke-width="10"/><path d="M55 423L52 490M165 430L162 497M280 440L277 505M400 448L397 510M515 455L512 516" stroke="#9a754f" stroke-width="9"/>
+</svg>
+<div class="scene-label">☼ Patio · aire libre</div><button class="hotspot plant-btn" data-action="water">♧ Regar las plantas</button><button class="hotspot animal-btn" data-action="animals">♡ Visitar las gallinas</button><button class="hotspot door-btn" data-action="inside">↶ Volver a la casa</button>
+</div>
+<div class="hint" id="hint">Podés tocar los objetos que te llamen la atención</div>
+</div>
+<nav class="controls" aria-label="Moverse por Mi Lugar"><button class="control primary" data-go="inside" aria-pressed="true">⌂ Entrar a la casa</button><button class="control" data-go="garden" aria-pressed="false">♧ Salir al patio</button><button class="control" data-action="mate">☕ Preparar unos mates</button><button class="control" data-action="quiet">◌ Quedarme un rato</button></nav>
+<section class="message" aria-live="polite"><div class="emoji" id="messageIcon">🍂</div><div><strong id="messageTitle">Bienvenido a tu lugar</strong><p id="messageText">Respirá tranquilo. Esta casa no te pide nada; podés explorarla a tu ritmo.</p></div></section>
+</main>
+<footer><span>Mi Lugar · Un refugio digital, hecho despacio.</span><span>Primera escena · Casa y patio</span></footer>
+</div>
+<script>
+const $=s=>document.querySelector(s);const $$=s=>document.querySelectorAll(s);
+let current='inside', watered=false, fed=false;
+const copy={
+inside:{heading:'La casa está tranquila',sub:'Entraste. Afuera sopla una brisa suave y la luz de la tarde se acomoda sobre los muebles. No hay nada que tengas que hacer.',hint:'Podés tocar los objetos que te llamen la atención'},
+garden:{heading:'El patio te espera',sub:'La tierra guarda el calor del día. Hay plantas para cuidar, animales que visitar y un camino de vuelta a la casa.',hint:'Elegí una pequeña tarea o quedate mirando el paisaje'}
+};
+function go(where){current=where;$$('.view').forEach(v=>v.classList.toggle('active',v.id===where));$$('[data-go]').forEach(b=>{b.setAttribute('aria-pressed',String(b.dataset.go===where));b.classList.toggle('primary',b.dataset.go===where)});$('#heading').textContent=copy[where].heading;$('#subheading').textContent=copy[where].sub;$('#hint').textContent=copy[where].hint;respond(where==='inside'?'⌂':'☼',where==='inside'?'Volviste a casa':'Un poco de aire fresco',where==='inside'?'El sillón, la mesa matera y la estufa te esperan.':'Estás en el patio. No hace falta apurarse; elegí qué te gustaría hacer.')}
+function respond(icon,title,text){$('#messageIcon').textContent=icon;$('#messageTitle').textContent=title;$('#messageText').textContent=text}
+function act(action){
+switch(action){
+case 'inside':go('inside');break;
+case 'window':respond('🌾','El paisaje detrás de la ventana','A lo lejos, las bardas se tiñen de dorado. Una brisa mueve las ramas. Te quedás un momento mirando, sin pensar en nada más.');break;
+case 'fire':respond('🔥','La estufa crepita despacito','El calor de la leña llena la habitación. Afuera puede hacer frío; acá adentro hay refugio.');break;
+case 'mate':respond('🧉','El mate está listo','Ponés la pava, acomodás la yerba y te servís el primer mate. No hay reloj que te corra.');break;
+case 'quiet':respond('☁️','Un rato para vos','No tenés ninguna tarea pendiente en este lugar. Podés escuchar el viento imaginario, mirar la luz y descansar.');break;
+case 'water':if(!watered){watered=true;respond('💧','Las plantas recibieron agua','Regaste la huerta. La tierra se oscurece un poquito y las hojas parecen más frescas. Mañana podés volver a visitarlas.')}else{respond('🌱','La huerta está atendida','Ya regaste las plantas en esta visita. Podés recorrer el patio o volver a la casa.')}break;
+case 'animals':if(!fed){fed=true;respond('🐔','Una visita a las gallinas','Les dejaste agua limpia y un poco de alimento. Las gallinas picotean tranquilas junto al gallinero.')}else{respond('🐓','Las gallinas están tranquilas','Ya pasaste a verlas. Se escuchan pequeños cacareos en el patio. Podés quedarte un rato o volver adentro.')}break;
+}
+}
+$$('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+$$('[data-action]').forEach(b=>b.addEventListener('click',()=>act(b.dataset.action)));
+</script>
+</body></html>
