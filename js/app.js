@@ -106,5 +106,7 @@ $('#mateRitual').addEventListener('click',e=>{if(e.target===$('#mateRitual'))clo
 $('#ambienceBtn').addEventListener('click',toggleAmbience);$('#timeBtn').addEventListener('click',cycleTime);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){if($('#mediaRoom').classList.contains('open'))closeMedia();if($('#mateRitual').classList.contains('open'))closeMate()}});
 scene.dataset.time=state.time||'day';setTime(state.time||'day');renderMate();
+const dayOrder=['dawn','day','sunset','night'];
+dayTimer=setInterval(()=>{if(document.visibilityState==='visible'){const i=dayOrder.indexOf(state.time);setTime(dayOrder[(i+1)%dayOrder.length])}},240000);
 if(state.ambience){state.ambience=false;persist()}
 })();
