@@ -6,7 +6,7 @@ const initial={water:false,feed:false,mate:false,seed:false,visited:0,ambience:f
 let state={...initial};
 try{state={...initial,...JSON.parse(localStorage.getItem(saveKey)||'{}')}}catch(e){}
 let room='house',audioCtx=null,ambienceTimer=null,mediaMode='cinema',mateStep=0,oscillators=[],musicTimer=null,musicTrack='mate',musicNote=0;
-let dayTimer=null;
+let dayTimer=null,mediaLoadTimer=null;
 const scene=$('#scene');
 function persist(){try{localStorage.setItem(saveKey,JSON.stringify(state))}catch(e){}}
 function say(icon,title,text){const tip=$('#sceneTip');if(tip)tip.textContent=icon+' '+title+' · '+text}
