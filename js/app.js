@@ -45,9 +45,11 @@ function parseYoutube(raw){
  }catch(e){}return null;
 }
 function loadVideo(){
- const parsed=parseYoutube($('#mediaUrl').value.trim());if(!parsed){$('#mediaStatus').textContent='No reconocí el enlace. Pegá la dirección completa de un video o una lista de YouTube.';return}
+ const parsed=parseYoutube($('#mediaUrl').value.trim());if(!parsed){$('#mediaStatus').textContent='Ese enlace no parece ser de YouTube. Pegá la dirección de un video o una lista compatible; no abriremos otras páginas.';$('#mediaUrl').focus();return}
+ stopMusic(false);if(mediaLoadTimer)clearTimeout(mediaLoadTimer);
  const src=parsed.type==='video'?'https://www.youtube-nocookie.com/embed/'+parsed.id+'?autoplay=1&rel=0&playsinline=1':'https://www.youtube-nocookie.com/embed/videoseries?list='+parsed.id+'&autoplay=1&rel=0&playsinline=1';
- $('#mediaFrame').src=src;$('#mediaPlayer').classList.add('visible');$('#mediaStatus').textContent='Intentando reproducir dentro de Mi Lugar. Algunos titulares bloquean la inserción; en ese caso elegí otro video o la plataforma oficial.';
+ $('#mediaFrame').src=src;$('#mediaPlayer').classList.add('visible');$('#mediaStatus').textContent='Cargando en la pantalla del living… Si queda negra, el video puede tener bloqueada la reproducción integrada.';
+ mediaLoadTimer=setTimeout(()=>{if($('#mediaPlayer').classList.contains('visible'))$('#mediaStatus').textContent='¿No arrancó? Revisá la conexión y probá otra pieza. Algunos videos no admiten reproducción incrustada; Mi Lugar no abrirá otra pestaña.'},10000);
 }
 function startMusic(track){
  const ctx=getAudio();if(!ctx){$('#mediaStatus').textContent='Este navegador no permite reproducir la melodía local.';return}
