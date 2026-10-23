@@ -22,7 +22,7 @@ function openMedia(mode){
  root.classList.add('open');root.setAttribute('aria-hidden','false');setMediaMode(mode);
  say(mode==='cinema'?'📺':'🎵',mode==='cinema'?'El televisor se encendió':'El equipo de música está listo',mode==='cinema'?'Elegí cine para verlo aquí cuando el video permita inserción.':'Elegí música para llenar la casa.');
 }
-function closeMedia(){const root=$('#mediaRoom');root.classList.remove('open');root.setAttribute('aria-hidden','true');$('#mediaFrame').src='';$('#mediaPlayer').classList.remove('visible')}
+function closeMedia(){const root=$('#mediaRoom');if(mediaLoadTimer){clearTimeout(mediaLoadTimer);mediaLoadTimer=null}stopMusic(false);root.classList.remove('open');root.setAttribute('aria-hidden','true');$('#mediaFrame').src='';$('#mediaPlayer').classList.remove('visible')}
 function setMediaMode(mode){
  stopMusic(false);
  mediaMode=mode;const cinema=mode==='cinema';
