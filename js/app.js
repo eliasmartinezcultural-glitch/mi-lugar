@@ -24,6 +24,7 @@ function openMedia(mode){
 }
 function closeMedia(){const root=$('#mediaRoom');if(mediaLoadTimer){clearTimeout(mediaLoadTimer);mediaLoadTimer=null}stopMusic(false);root.classList.remove('open');root.setAttribute('aria-hidden','true');$('#mediaFrame').src='';$('#mediaPlayer').classList.remove('visible')}
 function setMediaMode(mode){
+ if(mediaLoadTimer){clearTimeout(mediaLoadTimer);mediaLoadTimer=null}
  stopMusic(false);
  mediaMode=mode;const cinema=mode==='cinema';
  $('#mediaTitle').textContent=cinema?'El televisor del living':'El equipo de música';
