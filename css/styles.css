@@ -115,3 +115,11 @@ body{background:#493d31}
 .scene[data-time="night"]::before{opacity:.34;background:radial-gradient(ellipse at 20% 15%,#8ea5e255 0,transparent 45%)}
 @media(max-width:600px){.media-choice.music-track{min-height:58px}.media-choice small{font-size:10px}.media-choice.music-stop{grid-column:1/-1}}
 @media(prefers-reduced-motion:reduce){.scene::before,.scene .hotspot,#mediaRoom.open .media-shell{animation:none!important}}
+
+
+/* Catálogo de medios integrado 005 */
+.media-section-title{grid-column:1/-1;padding:8px 3px 2px;margin-top:5px;border-bottom:1px solid #d9c7aa;color:#8b7459;font:10px/1.4 system-ui,sans-serif;letter-spacing:.12em}
+.media-choice.film-card{min-height:66px;background:linear-gradient(135deg,#fffaf0,#e5e8d9);border-color:#d4c3a5;box-shadow:0 3px 0 #d9c7aa;transition:transform .18s,box-shadow .18s}
+.media-choice.film-card:hover{transform:translateY(-2px);box-shadow:0 5px 0 #c5d5b9}
+.media-choice.film-card small{display:block;margin-top:5px;color:#89745c;font:11px/1.4 system-ui,sans-serif}
+@media(max-width:600px){.media-section-title{font-size:9px}.media-choice.film-card{min-height:58px}.media-choice.film-card small{font-size:10px}}
