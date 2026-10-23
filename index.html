@@ -7,8 +7,6 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body><div class="app">
-<header><div class="brand"><div class="brand-icon" aria-hidden="true">⌂</div><div><h1>Mi Lugar</h1><p>UNA CASA RURAL PARA ESTAR</p></div></div><div class="quiet-pill">✦ Sin apuro · A tu ritmo</div></header>
-<section class="intro"><h2 id="heading">La casa está tranquila</h2><p id="subheading">La luz de la tarde cae sobre los muebles. Tocá el televisor o la música para abrirlos dentro de este mundo.</p></section>
 <main class="world">
 <div class="scene" id="scene" aria-label="Mundo rural ilustrado e interactivo">
 <section class="room active" id="house" aria-label="Interior de la casa">
@@ -63,23 +61,9 @@
     <p class="media-note">Algunos videos no permiten reproducción incrustada. Los catálogos oficiales pueden abrirse en su propia plataforma; Mi Lugar no copia ni aloja las películas.</p>
   </div>
 </div>
-<div class="scene-tip" id="sceneTip">Tocá los objetos de la casa para descubrir qué podés hacer.</div>
+<nav class="nav" aria-label="Moverse por Mi Lugar"><button class="btn primary" data-go="house" aria-pressed="true">⌂ Entrar a la casa</button><button class="btn" data-go="yard" aria-pressed="false">♧ Salir al patio</button><button class="btn" data-action="mate">🧉 Preparar unos mates</button><button class="btn" data-action="quiet">🍃 Quedarme un rato</button><button class="btn" id="ambienceBtn">🌾 Escuchar sonidos de campo</button></nav><div class="statusbar" aria-hidden="true" style="display:none"><div class="stat"><strong id="waterValue">La huerta espera</strong><div class="meter"><span id="waterBar"></span></div></div><div class="stat"><strong id="feedValue">Bebederos por revisar</strong><div class="meter"><span id="feedBar"></span></div></div><div class="stat"><strong id="mateValue">Pava por calentar</strong><div class="meter"><span id="mateBar"></span></div></div><div class="stat"><strong id="visitValue">0 pequeños momentos</strong></div></div><section class="message" aria-live="polite" style="display:none"><div class="emoji" id="messageIcon">🍂</div><div><strong id="messageTitle">Bienvenido a tu lugar</strong><p id="messageText">Respirá tranquilo.</p></div></section><div class="scene-tip" id="sceneTip">Tocá los objetos de la casa para descubrir qué podés hacer.</div>
 </div>
-<nav class="nav" aria-label="Moverse por Mi Lugar"><button class="btn primary" data-go="house" aria-pressed="true">⌂ Entrar a la casa</button><button class="btn" data-go="yard" aria-pressed="false">♧ Salir al patio</button><button class="btn" data-action="mate">🧉 Preparar unos mates</button><button class="btn" data-action="quiet">🍃 Quedarme un rato</button><button class="btn" id="ambienceBtn">🌾 Escuchar sonidos de campo</button></nav>
-<div class="statusbar" aria-label="Estado de tu mundo"><div class="stat"><span class="ico">💧</span><div><strong id="waterValue">La huerta espera</strong><small>Estado de las plantas</small><div class="meter"><span id="waterBar"></span></div></div></div><div class="stat"><span class="ico">🐔</span><div><strong id="feedValue">Bebederos por revisar</strong><small>Animales del patio</small><div class="meter"><span id="feedBar"></span></div></div></div><div class="stat"><span class="ico">🧉</span><div><strong id="mateValue">Pava por calentar</strong><small>Ritual matero</small><div class="meter"><span id="mateBar"></span></div></div></div><div class="stat"><span class="ico">🍂</span><div><strong id="visitValue">0 pequeños momentos</strong><small>Tu visita a Mi Lugar</small></div></div></div>
-<section class="message" aria-live="polite"><div class="emoji" id="messageIcon">🍂</div><div><strong id="messageTitle">Bienvenido a tu lugar</strong><p id="messageText">Respirá tranquilo. Esta casa no te pide nada; podés explorarla a tu ritmo.</p></div></section>
+
 </main>
-<section class="sections">
-<div class="section-head"><div><h3>La vida cotidiana</h3><p>Pequeños gestos que hacen que el refugio se sienta vivo.</p></div></div>
-<div class="cards">
-<article class="card"><div class="big">🌿</div><h4>La huerta</h4><p>Regá las plantas y sembrá unas semillas. El estado de tus tareas queda guardado en este dispositivo.</p><div class="meter"><span id="waterBar2"></span></div><button class="btn" id="waterBtn">💧 Regar la huerta</button><div style="height:8px"></div><button class="btn" id="seedBtn">🌱 Plantar semillas</button></article>
-<article class="card"><div class="big">🐓</div><h4>Los animales</h4><p>Visitá el gallinero, llená el bebedero y dejá alimento. Estas son actividades simuladas del mundo digital.</p><div class="meter"><span id="feedBar2"></span></div><button class="btn" id="feedBtn">🌾 Dar agua y alimento</button></article>
-<article class="card"><div class="big">🧉</div><h4>La mesa matera</h4><p>Prepará el mate, acomodá el termo y quedate mirando por la ventana. No hay una tarea que terminar.</p><div class="meter"><span id="mateBar2"></span></div><button class="btn" id="mateBtn">🧉 Preparar unos mates</button></article>
-</div>
-<div class="section-head"><div><h3>Un rincón para aprender</h3><p>Lecturas cortas, curiosidades y pequeñas pausas para la mente.</p></div></div>
-<div class="reading" id="reading"><h4>📖 La biblioteca de la casa</h4><p>Esta habitación crecerá con textos que puedas leer sin apuro, cuentos, curiosidades sobre la Patagonia, cultura, naturaleza y música. La idea es que cada lectura abra una puerta, no que te apure a pasar a la siguiente.</p><div class="mini-list"><span class="chip">Naturaleza</span><span class="chip">Cine argentino</span><span class="chip">Música</span><span class="chip">Historias</span><span class="chip">Aprender algo nuevo</span></div></div>
-<div class="section-head"><div><h3>El sonido del campo</h3><p>Un primer sonido experimental, generado localmente en tu navegador.</p></div></div>
-<div class="card"><p>Activá una ambientación breve desde el botón de arriba. Por ahora son tonos suaves generados en el navegador, no grabaciones auténticas de aves o viento. Más adelante podemos sumar grabaciones propias o con licencia compatible.</p><button class="btn" id="resetVisit">↻ Reiniciar tareas de esta visita</button></div>
-</section>
-<footer class="footer"><span>Mi Lugar · Un refugio digital, hecho despacio.</span><span>Casa, patio y experiencias dentro del mundo</span><span>Las tareas rurales son simulaciones digitales.</span></footer>
+
 </div><script src="js/app.js" defer></script></body></html>
