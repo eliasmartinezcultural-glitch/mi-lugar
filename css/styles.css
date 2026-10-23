@@ -78,3 +78,5 @@ body{background:#493d31}
 #timeBtn{white-space:nowrap}
 @media(max-width:600px){.mate-card{border-radius:17px;padding:14px}.mate-progress span{padding:8px 10px}.mate-card p{font-size:13px}.mate-actions{gap:6px}.scene .nav{max-height:30%;overflow:auto}}
 @media(prefers-reduced-motion:reduce){.sun,.wind,.steam,#yard svg g:has(ellipse[cx="855"]),#yard svg g:has(ellipse[cx="1100"]),#house svg path[fill="#f4d38a"]{animation:none!important}.scene,.scene::after{transition:none}}
+
+.scene .immersive-media.open{z-index:8}.scene .mate-ritual.open{z-index:9}
