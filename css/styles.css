@@ -33,3 +33,61 @@ body{background:#493d31}
  #yard .water{left:7%;bottom:32%}#yard .feed{right:7%;bottom:33%}#yard .return{left:42%;top:17%}
 }
 @media(max-width:380px){.nav .btn{font-size:10px;padding:8px}.scene-tip{max-width:94%}}
+
+/* MUNDO VIVO 002 — la escena cambia, respira y responde sin salir del mundo */
+:root{--day-filter:1;--night-tint:rgba(27,39,67,0)}
+.scene{isolation:isolate;transition:filter 2.5s ease}
+.scene::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:var(--night-tint);transition:background 2.5s ease}
+.scene .room,.scene .nav,.scene .scene-tip,.scene .scene-label,.scene .hotspot,.scene .immersive-media,.scene .mate-ritual{position:absolute}
+.scene .room{z-index:0}
+.scene .nav,.scene .scene-tip,.scene .scene-label,.scene .hotspot,.scene .immersive-media,.scene .mate-ritual{z-index:4}
+.scene .nav{z-index:6}
+.scene .scene-tip,.scene .scene-label{z-index:5}
+.scene .hotspot{z-index:5}
+#house svg,#yard svg{overflow:hidden}
+#house svg .sun,#yard svg .sun{transform-box:fill-box;transform-origin:center;animation:sunPulse 7s ease-in-out infinite alternate}
+#house svg .steam{animation:steam 3.2s ease-out infinite}
+#house svg .wind,#yard svg .wind{transform-box:fill-box;transform-origin:bottom center;animation:wind 3.4s ease-in-out infinite alternate}
+#yard svg g:has(ellipse[cx="855"]){transform-box:fill-box;transform-origin:center;animation:chickenBob 2.1s ease-in-out infinite alternate}
+#yard svg g:has(ellipse[cx="1100"]){transform-box:fill-box;transform-origin:center;animation:chickenBob 2.8s ease-in-out infinite alternate-reverse}
+@keyframes chickenBob{0%{translate:0 0}40%{translate:2px -1px}100%{translate:-2px 1px}}
+@keyframes fireFlicker{0%,100%{opacity:.82;transform:scaleY(.94)}50%{opacity:1;transform:scaleY(1.07)}}
+#house svg path[fill="#f4d38a"]{transform-box:fill-box;transform-origin:center bottom;animation:fireFlicker .8s ease-in-out infinite}
+.scene[data-time="dawn"]{--night-tint:rgba(228,156,112,.10)}
+.scene[data-time="day"]{--night-tint:rgba(255,244,200,0)}
+.scene[data-time="sunset"]{--night-tint:rgba(179,104,76,.20)}
+.scene[data-time="night"]{--night-tint:rgba(23,33,61,.48)}
+.scene[data-time="night"] .sun{opacity:.18!important}
+.scene[data-time="night"] .scene-label,.scene[data-time="night"] .scene-tip{background:#262b39e8;color:#fff4df}
+.mate-ritual{inset:0;display:none;align-items:center;justify-content:center;padding:clamp(10px,3vw,28px);background:#201b16b8;backdrop-filter:blur(5px);z-index:9}
+.mate-ritual.open{display:flex;animation:arrive .22s ease both}
+.mate-card{width:min(100%,560px);max-height:100%;overflow:auto;background:#f8efdf;color:#493b30;border:1px solid #fff8;border-radius:22px;padding:clamp(15px,3vw,25px);box-shadow:0 18px 70px #1d140f70}
+.ritual-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.ritual-head h3{font-size:clamp(21px,4vw,30px);font-weight:normal;margin:6px 0 0}
+.mate-illustration{position:relative;text-align:center;font-size:clamp(64px,12vw,100px);padding:12px 0;filter:drop-shadow(0 8px 6px #74533320)}
+#mateSteam{display:inline-block;font-size:.52em;vertical-align:top;animation:steam 2.3s ease-out infinite}
+.mate-card p{font:14px/1.55 system-ui,sans-serif}
+.mate-progress{display:grid;gap:7px;margin:15px 0}
+.mate-progress span{border:1px solid #dfceb4;border-radius:10px;padding:10px 12px;font:12px system-ui,sans-serif;background:#fff9ef}
+.mate-progress span.done{background:#e1ead8;border-color:#a9bd9b}
+.mate-progress span.current{border-color:#758b67;box-shadow:inset 3px 0 #758b67}
+.mate-actions{display:flex;gap:8px;justify-content:space-between}
+.mate-actions button{flex:1}
+.mate-actions button:disabled{opacity:.4;cursor:not-allowed}
+.mate-note{font-size:11px!important;color:#887760}
+#timeBtn{white-space:nowrap}
+@media(max-width:600px){.mate-card{border-radius:17px;padding:14px}.mate-progress span{padding:8px 10px}.mate-card p{font-size:13px}.mate-actions{gap:6px}.scene .nav{max-height:30%;overflow:auto}}
+@media(prefers-reduced-motion:reduce){.sun,.wind,.steam,#yard svg g:has(ellipse[cx="855"]),#yard svg g:has(ellipse[cx="1100"]),#house svg path[fill="#f4d38a"]{animation:none!important}.scene,.scene::after{transition:none}}
+
+.scene .immersive-media.open{z-index:8}.scene .mate-ritual.open{z-index:9}
+
+/* Movimiento separado para que el patio no parezca una postal quieta */
+#house svg .sun,#yard svg .sun{animation:sunJourney 55s ease-in-out infinite alternate}
+@keyframes sunJourney{0%{transform:translate(-24px,12px) scale(.92)}50%{transform:translate(0,-5px) scale(1.03)}100%{transform:translate(25px,14px) scale(.94)}}
+#yard svg .chicken{transform-box:fill-box;transform-origin:center;animation:chickenWalk 5.5s ease-in-out infinite}
+#yard svg .chicken-two{animation-delay:-2.7s;animation-direction:alternate-reverse}
+@keyframes chickenWalk{0%,100%{translate:0 0;rotate:0deg}30%{translate:3px -1px;rotate:1deg}65%{translate:-5px 0;rotate:-1deg}}
+#yard svg .crop-row{transform-box:fill-box;transform-origin:bottom center;animation:cropSway 4.6s ease-in-out infinite alternate}
+#yard svg .flowers{transform-box:fill-box;transform-origin:bottom center;animation:cropSway 3.7s ease-in-out infinite alternate-reverse}
+@keyframes cropSway{from{rotate:-1deg}to{rotate:1.4deg}}
+@media(prefers-reduced-motion:reduce){#house svg .sun,#yard svg .sun,#yard svg .chicken,#yard svg .crop-row,#yard svg .flowers{animation:none!important}}
